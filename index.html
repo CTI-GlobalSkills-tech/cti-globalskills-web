@@ -76,6 +76,11 @@
             -webkit-text-fill-color: transparent;
         }
 
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
         nav a {
             color: #d8b4fe;
             text-decoration: none;
@@ -98,6 +103,7 @@
             box-shadow: 0 0 20px rgba(217, 70, 239, 0.4);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-decoration: none;
+            margin-left: 30px;
         }
 
         .btn-nav:hover {
@@ -166,6 +172,7 @@
             text-decoration: none;
             box-shadow: 0 10px 30px rgba(236, 72, 153, 0.35);
             transition: all 0.3s ease;
+            display: inline-block;
         }
 
         .btn-primary:hover {
@@ -183,6 +190,7 @@
             text-decoration: none;
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
+            display: inline-block;
         }
 
         .btn-secondary:hover {
@@ -195,6 +203,7 @@
             padding: 90px 8%;
             max-width: 1250px;
             margin: 0 auto;
+            text-align: center;
         }
 
         .section-title {
@@ -212,6 +221,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
+            text-align: left;
         }
 
         .card {
@@ -259,10 +269,20 @@
             line-height: 1.6;
         }
 
+        /* Configuración para que queden exactamente de 2 en 2 */
         .ecosystem-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        @media (max-width: 850px) {
+            .ecosystem-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .eco-card {
@@ -338,8 +358,8 @@
             <a href="#propuesta">El Riesgo Cognitivo</a>
             <a href="#ecosistema">Ecosistema CTI</a>
             <a href="#contacto">Contacto</a>
+            <a href="#contacto" class="btn-nav">Acceder al Gimnasio</a>
         </nav>
-        <a href="#contacto" class="btn-nav">Acceder al Gimnasio</a>
     </header>
 
     <section class="hero" id="hero">
