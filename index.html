@@ -54,26 +54,29 @@
             100% { transform: translate(-150px, -150px) scale(1.3); }
         }
 
+        .wrapper {
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 25px 8%;
+            padding: 20px 5%;
             backdrop-filter: blur(12px);
-            background: rgba(15, 7, 25, 0.7);
+            background: rgba(15, 7, 25, 0.85);
             border-bottom: 1px solid rgba(217, 70, 239, 0.15);
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
-        .logo {
-            font-weight: 800;
-            font-size: 1.3rem;
-            letter-spacing: 0.5px;
-            background: linear-gradient(135deg, #fff 30%, #06b6d4 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .logo-img {
+            height: 42px;
+            width: auto;
+            display: block;
         }
 
         nav {
@@ -84,7 +87,7 @@
         nav a {
             color: #d8b4fe;
             text-decoration: none;
-            margin-left: 30px;
+            margin-left: 28px;
             font-size: 0.95rem;
             font-weight: 600;
             transition: color 0.3s ease;
@@ -103,7 +106,7 @@
             box-shadow: 0 0 20px rgba(217, 70, 239, 0.4);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-decoration: none;
-            margin-left: 30px;
+            margin-left: 28px;
         }
 
         .btn-nav:hover {
@@ -200,8 +203,8 @@
         }
 
         section {
-            padding: 90px 8%;
-            max-width: 1250px;
+            padding: 90px 5%;
+            max-width: 1200px;
             margin: 0 auto;
             text-align: center;
         }
@@ -269,12 +272,11 @@
             line-height: 1.6;
         }
 
-        /* Configuración para que queden exactamente de 2 en 2 */
         .ecosystem-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 35px;
-            max-width: 1000px;
+            max-width: 1050px;
             margin: 0 auto;
             text-align: left;
         }
@@ -351,82 +353,86 @@
     <div class="bg-glow"></div>
     <div class="bg-glow-2"></div>
 
-    <header>
-        <div class="logo">CTI GlobalSkills</div>
-        <nav>
-            <a href="#hero">Inicio</a>
-            <a href="#propuesta">El Riesgo Cognitivo</a>
-            <a href="#ecosistema">Ecosistema CTI</a>
-            <a href="#contacto">Contacto</a>
-            <a href="#contacto" class="btn-nav">Acceder al Gimnasio</a>
-        </nav>
-    </header>
+    <div class="wrapper">
+        <header>
+            <a href="#hero">
+                <img src="CTI Global Skills-H-color.jpg" alt="CTI GlobalSkills" class="logo-img">
+            </a>
+            <nav>
+                <a href="#hero">Inicio</a>
+                <a href="#propuesta">El Riesgo Cognitivo</a>
+                <a href="#ecosistema">Ecosistema CTI</a>
+                <a href="#contacto">Contacto</a>
+                <a href="#contacto" class="btn-nav">Acceder al Gimnasio</a>
+            </nav>
+        </header>
 
-    <section class="hero" id="hero">
-        <div class="tag">// DeepTech para la Toma de Decisiones</div>
-        <h1>Blindamos el <span>Juicio Directivo</span> frente a la Incertidumbre.</h1>
-        <p>Transformamos el pensamiento crítico de tu organización en una huella cognitiva verificable. Medimos, entrenamos y elevamos el sistema inmunitario de tus líderes con nuestro algoritmo determinista y el Gimnasio Cerebral B2B.</p>
-        
-        <div class="buttons-container">
-            <a href="#ecosistema" class="btn-primary">Solicitar Auditoría Cognitiva (Radar)</a>
-            <a href="#ecosistema" class="btn-secondary">Explorar el Gimnasio Cerebral</a>
-        </div>
-    </section>
+        <section class="hero" id="hero">
+            <div class="tag">// DeepTech para la Toma de Decisiones</div>
+            <h1>Blindamos el <span>Juicio Directivo</span> frente a la Incertidumbre.</h1>
+            <p>Transformamos el pensamiento crítico de tu organización en una huella cognitiva verificable. Medimos, entrenamos y elevamos el sistema inmunitario de tus líderes con nuestro algoritmo determinista y el Gimnasio Cerebral B2B.</p>
+            
+            <div class="buttons-container">
+                <a href="#ecosistema" class="btn-primary">Solicitar Auditoría Cognitiva (Radar)</a>
+                <a href="#ecosistema" class="btn-secondary">Explorar el Gimnasio Cerebral</a>
+            </div>
+        </section>
 
-    <section id="propuesta">
-        <h2 class="section-title">Una mala decisión directiva destruye más EBITDA en minutos<br>que lo que un ERP optimiza en años.</h2>
-        
-        <div class="cards-grid">
-            <div class="card">
-                <h3>El Costo de la Parálisis</h3>
-                <p>Las presiones del mercado y la saturación de información congelan proyectos críticos y provocan fugas millonarias de ganancias por falta de agilidad cognitiva.</p>
+        <section id="propuesta">
+            <h2 class="section-title">Una mala decisión directiva destruye más EBITDA en minutos<br>que lo que un ERP optimiza en años.</h2>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>El Costo de la Parálisis</h3>
+                    <p>Las presiones del mercado y la saturación de información congelan proyectos críticos y provocan fugas millonarias de ganancias por falta de agilidad cognitiva.</p>
+                </div>
+                <div class="card">
+                    <h3>Adiós a las Cajas Negras</h3>
+                    <p>A diferencia de las herramientas de RH tradicionales o IAs que "alucinan", nuestro modelo utiliza un algoritmo determinista basado en matemáticas puras y citas textuales. Cero subjetividad.</p>
+                </div>
+                <div class="card">
+                    <h3>Fricción Cognitiva Productiva</h3>
+                    <p>A través de nuestras Funciones de Forzado Cognitivo (CFF), actuamos como un speed bump cerebral que frena el sesgo automático (Sistema 1) y activa el rigor analítico (Sistema 2).</p>
+                </div>
             </div>
-            <div class="card">
-                <h3>Adiós a las Cajas Negras</h3>
-                <p>A diferencia de las herramientas de RH tradicionales o IAs que "alucinan", nuestro modelo utiliza un algoritmo determinista basado en matemáticas puras y citas textuales. Cero subjetividad.</p>
-            </div>
-            <div class="card">
-                <h3>Fricción Cognitiva Productiva</h3>
-                <p>A través de nuestras Funciones de Forzado Cognitivo (CFF), actuamos como un speed bump cerebral que frena el sesgo automático (Sistema 1) y activa el rigor analítico (Sistema 2).</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="ecosistema">
-        <h2 class="section-title">De la Vulnerabilidad a la Supremacía Ejecutiva</h2>
-        
-        <div class="ecosystem-grid">
-            <div class="eco-card">
-                <span class="level-tag">Nivel 1</span>
-                <h3>El Radar (Auditoría Cognitiva Inicial)</h3>
-                <p>Una evaluación estratégica de ticket fijo diseñada para identificar de inmediato las vulnerabilidades operativas, el cierre prematuro y los puntos ciegos de tu equipo directivo en escenarios de alta fricción.</p>
+        <section id="ecosistema">
+            <h2 class="section-title">De la Vulnerabilidad a la Supremacía Ejecutiva</h2>
+            
+            <div class="ecosystem-grid">
+                <div class="eco-card">
+                    <span class="level-tag">Nivel 1</span>
+                    <h3>El Radar (Auditoría Cognitiva Inicial)</h3>
+                    <p>Una evaluación estratégica de ticket fijo diseñada para identificar de inmediato las vulnerabilidades operativas, el cierre prematuro y los puntos ciegos de tu equipo directivo en escenarios de alta fricción.</p>
+                </div>
+                <div class="eco-card">
+                    <span class="level-tag">Nivel 2 (Sprint)</span>
+                    <h3>Sprint de Elasticidad Cognitiva</h3>
+                    <p>Programa intensivo de 2 a 3 semanas diseñado para romper el letargo mental, activar nuevas rutas analíticas y elevar la agilidad en la toma de decisiones directivas.</p>
+                </div>
+                <div class="eco-card">
+                    <span class="level-tag">Nivel 2 (SaaS)</span>
+                    <h3>Licencia SaaS Anual</h3>
+                    <p>Entrenamiento continuo post-sprint mediante micro-casos integrados directamente en las herramientas de trabajo diarias de tus líderes (Slack/Teams).</p>
+                </div>
+                <div class="eco-card">
+                    <span class="level-tag" style="background: rgba(6, 182, 212, 0.2); color: #67e8f9;">Nivel 3 • Desarrollo 2027</span>
+                    <h3>Black Label (War Room Algorítmico)</h3>
+                    <p>Membresía premium de alto valor orientada al emparejamiento algorítmico global para la resolución de crisis corporativas de máxima complejidad.</p>
+                </div>
             </div>
-            <div class="eco-card">
-                <span class="level-tag">Nivel 2 (Sprint)</span>
-                <h3>Sprint de Elasticidad Cognitiva</h3>
-                <p>Programa intensivo de 2 a 3 semanas diseñado para romper el letargo mental, activar nuevas rutas analíticas y elevar la agilidad en la toma de decisiones directivas.</p>
-            </div>
-            <div class="eco-card">
-                <span class="level-tag">Nivel 2 (SaaS)</span>
-                <h3>Licencia SaaS Anual</h3>
-                <p>Entrenamiento continuo post-sprint mediante micro-casos integrados directamente en las herramientas de trabajo diarias de tus líderes (Slack/Teams).</p>
-            </div>
-            <div class="eco-card">
-                <span class="level-tag" style="background: rgba(6, 182, 212, 0.2); color: #67e8f9;">Nivel 3 • Desarrollo 2027</span>
-                <h3>Black Label (War Room Algorítmico)</h3>
-                <p>Membresía premium de alto valor orientada al emparejamiento algorítmico global para la resolución de crisis corporativas de máxima complejidad.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <footer class="cta-footer" id="contacto">
-        <h2>¿Listo para blindar el activo más valioso de tu organización: el juicio de tus líderes?</h2>
-        <a href="#" class="btn-primary" style="font-size: 1.1rem; padding: 18px 42px;">Agendar una Demostración Estratégica</a>
-        
-        <div class="legal-footer">
-            CTI Globalskills S.A.P.I. de C.V. &copy; 2026. Todos los derechos reservados.
-        </div>
-    </footer>
+        <footer class="cta-footer" id="contacto">
+            <h2>¿Listo para blindar el activo más valioso de tu organización: el juicio de tus líderes?</h2>
+            <a href="#" class="btn-primary" style="font-size: 1.1rem; padding: 18px 42px;">Agendar una Demostración Estratégica</a>
+            
+            <div class="legal-footer">
+                CTI Globalskills S.A.P.I. de C.V. &copy; 2026. Todos los derechos reservados.
+            </div>
+        </footer>
+    </div>
 
 </body>
 </html>
