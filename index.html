@@ -54,7 +54,7 @@
             100% { transform: translate(-100px, -100px) scale(1.3); }
         }
 
-        /* Contenedor perfectamente centrado en pantallas grandes */
+        /* Contenedor central intacto */
         .page-container {
             width: 100%;
             max-width: 1400px;
@@ -75,19 +75,20 @@
             z-index: 100;
         }
 
-        /* Ajuste elegante del logotipo para fundirse con el fondo oscuro */
+        /* MAGIA AQUÍ: Eliminamos el fondo blanco del JPG y ajustamos brillo */
         .logo-container {
             display: flex;
             align-items: center;
             text-decoration: none;
+            background: transparent;
         }
 
         .logo-img {
-            height: 48px;
+            height: 45px;
             width: auto;
             display: block;
-            mix-blend-mode: screen; /* Elimina por completo el fondo blanco */
-            filter: brightness(1.2) contrast(1.1);
+            mix-blend-mode: multiply; /* Vuelve transparente el fondo blanco del JPG en fondos oscuros */
+            filter: invert(1) hue-rotate(180deg) brightness(1.8) contrast(1.2); 
         }
 
         nav {
