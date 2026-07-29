@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTI Globalskills | Blindamos el Juicio Directivo</title>
+    <!-- Tailwind CSS para un diseño limpio y profesional -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#090d16',
+                        cardBg: '#111827',
+                        cyanBrand: '#00f2fe',
+                        violetBrand: '#4facfe',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #090d16; color: #f3f4f6; }
+        .glow-effect {
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.15);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 35px rgba(79, 172, 254, 0.3);
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-gray-100 antialiased selection:bg-cyanBrand selection:text-black">
+
+    <!-- 1. Barra de Navegación (Header) -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-darkBg/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <!-- Logotipo o Identidad -->
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyanBrand to-violetBrand flex items-center justify-center font-bold text-black text-xl shadow-lg">
+                    C
+                </div>
+                <span class="font-bold text-xl tracking-wide bg-gradient-to-r from-cyanBrand to-violetBrand bg-clip-text text-transparent">
+                    CTI GlobalSkills
+                </span>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
+                <a href="#inicio" class="hover:text-cyanBrand transition">Inicio</a>
+                <a href="#problema" class="hover:text-cyanBrand transition">El Riesgo Cognitivo</a>
+                <a href="#soluciones" class="hover:text-cyanBrand transition">Ecosistema CTI</a>
+                <a href="#contacto" class="hover:text-cyanBrand transition">Contacto</a>
+            </nav>
+            <div>
+                <a href="#soluciones" class="px-5 py-2.5 rounded-full text-sm font-semibold bg-gradient-to-r from-cyanBrand to-violetBrand text-black hover:opacity-90 transition shadow-lg">
+                    Acceder al Gimnasio
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Sección Principal (Hero Section con Dinamismo) -->
+    <section id="inicio" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden flex items-center">
+        <!-- Elementos decorativos de fondo con brillo -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyanBrand/10 rounded-full blur-[120px] pointer-events-none"></div>
+        
+        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+            <span class="inline-block px-4 py-1.5 mb-6 rounded-full text-xs font-semibold tracking-wider uppercase bg-cyanBrand/10 text-cyanBrand border border-cyanBrand/20">
+                // DEEPTECH PARA LA TOMA DE DECISIONES
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                Blindamos el <span class="bg-gradient-to-r from-cyanBrand to-violetBrand bg-clip-text text-transparent">Juicio Directivo</span> frente a la Incertidumbre.
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
+                Transformamos el pensamiento crítico de tu organización en una huella cognitiva verificable. Medimos, entrenamos y elevamos el sistema inmunitario de tus líderes con nuestro algoritmo determinista y el Gimnasio Cerebral B2B.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#soluciones" class="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold bg-gradient-to-r from-cyanBrand to-violetBrand text-black hover:opacity-90 transition shadow-xl text-center">
+                    Solicitar Auditoría Cognitiva (Radar)
+                </a>
+                <a href="#problema" class="w-full sm:w-auto px-8 py-4 rounded-xl font-medium bg-cardBg border border-gray-700 text-gray-200 hover:border-cyanBrand/50 transition text-center">
+                    Conocer la Metodología
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Sección de Propuesta de Valor (El Verdadero Riesgo) -->
+    <section id="problema" class="py-24 bg-cardBg/40 border-t border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Una mala decisión directiva destruye más EBITDA en minutos que lo que un ERP optimiza en años.
+                </h2>
+                <p class="text-gray-400">El verdadero riesgo en las organizaciones modernas no es operativo, es cognitivo.</p>
+            </div>
+
+            <!-- Tarjetas Interactivas con Movimiento (Hover) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-2xl bg-cardBg border border-gray-800 transition duration-300 glow-hover">
+                    <div class="w-12 h-12 rounded-lg bg-cyanBrand/10 text-cyanBrand flex items-center justify-center font-bold text-xl mb-6">01</div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">El Costo de la Parálisis</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Las presiones del mercado y la saturación de información congelan proyectos críticos y provocan fugas millonarias de ganancias por falta de agilidad cognitiva.</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-cardBg border border-gray-800 transition duration-300 glow-hover">
+                    <div class="w-12 h-12 rounded-lg bg-violetBrand/10 text-violetBrand flex items-center justify-center font-bold text-xl mb-6">02</div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Adiós a las Cajas Negras</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">A diferencia de herramientas tradicionales o IAs que "alucinan", nuestro modelo utiliza un algoritmo determinista basado en matemáticas puras y citas textuales[cite: 2, 4]. Cero subjetividad.</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-cardBg border border-gray-800 transition duration-300 glow-hover">
+                    <div class="w-12 h-12 rounded-lg bg-cyanBrand/10 text-cyanBrand flex items-center justify-center font-bold text-xl mb-6">03</div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Fricción Cognitiva Productiva</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">A través de Funciones de Forzado Cognitivo (CFF), actuamos como un *speed bump* cerebral que frena el sesgo automático y activa el rigor analítico[cite: 3].</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Sección de Soluciones (Ecosistema CTI en 3 Niveles) -->
+    <section id="soluciones" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-cyanBrand text-sm font-semibold uppercase tracking-wider">Ecosistema Escalable</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2">De la Vulnerabilidad a la Supremacía Ejecutiva</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Nivel 1 -->
+                <div class="p-8 rounded-2xl bg-cardBg border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <span class="px-3 py-1 rounded-md text-xs font-semibold bg-cyanBrand/20 text-cyanBrand">Nivel 1</span>
+                        <h3 class="text-2xl font-bold mt-4 mb-3">El Radar (Auditoría Inicial)</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Nuestro "caballo de troya". Una evaluación de ticket fijo diseñada para identificar de inmediato las vulnerabilidades operativas, el cierre prematuro y los puntos ciegos de tu equipo directivo.</p>
+                    </div>
+                    <a href="#contacto" class="w-full py-3 rounded-xl bg-gray-800 hover:bg-cyanBrand hover:text-black font-semibold text-sm transition text-center">
+                        Solicitar Auditoría
+                    </a>
+                </div>
+
+                <!-- Nivel 2 -->
+                <div class="p-8 rounded-2xl bg-gradient-to-b from-cardBg to-gray-900 border border-cyanBrand/40 flex flex-col justify-between relative glow-effect">
+                    <div class="absolute -top-3 right-6 px-3 py-0.5 rounded-full text-xs font-bold bg-gradient-to-r from-cyanBrand to-violetBrand text-black">
+                        Más Popular
+                    </div>
+                    <div>
+                        <span class="px-3 py-1 rounded-md text-xs font-semibold bg-violetBrand/20 text-violetBrand">Nivel 2</span>
+                        <h3 class="text-2xl font-bold mt-4 mb-3">El Gimnasio (SaaS Anual)</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Suscripción anual recurrente estructurada en el <strong>Sprint de Gimnasio Intensivo</strong> (2-3 semanas) y entrenamiento continuo mediante micro-casos aplicados en Slack y Teams[cite: 5].</p>
+                    </div>
+                    <a href="#contacto" class="w-full py-3 rounded-xl bg-gradient-to-r from-cyanBrand to-violetBrand text-black font-semibold text-sm transition hover:opacity-90 text-center shadow-lg">
+                        Contratar Gimnasio
+                    </a>
+                </div>
+
+                <!-- Nivel 3 -->
+                <div class="p-8 rounded-2xl bg-cardBg border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <span class="px-3 py-1 rounded-md text-xs font-semibold bg-cyanBrand/20 text-cyanBrand">Nivel 3</span>
+                        <h3 class="text-2xl font-bold mt-4 mb-3">Black Label (War Room)</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Membresía premium de alto valor orientada al emparejamiento algorítmico global para la resolución de crisis corporativas complejas al más alto nivel directivo[cite: 5].</p>
+                    </div>
+                    <a href="#contacto" class="w-full py-3 rounded-xl bg-gray-800 hover:bg-cyanBrand hover:text-black font-semibold text-sm transition text-center">
+                        Acceso Exclusivo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Pie de Página (Footer) -->
+    <footer id="contacto" class="py-16 bg-cardBg border-t border-gray-800 text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">¿Listo para blindar el juicio de tus líderes?</h2>
+            <p class="text-gray-400 mb-8 max-w-xl mx-auto text-sm">Integra tecnología DeepTech a la medida de tu organización y protege el futuro de tu empresa.</p>
+            <a href="mailto:contacto@cti-globalskills.net" class="inline-block px-8 py-4 rounded-xl font-semibold bg-gradient-to-r from-cyanBrand to-violetBrand text-black hover:opacity-90 transition shadow-lg mb-12">
+                Agendar Demostración Estratégica
+            </a>
+            <div class="border-t border-gray-800 pt-8 text-xs text-gray-500 flex flex-col sm:flex-row items-center justify-between">
+                <p>&copy; 2026 CTI GlobalSkills S.A.I. de C.V. Todos los derechos reservados[cite: 5].</p>
+                <div class="flex space-x-6 mt-4 sm:mt-0">
+                    <span class="hover:text-cyanBrand transition cursor-pointer">Privacidad</span>
+                    <span class="hover:text-cyanBrand transition cursor-pointer">Términos de Servicio</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
