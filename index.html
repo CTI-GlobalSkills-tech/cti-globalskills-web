@@ -11,6 +11,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -21,12 +22,12 @@
             position: relative;
         }
 
-        /* Fondo animado con esferas de luz magenta y violeta */
+        /* Fondos con luces dinámicas magenta, violeta y cian */
         .bg-glow {
             position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(217, 70, 239, 0.25) 0%, rgba(139, 92, 246, 0.05) 60%, transparent 100%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(217, 70, 239, 0.2) 0%, rgba(6, 182, 212, 0.05) 60%, transparent 100%);
             top: -100px;
             left: -100px;
             z-index: -1;
@@ -35,11 +36,11 @@
 
         .bg-glow-2 {
             position: absolute;
-            width: 600px;
-            height: 600px;
+            width: 700px;
+            height: 700px;
             background: radial-gradient(circle, rgba(168, 85, 247, 0.2) 0%, rgba(236, 72, 153, 0.05) 70%, transparent 100%);
-            bottom: -200px;
-            right: -100px;
+            top: 40%;
+            right: -200px;
             z-index: -1;
             animation: floatGlow2 10s ease-in-out infinite alternate;
         }
@@ -51,17 +52,17 @@
 
         @keyframes floatGlow2 {
             0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(-120px, -150px) scale(1.3); }
+            100% { transform: translate(-150px, -150px) scale(1.3); }
         }
 
-        /* Navbar estilizada */
+        /* Navbar */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 25px 8%;
             backdrop-filter: blur(12px);
-            background: rgba(15, 7, 25, 0.6);
+            background: rgba(15, 7, 25, 0.7);
             border-bottom: 1px solid rgba(217, 70, 239, 0.15);
             position: sticky;
             top: 0;
@@ -72,7 +73,7 @@
             font-weight: 800;
             font-size: 1.3rem;
             letter-spacing: 0.5px;
-            background: linear-gradient(135deg, #fff 30%, #e879f9 100%);
+            background: linear-gradient(135deg, #fff 30%, #06b6d4 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -87,7 +88,7 @@
         }
 
         nav a:hover {
-            color: #f472b6;
+            color: #06b6d4;
         }
 
         .btn-nav {
@@ -98,6 +99,7 @@
             font-weight: 600;
             box-shadow: 0 0 20px rgba(217, 70, 239, 0.4);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
         }
 
         .btn-nav:hover {
@@ -105,27 +107,21 @@
             box-shadow: 0 0 30px rgba(217, 70, 239, 0.7);
         }
 
-        /* Sección Hero con animaciones de entrada */
-        main {
+        /* Hero Section */
+        .hero {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding: 100px 20px;
-            max-width: 900px;
+            padding: 90px 20px 120px 20px;
+            max-width: 950px;
             margin: 0 auto;
-            animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .tag {
-            background: rgba(217, 70, 239, 0.1);
-            border: 1px solid rgba(217, 70, 239, 0.3);
-            color: #f0abfc;
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            color: #67e8f9;
             padding: 8px 18px;
             border-radius: 30px;
             font-size: 0.85rem;
@@ -133,13 +129,7 @@
             text-transform: uppercase;
             letter-spacing: 1.5px;
             margin-bottom: 25px;
-            box-shadow: 0 0 15px rgba(217, 70, 239, 0.15);
-            animation: pulseTag 3s ease-in-out infinite;
-        }
-
-        @keyframes pulseTag {
-            0%, 100% { border-color: rgba(217, 70, 239, 0.3); }
-            50% { border-color: rgba(217, 70, 239, 0.8); box-shadow: 0 0 25px rgba(217, 70, 239, 0.3); }
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.15);
         }
 
         h1 {
@@ -150,18 +140,17 @@
         }
 
         h1 span {
-            background: linear-gradient(135deg, #ec4899 0%, #a855f7 50%, #c084fc 100%);
+            background: linear-gradient(135deg, #ec4899 0%, #a855f7 50%, #06b6d4 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 25px rgba(236, 72, 153, 0.3));
         }
 
-        p {
+        .hero p {
             font-size: 1.15rem;
             color: #d1d5db;
             line-height: 1.6;
             margin-bottom: 45px;
-            max-width: 750px;
+            max-width: 800px;
         }
 
         .buttons-container {
@@ -201,8 +190,146 @@
 
         .btn-secondary:hover {
             background: rgba(217, 70, 239, 0.15);
-            border-color: #ec4899;
+            border-color: #06b6d4;
             transform: translateY(-4px);
+        }
+
+        /* Secciones Generales */
+        section {
+            padding: 90px 8%;
+            max-width: 1250px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 60px;
+            line-height: 1.25;
+            background: linear-gradient(135deg, #ffffff 40%, #d8b4fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Tarjetas de Propuesta de Valor */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: rgba(18, 10, 30, 0.6);
+            border: 1px solid rgba(217, 70, 239, 0.2);
+            border-radius: 20px;
+            padding: 40px 30px;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #ec4899, #06b6d4);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(6, 182, 212, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(6, 182, 212, 0.15);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #f472b6;
+        }
+
+        .card p {
+            color: #cbd5e1;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        /* Niveles del Ecosistema */
+        .ecosystem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        .eco-card {
+            background: linear-gradient(145deg, rgba(15, 7, 25, 0.8), rgba(30, 10, 45, 0.4));
+            border: 1px solid rgba(168, 85, 247, 0.25);
+            border-radius: 24px;
+            padding: 45px 35px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .eco-card:hover {
+            transform: translateY(-5px);
+            border-color: #d946ef;
+        }
+
+        .level-tag {
+            display: inline-block;
+            background: rgba(217, 70, 239, 0.15);
+            color: #e879f9;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .eco-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .eco-card p {
+            color: #cbd5e1;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        /* Footer CTA Final */
+        .cta-footer {
+            text-align: center;
+            padding: 100px 20px;
+            background: radial-gradient(circle at center, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+            border-top: 1px solid rgba(217, 70, 239, 0.15);
+        }
+
+        .cta-footer h2 {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            max-width: 900px;
+            margin: 0 auto 35px auto;
+            line-height: 1.2;
+        }
+
+        .legal-footer {
+            margin-top: 60px;
+            font-size: 0.9rem;
+            color: #94a3b8;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
@@ -211,27 +338,82 @@
     <div class="bg-glow"></div>
     <div class="bg-glow-2"></div>
 
+    <!-- Navbar -->
     <header>
         <div class="logo">CTI GlobalSkills</div>
         <nav>
-            <a href="#">Inicio</a>
-            <a href="#">El Riesgo Cognitivo</a>
-            <a href="#">Ecosistema CTI</a>
-            <a href="#">Contacto</a>
+            <a href="#hero">Inicio</a>
+            <a href="#propuesta">El Riesgo Cognitivo</a>
+            <a href="#ecosistema">Ecosistema CTI</a>
+            <a href="#contacto">Contacto</a>
         </nav>
-        <a href="#" class="btn-nav">Acceder al Gimnasio</a>
+        <a href="#contacto" class="btn-nav">Acceder al Gimnasio</a>
     </header>
 
-    <main>
+    <!-- 1. Hero Section -->
+    <section class="hero" id="hero">
         <div class="tag">// DeepTech para la Toma de Decisiones</div>
         <h1>Blindamos el <span>Juicio Directivo</span> frente a la Incertidumbre.</h1>
         <p>Transformamos el pensamiento crítico de tu organización en una huella cognitiva verificable. Medimos, entrenamos y elevamos el sistema inmunitario de tus líderes con nuestro algoritmo determinista y el Gimnasio Cerebral B2B.</p>
         
         <div class="buttons-container">
-            <a href="#" class="btn-primary">Solicitar Auditoría Cognitiva (Radar)</a>
-            <a href="#" class="btn-secondary">Conocer la Metodología</a>
+            <a href="#ecosistema" class="btn-primary">Solicitar Auditoría Cognitiva (Radar)</a>
+            <a href="#ecosistema" class="btn-secondary">Explorar el Gimnasio Cerebral</a>
         </div>
-    </main>
+    </section>
+
+    <!-- 2. Propuesta de Valor -->
+    <section id="propuesta">
+        <h2 class="section-title">Una mala decisión directiva destruye más EBITDA en minutos<br>que lo que un ERP optimiza en años.</h2>
+        
+        <div class="cards-grid">
+            <div class="card">
+                <h3>El Costo de la Parálisis</h3>
+                <p>Las presiones del mercado y la saturación de información congelan proyectos críticos y provocan fugas millonarias de ganancias por falta de agilidad cognitiva.</p>
+            </div>
+            <div class="card">
+                <h3>Adiós a las Cajas Negras</h3>
+                <p>A diferencia de las herramientas de RH tradicionales o IAs que "alucinan", nuestro modelo utiliza un algoritmo determinista basado en matemáticas puras y citas textuales. Cero subjetividad.</p>
+            </div>
+            <div class="card">
+                <h3>Fricción Cognitiva Productiva</h3>
+                <p>A través de nuestras Funciones de Forzado Cognitivo (CFF), actuamos como un speed bump cerebral que frena el sesgo automático (Sistema 1) y activa el rigor analítico (Sistema 2).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Soluciones: El Ecosistema CTI -->
+    <section id="ecosistema">
+        <h2 class="section-title">De la Vulnerabilidad a la Supremacía Ejecutiva</h2>
+        
+        <div class="ecosystem-grid">
+            <div class="eco-card">
+                <span class="level-tag">Nivel 1</span>
+                <h3>El Radar (Auditoría Cognitiva Inicial)</h3>
+                <p>Nuestro "caballo de troya". Una evaluación de ticket fijo diseñada para identificar de inmediato las vulnerabilidades operativas, el cierre prematuro y los puntos ciegos de tu equipo directivo en escenarios de alta fricción.</p>
+            </div>
+            <div class="eco-card">
+                <span class="level-tag">Nivel 2</span>
+                <h3>El Gimnasio (SaaS Anual + Sprint de Elasticidad)</h3>
+                <p>Un programa de alto impacto estructurado en dos vertientes: Sprint de Gimnasio Intensivo (2 a 3 semanas) para romper el letargo mental, y Entrenamiento Continuo Post-Sprint con micro-casos aplicados directamente en Slack/Teams.</p>
+            </div>
+            <div class="eco-card">
+                <span class="level-tag">Nivel 3</span>
+                <h3>Black Label (War Room Algorítmico)</h3>
+                <p>Membresía premium de alto valor para el emparejamiento algorítmico global en la resolución de crisis corporativas complejas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Llamado a la Acción Final -->
+    <footer class="cta-footer" id="contacto">
+        <h2>¿Listo para blindar el activo más valioso de tu organización: el juicio de tus líderes?</h2>
+        <a href="#" class="btn-primary" style="font-size: 1.1rem; padding: 18px 42px;">Agendar una Demostración Estratégica</a>
+        
+        <div class="legal-footer">
+            CTI Globalskills S.A.P.I. de C.V. &copy; 2026. Todos los derechos reservados.
+        </div>
+    </footer>
 
 </body>
 </html>
