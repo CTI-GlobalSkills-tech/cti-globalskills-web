@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CTI GlobalSkills - DeepTech</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Iconos de FontAwesome para Redes Sociales y Datos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -269,7 +271,6 @@
             line-height: 1.6;
         }
 
-        /* Configuración para que queden exactamente de 2 en 2 */
         .ecosystem-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -324,9 +325,85 @@
             line-height: 1.6;
         }
 
+        /* ESTILOS DE LA SECCIÓN DE CONTACTO */
+        .contact-section {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .contact-box {
+            background: rgba(18, 10, 30, 0.5);
+            border: 1px solid rgba(217, 70, 239, 0.2);
+            border-radius: 20px;
+            padding: 30px 20px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-box:hover {
+            border-color: #06b6d4;
+            transform: translateY(-5px);
+        }
+
+        .contact-box i {
+            font-size: 2.2rem;
+            color: #06b6d4;
+            margin-bottom: 15px;
+        }
+
+        .contact-box h4 {
+            font-size: 1.1rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .contact-box p, .contact-box a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            transition: color 0.3s ease;
+        }
+
+        .contact-box a:hover {
+            color: #e879f9;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(217, 70, 239, 0.1);
+            border: 1px solid rgba(217, 70, 239, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff !important;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background: #d946ef;
+            border-color: #d946ef;
+            transform: scale(1.1);
+        }
+
         .cta-footer {
             text-align: center;
-            padding: 100px 20px;
+            padding: 100px 20px 40px 20px;
             background: radial-gradient(circle at center, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
             border-top: 1px solid rgba(217, 70, 239, 0.15);
         }
@@ -358,7 +435,7 @@
             <a href="#propuesta">El Riesgo Cognitivo</a>
             <a href="#ecosistema">Ecosistema CTI</a>
             <a href="#contacto">Contacto</a>
-            <a href="#contacto" class="btn-nav">Acceder al Gimnasio</a>
+            <a href="https://wa.me/522223244758" target="_blank" class="btn-nav">Acceder al Gimnasio</a>
         </nav>
     </header>
 
@@ -368,7 +445,7 @@
         <p>Transformamos el pensamiento crítico de tu organización en una huella cognitiva verificable. Medimos, entrenamos y elevamos el sistema inmunitario de tus líderes con nuestro algoritmo determinista y el Gimnasio Cerebral B2B.</p>
         
         <div class="buttons-container">
-            <a href="#ecosistema" class="btn-primary">Solicitar Auditoría Cognitiva (Radar)</a>
+            <a href="#contacto" class="btn-primary">Solicitar Auditoría Cognitiva (Radar)</a>
             <a href="#ecosistema" class="btn-secondary">Explorar el Gimnasio Cerebral</a>
         </div>
     </section>
@@ -421,8 +498,33 @@
 
     <footer class="cta-footer" id="contacto">
         <h2>¿Listo para blindar el activo más valioso de tu organización: el juicio de tus líderes?</h2>
-        <a href="#" class="btn-primary" style="font-size: 1.1rem; padding: 18px 42px;">Agendar una Demostración Estratégica</a>
+        <a href="https://wa.me/522223244758" target="_blank" class="btn-primary" style="font-size: 1.1rem; padding: 18px 42px;">Agendar una Demostración Estratégica</a>
         
+        <!-- SECCIÓN DE CONTACTO, DIRECCIÓN Y REDES SOCIALES -->
+        <div class="contact-section">
+            <div class="contact-box">
+                <i class="fa-solid fa-location-dot"></i>
+                <h4>Ubicación</h4>
+                <p>Calle Arquímedes 130, Col. Polanco V Sección<br>Ciudad de México, México. C.P. 11560</p>
+            </div>
+            
+            <div class="contact-box">
+                <i class="fa-brands fa-whatsapp"></i>
+                <h4>WhatsApp Directo</h4>
+                <p><a href="https://wa.me/522223244758" target="_blank">+52 222 324 4758</a></p>
+            </div>
+            
+            <div class="contact-box">
+                <i class="fa-solid fa-share-nodes"></i>
+                <h4>Redes Sociales</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/cti_globalskills" target="_blank" class="social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/cti_globalskills" target="_blank" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/79625300/" target="_blank" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+
         <div class="legal-footer">
             CTI Globalskills S.A.P.I. de C.V. &copy; 2026. Todos los derechos reservados.
         </div>
