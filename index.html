@@ -23,12 +23,12 @@
             position: relative;
         }
 
-        /* Luces ambientales corporativas en violeta/magenta */
+        /* Luces ambientales corporativas más sobrias y equilibradas */
         .glow-bg {
             position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(147, 51, 234, 0.15) 0%, rgba(6, 3, 11, 0) 70%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(91, 33, 182, 0.12) 0%, rgba(6, 3, 11, 0) 70%);
             top: -100px;
             left: -100px;
             z-index: 1;
@@ -37,11 +37,11 @@
 
         .glow-bg-2 {
             position: absolute;
-            width: 700px;
-            height: 700px;
-            background: radial-gradient(circle, rgba(219, 39, 119, 0.1) 0%, rgba(6, 3, 11, 0) 70%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(131, 24, 98, 0.08) 0%, rgba(6, 3, 11, 0) 70%);
             top: 35%;
-            right: -250px;
+            right: -200px;
             z-index: 1;
             pointer-events: none;
         }
@@ -51,18 +51,18 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 22px 8%;
+            padding: 18px 8%;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            background: rgba(6, 3, 11, 0.9);
+            background: rgba(6, 3, 11, 0.92);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(147, 51, 234, 0.2);
+            border-bottom: 1px solid rgba(112, 26, 117, 0.2);
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 800;
             color: #ffffff;
             letter-spacing: -0.5px;
@@ -76,28 +76,28 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 25px;
             align-items: center;
         }
 
         nav ul li a {
             text-decoration: none;
             color: #cbd5e1;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 600;
             transition: color 0.3s ease;
         }
 
         nav ul li a:hover {
-            color: #d946ef;
+            color: #c084fc;
         }
 
         .btn-nav {
-            background: linear-gradient(135deg, #9333ea 0%, #db2777 100%);
+            background: linear-gradient(135deg, #7e22ce 0%, #be185d 100%);
             color: white !important;
-            padding: 10px 22px;
+            padding: 8px 18px;
             border-radius: 50px;
-            box-shadow: 0 0 20px rgba(147, 51, 234, 0.4);
+            box-shadow: 0 0 15px rgba(126, 34, 206, 0.3);
             transition: transform 0.3s ease !important;
         }
 
@@ -105,9 +105,9 @@
             transform: scale(1.05);
         }
 
-        /* Hero Section */
+        /* Hero Section - Más compacto para reducir scroll */
         .hero {
-            padding: 180px 8% 100px 8%;
+            padding: 140px 8% 70px 8%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -118,109 +118,111 @@
 
         .hero-tag {
             display: inline-block;
-            padding: 8px 20px;
-            background: rgba(147, 51, 234, 0.1);
+            padding: 6px 16px;
+            background: rgba(112, 26, 117, 0.15);
             border: 1px solid rgba(147, 51, 234, 0.3);
-            color: #e879f9;
+            color: #d8b4fe;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .hero h1 {
-            font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+            font-size: clamp(2.4rem, 4.8vw, 4.2rem);
             font-weight: 800;
             line-height: 1.1;
-            margin-bottom: 25px;
-            max-width: 1000px;
+            margin-bottom: 20px;
+            max-width: 950px;
             letter-spacing: -1.5px;
         }
 
         .hero h1 span.gradient-text-1 {
-            background: linear-gradient(135deg, #e879f9 0%, #c084fc 100%);
+            background: linear-gradient(135deg, #d8b4fe 0%, #a855f7 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero h1 span.gradient-text-2 {
-            background: linear-gradient(135deg, #f472b6 0%, #db2777 100%);
+            background: linear-gradient(135deg, #f472b6 0%, #be185d 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-size: clamp(0.95rem, 1.8vw, 1.1rem);
             color: #94a3b8;
-            max-width: 800px;
-            line-height: 1.6;
-            margin-bottom: 45px;
+            max-width: 750px;
+            line-height: 1.5;
+            margin-bottom: 30px;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
             justify-content: center;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #9333ea 0%, #db2777 100%);
+            background: linear-gradient(135deg, #7e22ce 0%, #be185d 100%);
             color: white;
-            padding: 16px 36px;
+            padding: 13px 30px;
             border-radius: 50px;
             font-weight: 700;
+            font-size: 0.95rem;
             text-decoration: none;
-            box-shadow: 0 10px 30px rgba(147, 51, 234, 0.4);
+            box-shadow: 0 8px 25px rgba(126, 34, 206, 0.35);
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 15px 35px rgba(219, 39, 119, 0.6);
+            box-shadow: 0 12px 30px rgba(190, 24, 93, 0.5);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.02);
             color: white;
-            padding: 16px 36px;
+            padding: 13px 30px;
             border-radius: 50px;
             font-weight: 600;
+            font-size: 0.95rem;
             text-decoration: none;
             border: 1px solid rgba(147, 51, 234, 0.3);
             transition: all 0.3s ease;
         }
 
         .btn-secondary:hover {
-            background: rgba(147, 51, 234, 0.1);
-            border-color: #d946ef;
+            background: rgba(112, 26, 117, 0.15);
+            border-color: #c084fc;
         }
 
-        /* Sección de Dolor / Estadísticas */
+        /* Sección de Dolor / Estadísticas - Compacta */
         .pain-section {
-            padding: 100px 8%;
+            padding: 70px 8%;
             position: relative;
             z-index: 2;
-            background: linear-gradient(180deg, rgba(6,3,11,0) 0%, rgba(20, 10, 35, 0.6) 100%);
-            border-top: 1px solid rgba(147, 51, 234, 0.2);
+            background: linear-gradient(180deg, rgba(6,3,11,0) 0%, rgba(15, 8, 25, 0.5) 100%);
+            border-top: 1px solid rgba(112, 26, 117, 0.2);
         }
 
         .pain-header {
             text-align: center;
-            max-width: 900px;
-            margin: 0 auto 70px auto;
+            max-width: 850px;
+            margin: 0 auto 50px auto;
         }
 
         .pain-header h2 {
-            font-size: clamp(2rem, 3.8vw, 3.2rem);
+            font-size: clamp(1.8rem, 3.2vw, 2.8rem);
             font-weight: 800;
             line-height: 1.2;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             letter-spacing: -1px;
         }
 
@@ -230,59 +232,57 @@
 
         .pain-header p {
             color: #94a3b8;
-            font-size: 1.1rem;
-            line-height: 1.6;
+            font-size: 1rem;
+            line-height: 1.5;
         }
 
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            max-width: 1300px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .card {
-            background: rgba(20, 10, 35, 0.6);
-            border: 1px solid rgba(147, 51, 234, 0.25);
-            border-radius: 20px;
-            padding: 45px 35px;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
+            background: rgba(18, 9, 30, 0.5);
+            border: 1px solid rgba(112, 26, 117, 0.25);
+            border-radius: 16px;
+            padding: 35px 28px;
+            transition: all 0.3s ease;
         }
 
         .card:hover {
-            transform: translateY(-8px);
-            border-color: #d946ef;
-            box-shadow: 0 20px 40px rgba(147, 51, 234, 0.2);
+            transform: translateY(-5px);
+            border-color: #a855f7;
+            box-shadow: 0 15px 30px rgba(112, 26, 117, 0.15);
         }
 
         .card-number {
-            font-size: 3.2rem;
+            font-size: 2.8rem;
             font-weight: 800;
-            color: #e879f9;
-            margin-bottom: 20px;
+            color: #d8b4fe;
+            margin-bottom: 15px;
             letter-spacing: -1px;
         }
 
         .card h3 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             color: #ffffff;
         }
 
         .card p {
             color: #94a3b8;
-            font-size: 0.98rem;
-            line-height: 1.6;
+            font-size: 0.92rem;
+            line-height: 1.5;
         }
 
-        /* Sección Ecosistema CTI de 4 Pasos */
+        /* Sección Ecosistema CTI - Estructura 2x2 para evitar exceso de scroll */
         .ecosystem-section {
-            padding: 100px 8%;
-            max-width: 1300px;
+            padding: 70px 8%;
+            max-width: 1150px;
             margin: 0 auto;
             position: relative;
             z-index: 2;
@@ -290,148 +290,171 @@
 
         .ecosystem-header {
             text-align: center;
-            max-width: 900px;
-            margin: 0 auto 60px auto;
+            max-width: 850px;
+            margin: 0 auto 45px auto;
         }
 
         .ecosystem-header h2 {
-            font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+            font-size: clamp(2rem, 3.2vw, 2.8rem);
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .ecosystem-header h2 span {
-            background: linear-gradient(135deg, #e879f9 0%, #db2777 100%);
+            background: linear-gradient(135deg, #d8b4fe 0%, #be185d 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .ecosystem-header p {
             color: #94a3b8;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .ecosystem-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(2, 1fr); /* Exacto: 2 recuadros por fila */
             gap: 25px;
         }
 
+        @media(max-width: 768px) {
+            .ecosystem-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .eco-card {
-            background: linear-gradient(145deg, rgba(20, 10, 35, 0.8) 0%, rgba(10, 5, 20, 0.9) 100%);
-            border: 1px solid rgba(147, 51, 234, 0.3);
-            border-radius: 20px;
-            padding: 35px 30px;
+            background: linear-gradient(145deg, rgba(18, 9, 30, 0.7) 0%, rgba(10, 4, 18, 0.85) 100%);
+            border: 1px solid rgba(112, 26, 117, 0.3);
+            border-radius: 16px;
+            padding: 30px 28px;
             position: relative;
             transition: transform 0.3s ease;
         }
 
         .eco-card:hover {
-            transform: translateY(-5px);
-            border-color: #e879f9;
+            transform: translateY(-4px);
+            border-color: #d8b4fe;
         }
 
         .eco-step {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 800;
             color: #00ff88; /* Acento verde mínimo */
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .eco-card h3 {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        /* Leyenda Black Label */
+        .badge-2027 {
+            font-size: 0.7rem;
+            background: rgba(190, 24, 93, 0.2);
+            border: 1px solid rgba(190, 24, 93, 0.4);
+            color: #f472b6;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
         .eco-card p {
             color: #94a3b8;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             line-height: 1.5;
         }
 
-        /* Footer Completo con Contacto y Redes */
+        /* Footer Completo Compacto */
         footer {
             background: #040207;
-            padding: 80px 8% 40px 8%;
-            border-top: 1px solid rgba(147, 51, 234, 0.2);
+            padding: 60px 8% 30px 8%;
+            border-top: 1px solid rgba(112, 26, 117, 0.2);
             position: relative;
             z-index: 2;
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            max-width: 1300px;
-            margin: 0 auto 50px auto;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 35px;
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
             text-align: left;
         }
 
         .footer-col h4 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: #ffffff;
         }
 
         .footer-col p, .footer-col a {
             color: #94a3b8;
-            font-size: 0.95rem;
-            line-height: 1.6;
+            font-size: 0.9rem;
+            line-height: 1.5;
             text-decoration: none;
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             transition: color 0.3s;
         }
 
         .footer-col a:hover {
-            color: #e879f9;
+            color: #d8b4fe;
         }
 
         .social-icons {
             display: flex;
-            gap: 15px;
-            margin-top: 20px;
+            gap: 12px;
+            margin-top: 15px;
         }
 
         .social-icons a {
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            width: 42px;
-            height: 42px;
-            background: rgba(147, 51, 234, 0.1);
+            width: 38px;
+            height: 38px;
+            background: rgba(112, 26, 117, 0.15);
             border: 1px solid rgba(147, 51, 234, 0.3);
             border-radius: 50%;
-            color: #e879f9;
-            font-size: 1.1rem;
+            color: #d8b4fe;
+            font-size: 1rem;
             transition: all 0.3s ease;
             margin-bottom: 0;
         }
 
         .social-icons a:hover {
-            background: #9333ea;
+            background: #7e22ce;
             color: white;
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
         .footer-bottom {
             text-align: center;
-            padding-top: 30px;
+            padding-top: 25px;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             color: #64748b;
-            font-size: 0.9rem;
-            max-width: 1300px;
+            font-size: 0.85rem;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         @media(max-width: 768px) {
             nav ul { display: none; }
-            .hero { padding-top: 140px; }
+            .hero { padding-top: 120px; }
         }
     </style>
 </head>
@@ -511,7 +534,7 @@
             </div>
             <div class="eco-card">
                 <div class="eco-step">Paso 04</div>
-                <h3>Black Label (War Room Algorítmico)</h3>
+                <h3>Black Label (War Room Algorítmico) <span class="badge-2027">Desarrollo a lanzar en 2027</span></h3>
                 <p>Membresía premium de alto valor orientada al emparejamiento algorítmico global para la resolución de crisis corporativas de máxima complejidad.</p>
             </div>
         </div>
@@ -522,12 +545,12 @@
             <div class="footer-col">
                 <h4>CTI GlobalSkills</h4>
                 <p>Infraestructura DeepTech para la evaluación y mitigación de riesgos cognitivos corporativos.</p>
-                <p><i class="fa-solid fa-location-dot" style="color: #e879f9; margin-right: 8px;"></i> Calle Arquímedes 130, Col. Polanco V Sección, CDMX, 11560</p>
+                <p><i class="fa-solid fa-location-dot" style="color: #d8b4fe; margin-right: 6px;"></i> Calle Arquímedes 130, Col. Polanco V Sección, CDMX, 11560</p>
             </div>
             <div class="footer-col">
                 <h4>Contacto Directivo</h4>
-                <p><i class="fa-solid fa-phone" style="color: #e879f9; margin-right: 8px;"></i> WA: +52 2223244758</p>
-                <p><i class="fa-solid fa-envelope" style="color: #e879f9; margin-right: 8px;"></i> contacto@cti-globalskills.net</p>
+                <p><i class="fa-solid fa-phone" style="color: #d8b4fe; margin-right: 6px;"></i> WA: +52 2223244758</p>
+                <p><i class="fa-solid fa-envelope" style="color: #d8b4fe; margin-right: 6px;"></i> contacto@cti-globalskills.net</p>
             </div>
             <div class="footer-col">
                 <h4>Redes Institucionales</h4>
