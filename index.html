@@ -12,7 +12,12 @@
         header { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: rgba(6, 3, 11, 0.9); border-bottom: 1px solid rgba(255,255,255,0.08); position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
         .logo-text { font-size: 1.5rem; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
         .logo-text span { color: #00ff88; }
-        .hero { padding: 160px 5% 100px 5%; text-align: center; max-width: 1000px; margin: 0 auto; }
+        .nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
+        .nav-links a { color: #a0aec0; text-decoration: none; font-size: 0.95rem; font-weight: 600; transition: color 0.3s; }
+        .nav-links a:hover { color: #00ff88; }
+        .btn-nav { background: linear-gradient(135deg, #00ff88 0%, #00b4d8 100%); color: #06030b !important; padding: 10px 20px; border-radius: 8px; font-weight: 800 !important; box-shadow: 0 0 15px rgba(0,255,136,0.3); }
+        
+        .hero { padding: 160px 5% 80px 5%; text-align: center; max-width: 1100px; margin: 0 auto; }
         .badge { display: inline-block; padding: 8px 16px; background: rgba(0, 255, 136, 0.1); color: #00ff88; border-radius: 50px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px; border: 1px solid rgba(0, 255, 136, 0.3); }
         h1 { font-size: clamp(2.5rem, 5vw, 4.2rem); font-weight: 800; line-height: 1.1; margin-bottom: 25px; letter-spacing: -1px; }
         h1 span { background: linear-gradient(135deg, #00ff88 0%, #00b4d8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
@@ -22,32 +27,63 @@
         .btn-primary:hover { transform: translateY(-2px); background: #00cc6a; box-shadow: 0 0 35px rgba(0,255,136,0.5); }
         .btn-secondary { background: transparent; color: #ffffff; padding: 16px 32px; border-radius: 8px; font-weight: 600; text-decoration: none; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease; }
         .btn-secondary:hover { border-color: #00ff88; color: #00ff88; }
-        .metrics-section { padding: 80px 5%; background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+
+        .pain-section { padding: 80px 5%; background: rgba(255,255,255,0.01); text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+        .pain-title { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800; margin-bottom: 20px; color: #fff; }
+        .pain-title span { color: #ff3366; }
+        .pain-subtitle { font-size: 1.15rem; color: #a0aec0; max-width: 900px; margin: 0 auto 50px auto; line-height: 1.6; }
+
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
         .metric-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 40px 30px; border-radius: 12px; text-align: left; transition: transform 0.3s ease; }
         .metric-card:hover { transform: translateY(-5px); border-color: rgba(0,255,136,0.4); }
         .metric-num { font-size: 3rem; font-weight: 800; color: #00ff88; margin-bottom: 15px; letter-spacing: -1px; }
         .metric-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 10px; color: #fff; }
         .metric-text { font-size: 0.95rem; color: #a0aec0; line-height: 1.5; }
-        footer { text-align: center; padding: 40px 5%; color: #718096; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05); }
+
+        .tomograph-section { padding: 90px 5%; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; align-items: center; }
+        .tomograph-content h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 20px; line-height: 1.2; }
+        .tomograph-content h2 span { color: #00ff88; }
+        .tomograph-content p { color: #a0aec0; font-size: 1.05rem; line-height: 1.6; margin-bottom: 25px; }
+        .feature-list { list-style: none; display: flex; flex-direction: column; gap: 15px; }
+        .feature-list li { display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 1.05rem; }
+        .feature-list li i { color: #00ff88; font-size: 1.2rem; }
+
+        .tomograph-box { background: linear-gradient(135deg, rgba(0,255,136,0.05) 0%, rgba(0,180,216,0.05) 100%); border: 1px solid rgba(0,255,136,0.3); padding: 45px; border-radius: 16px; position: relative; }
+        .tomograph-box h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 15px; color: #fff; }
+        .tomograph-box p { color: #cbd5e0; font-size: 0.95rem; line-height: 1.5; margin-bottom: 25px; }
+
+        footer { text-align: center; padding: 50px 5%; color: #718096; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05); }
+
+        @media(max-width: 768px) {
+            .nav-links { display: none; }
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="logo-text">CTI <span>GlobalSkills</span></div>
-        <a href="#contacto" class="btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">Acceso Directivos</a>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#dolor">El Riesgo</a></li>
+            <li><a href="#solucion">Tomógrafo Cognitivo</a></li>
+            <li><a href="#contacto" class="btn-nav">Acceso Directivos</a></li>
+        </ul>
     </header>
 
-    <section class="hero">
-        <div class="badge">Mitigación de Riesgos Ejecutivos</div>
-        <h1>Evita que el error de juicio de tus líderes destruya la <span>rentabilidad</span> de tu empresa.</h1>
-        <p class="hero-desc">El primer tomógrafo de agilidad cognitiva impulsado por algoritmos deterministas. Descubre cómo las fallas en el pensamiento crítico de la alta dirección erosionan tus ganancias y blinda tu operación ante la incertidumbre.</p>
+    <section id="inicio" class="hero">
+        <div class="badge">DeepTech para la Toma de Decisiones</div>
+        <h1>Blindamos el <span>Juicio Directivo</span> frente a la Incertidumbre.</h1>
+        <p class="hero-desc">Transformamos el pensamiento crítico de tu organización en una huella cognitiva verificable. Medimos, entrenamos y elevamos el sistema inmunitario de tus líderes con nuestro algoritmo determinista.</p>
         <div class="cta-container">
-            <a href="#contacto" class="btn-primary">Solicitar Radar de Auditoría Cognitiva <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#contacto" class="btn-primary">Solicitar Auditoría Cognitiva (Radar) <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#solucion" class="btn-secondary">Explorar el Simulador Cerebral</a>
         </div>
     </section>
 
-    <section class="metrics-section">
+    <section id="dolor" class="pain-section">
+        <h2 class="pain-title">Una mala decisión directiva destruye más <span>rentabilidad</span> en minutos de lo que un ERP optimiza en años.</h2>
+        <p class="pain-subtitle">La saturación informativa y la presión corporativa congelan proyectos críticos y provocan fugas masivas de capital por falta de agilidad mental en la alta dirección.</p>
+        
         <div class="metrics-grid">
             <div class="metric-card">
                 <div class="metric-num">20% - 30%</div>
@@ -67,7 +103,24 @@
         </div>
     </section>
 
-    <footer id="contacto">
+    <section id="solucion" class="tomograph-section">
+        <div class="tomograph-content">
+            <h2>El primer <span>Tomógrafo Cognitivo</span> para blindar el Consejo Directivo.</h2>
+            <p>No dependas de la intuición ciega ni de pruebas subjetivas del siglo pasado. Nuestro motor detecta con precisión matemática los puntos ciegos y la sobreconfianza de tus líderes antes de que impacten los estados financieros.</p>
+            <ul class="feature-list">
+                <li><i class="fa-solid fa-check-circle"></i> Algoritmo Determinista (Cero alucinaciones de IA)</li>
+                <li><i class="fa-solid fa-check-circle"></i> Funciones de Forzado Cognitivo contra el Cierre Prematuro</li>
+                <li><i class="fa-solid fa-check-circle"></i> Auditoría Longitudinal Trimestral de la Madurez del Talento</li>
+            </ul>
+        </div>
+        <div class="tomograph-box" id="contacto">
+            <h3>¿Listo para auditar el criterio de tus líderes?</h3>
+            <p>Obtén un diagnóstico ejecutivo preciso de las vulnerabilidades operativas en tu equipo directivo y blinda la rentabilidad de tu organización.</p>
+            <a href="mailto:contacto@cti-globalskills.net" class="btn-primary" style="width: 100%; justify-content: center;">Contactar con el equipo directivo <i class="fa-solid fa-envelope"></i></a>
+        </div>
+    </section>
+
+    <footer>
         <p>&copy; 2026 CTI GlobalSkills S.A.P.I. de C.V. Todos los derechos reservados. Inteligencia y Soberanía Cognitiva.</p>
     </footer>
 </body>
