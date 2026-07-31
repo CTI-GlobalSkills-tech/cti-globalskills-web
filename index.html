@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CTI GlobalSkills - DeepTech</title>
+    <title>CTI GlobalSkills - DeepTech para la Alta Dirección</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <!-- Iconos de FontAwesome para Redes Sociales y Datos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -24,12 +23,12 @@
             position: relative;
         }
 
-        /* Efectos de luz ambiental de fondo */
+        /* Luces ambientales corporativas en violeta/magenta */
         .glow-bg {
             position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(138, 43, 226, 0.15) 0%, rgba(6, 3, 11, 0) 70%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(147, 51, 234, 0.15) 0%, rgba(6, 3, 11, 0) 70%);
             top: -100px;
             left: -100px;
             z-index: 1;
@@ -38,11 +37,11 @@
 
         .glow-bg-2 {
             position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, rgba(6, 3, 11, 0) 70%);
-            top: 40%;
-            right: -200px;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(219, 39, 119, 0.1) 0%, rgba(6, 3, 11, 0) 70%);
+            top: 35%;
+            right: -250px;
             z-index: 1;
             pointer-events: none;
         }
@@ -52,14 +51,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 25px 8%;
+            padding: 22px 8%;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            background: rgba(6, 3, 11, 0.85);
+            background: rgba(6, 3, 11, 0.9);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(147, 51, 234, 0.2);
         }
 
         .logo {
@@ -71,34 +70,34 @@
         }
 
         .logo span {
-            color: #00ff88;
+            color: #00ff88; /* Acento mínimo verde solicitado */
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 35px;
+            gap: 30px;
             align-items: center;
         }
 
         nav ul li a {
             text-decoration: none;
-            color: #a0aec0;
+            color: #cbd5e1;
             font-size: 0.95rem;
             font-weight: 600;
             transition: color 0.3s ease;
         }
 
         nav ul li a:hover {
-            color: #00ff88;
+            color: #d946ef;
         }
 
         .btn-nav {
-            background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+            background: linear-gradient(135deg, #9333ea 0%, #db2777 100%);
             color: white !important;
             padding: 10px 22px;
             border-radius: 50px;
-            box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+            box-shadow: 0 0 20px rgba(147, 51, 234, 0.4);
             transition: transform 0.3s ease !important;
         }
 
@@ -120,9 +119,9 @@
         .hero-tag {
             display: inline-block;
             padding: 8px 20px;
-            background: rgba(0, 255, 136, 0.08);
-            border: 1px solid rgba(0, 255, 136, 0.3);
-            color: #00ff88;
+            background: rgba(147, 51, 234, 0.1);
+            border: 1px solid rgba(147, 51, 234, 0.3);
+            color: #e879f9;
             border-radius: 50px;
             font-size: 0.85rem;
             font-weight: 600;
@@ -141,13 +140,13 @@
         }
 
         .hero h1 span.gradient-text-1 {
-            background: linear-gradient(135deg, #c084fc 0%, #e879f9 100%);
+            background: linear-gradient(135deg, #e879f9 0%, #c084fc 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero h1 span.gradient-text-2 {
-            background: linear-gradient(135deg, #38bdf8 0%, #2dd4bf 100%);
+            background: linear-gradient(135deg, #f472b6 0%, #db2777 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -168,13 +167,13 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
+            background: linear-gradient(135deg, #9333ea 0%, #db2777 100%);
             color: white;
             padding: 16px 36px;
             border-radius: 50px;
             font-weight: 700;
             text-decoration: none;
-            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.3);
+            box-shadow: 0 10px 30px rgba(147, 51, 234, 0.4);
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
@@ -183,7 +182,7 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 15px 35px rgba(236, 72, 153, 0.5);
+            box-shadow: 0 15px 35px rgba(219, 39, 119, 0.6);
         }
 
         .btn-secondary {
@@ -193,13 +192,13 @@
             border-radius: 50px;
             font-weight: 600;
             text-decoration: none;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(147, 51, 234, 0.3);
             transition: all 0.3s ease;
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(147, 51, 234, 0.1);
+            border-color: #d946ef;
         }
 
         /* Sección de Dolor / Estadísticas */
@@ -207,8 +206,8 @@
             padding: 100px 8%;
             position: relative;
             z-index: 2;
-            background: linear-gradient(180deg, rgba(6,3,11,0) 0%, rgba(15, 10, 25, 0.6) 100%);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background: linear-gradient(180deg, rgba(6,3,11,0) 0%, rgba(20, 10, 35, 0.6) 100%);
+            border-top: 1px solid rgba(147, 51, 234, 0.2);
         }
 
         .pain-header {
@@ -226,7 +225,7 @@
         }
 
         .pain-header h2 span {
-            color: #00ff88;
+            color: #00ff88; /* Acento mínimo verde en palabra clave */
         }
 
         .pain-header p {
@@ -244,8 +243,8 @@
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(20, 10, 35, 0.6);
+            border: 1px solid rgba(147, 51, 234, 0.25);
             border-radius: 20px;
             padding: 45px 35px;
             transition: all 0.4s ease;
@@ -255,15 +254,14 @@
 
         .card:hover {
             transform: translateY(-8px);
-            border-color: rgba(0, 255, 136, 0.3);
-            background: rgba(255, 255, 255, 0.04);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: #d946ef;
+            box-shadow: 0 20px 40px rgba(147, 51, 234, 0.2);
         }
 
         .card-number {
             font-size: 3.2rem;
             font-weight: 800;
-            color: #00ff88;
+            color: #e879f9;
             margin-bottom: 20px;
             letter-spacing: -1px;
         }
@@ -281,108 +279,159 @@
             line-height: 1.6;
         }
 
-        /* Sección de Solución / Tomógrafo */
-        .solution-section {
+        /* Sección Ecosistema CTI de 4 Pasos */
+        .ecosystem-section {
             padding: 100px 8%;
             max-width: 1300px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
             position: relative;
             z-index: 2;
         }
 
-        @media(max-width: 968px) {
-            .solution-section {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .solution-content h2 {
-            font-size: clamp(2.2rem, 3.5vw, 3rem);
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 25px;
-            letter-spacing: -1px;
-        }
-
-        .solution-content h2 span {
-            color: #38bdf8;
-        }
-
-        .solution-content p {
-            color: #94a3b8;
-            font-size: 1.05rem;
-            line-height: 1.6;
-            margin-bottom: 35px;
-        }
-
-        .feature-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .feature-list li {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-weight: 600;
-            font-size: 1.05rem;
-            color: #e2e8f0;
-        }
-
-        .feature-list li i {
-            color: #00ff88;
-            font-size: 1.3rem;
-        }
-
-        .solution-box {
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.05) 0%, rgba(0, 255, 136, 0.05) 100%);
-            border: 1px solid rgba(56, 189, 248, 0.2);
-            border-radius: 24px;
-            padding: 50px;
+        .ecosystem-header {
             text-align: center;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            max-width: 900px;
+            margin: 0 auto 60px auto;
         }
 
-        .solution-box h3 {
-            font-size: 1.8rem;
+        .ecosystem-header h2 {
+            font-size: clamp(2.2rem, 3.8vw, 3.2rem);
             font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .ecosystem-header h2 span {
+            background: linear-gradient(135deg, #e879f9 0%, #db2777 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .ecosystem-header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        .ecosystem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .eco-card {
+            background: linear-gradient(145deg, rgba(20, 10, 35, 0.8) 0%, rgba(10, 5, 20, 0.9) 100%);
+            border: 1px solid rgba(147, 51, 234, 0.3);
+            border-radius: 20px;
+            padding: 35px 30px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .eco-card:hover {
+            transform: translateY(-5px);
+            border-color: #e879f9;
+        }
+
+        .eco-step {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: #00ff88; /* Acento verde mínimo */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .eco-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .eco-card p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Footer Completo con Contacto y Redes */
+        footer {
+            background: #040207;
+            padding: 80px 8% 40px 8%;
+            border-top: 1px solid rgba(147, 51, 234, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1300px;
+            margin: 0 auto 50px auto;
+            text-align: left;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
             margin-bottom: 20px;
             color: #ffffff;
         }
 
-        .solution-box p {
+        .footer-col p, .footer-col a {
             color: #94a3b8;
-            margin-bottom: 30px;
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             line-height: 1.6;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
         }
 
-        /* Footer */
-        footer {
+        .footer-col a:hover {
+            color: #e879f9;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 42px;
+            height: 42px;
+            background: rgba(147, 51, 234, 0.1);
+            border: 1px solid rgba(147, 51, 234, 0.3);
+            border-radius: 50%;
+            color: #e879f9;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-bottom: 0;
+        }
+
+        .social-icons a:hover {
+            background: #9333ea;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
             text-align: center;
-            padding: 50px 8%;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             color: #64748b;
             font-size: 0.9rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            background: #040207;
-            position: relative;
-            z-index: 2;
+            max-width: 1300px;
+            margin: 0 auto;
         }
 
-        /* Responsive móvil navegación */
         @media(max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-            .hero {
-                padding-top: 140px;
-            }
+            nav ul { display: none; }
+            .hero { padding-top: 140px; }
         }
     </style>
 </head>
@@ -397,7 +446,7 @@
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#riesgo">El Riesgo</a></li>
-                <li><a href="#tomografo">Tomógrafo Cognitivo</a></li>
+                <li><a href="#ecosistema">Ecosistema CTI</a></li>
                 <li><a href="#contacto" class="btn-nav">Acceso Directivos</a></li>
             </ul>
         </nav>
@@ -409,7 +458,7 @@
         <p>Transformamos el pensamiento crítico de tu organización en una huella cognitiva verificable. Medimos, entrenamos y elevamos el sistema inmunitario de tus líderes con algoritmos deterministas y cero subjetividad.</p>
         <div class="hero-buttons">
             <a href="#contacto" class="btn-primary">Solicitar Auditoría Cognitiva (Radar) <i class="fa-solid fa-arrow-right"></i></a>
-            <a href="#tomografo" class="btn-secondary">Explorar el Simulador Cerebral</a>
+            <a href="#ecosistema" class="btn-secondary">Explorar el Ecosistema</a>
         </div>
     </section>
 
@@ -438,25 +487,62 @@
         </div>
     </section>
 
-    <section id="tomografo" class="solution-section">
-        <div class="solution-content">
-            <h2>El primer <span>Tomógrafo Cognitivo</span> para blindar el Consejo Directivo.</h2>
-            <p>No dependas de la intuición ciega ni de pruebas subjetivas del siglo pasado. Nuestro motor detecta con precisión matemática los puntos ciegos y la sobreconfianza de tus líderes antes de que impacten los estados financieros.</p>
-            <ul class="feature-list">
-                <li><i class="fa-solid fa-check-circle"></i> Algoritmo Determinista (Cero alucinaciones de IA)</li>
-                <li><i class="fa-solid fa-check-circle"></i> Funciones de Forzado Cognitivo contra el Cierre Prematuro</li>
-                <li><i class="fa-solid fa-check-circle"></i> Auditoría Longitudinal Trimestral de la Madurez del Talento</li>
-            </ul>
+    <section id="ecosistema" class="ecosystem-section">
+        <div class="ecosystem-header">
+            <h2>El <span>Ecosistema CTI</span> de Alta Precisión</h2>
+            <p>Un recorrido metodológico estructurado en 4 fases para blindar el criterio del Consejo y asegurar la rentabilidad corporativa.</p>
         </div>
-        <div class="solution-box" id="contacto">
-            <h3>¿Listo para auditar el criterio de tus líderes?</h3>
-            <p>Obtén un diagnóstico ejecutivo preciso de las vulnerabilidades operativas en tu equipo directivo y blinda la rentabilidad de tu organización.</p>
-            <a href="mailto:contacto@cti-globalskills.net" class="btn-primary" style="width: 100%; justify-content: center;">Contactar con el equipo directivo <i class="fa-solid fa-envelope"></i></a>
+
+        <div class="ecosystem-grid">
+            <div class="eco-card">
+                <div class="eco-step">Paso 01</div>
+                <h3>Diagnóstico Inicial</h3>
+                <p>Evaluación ejecutiva profunda mediante tomografía cognitiva para detectar puntos ciegos, sesgos de confirmación y sobreconfianza en la alta dirección.</p>
+            </div>
+            <div class="eco-card">
+                <div class="eco-step">Paso 02</div>
+                <h3>Sprint de Elasticidad Cognitiva</h3>
+                <p>Entrenamiento táctico intensivo para romper la parálisis analítica y elevar la agilidad mental en la resolución de situaciones de alta incertidumbre.</p>
+            </div>
+            <div class="eco-card">
+                <div class="eco-step">Paso 03</div>
+                <h3>Licencia Anual de Gimnasio Cerebral</h3>
+                <p>Acceso continuo a micro-retos y simulaciones ejecutivas integradas en el flujo de trabajo diario (Slack/Teams) para mantener el juicio directivo en forma óptima.</p>
+            </div>
+            <div class="eco-card">
+                <div class="eco-step">Paso 04</div>
+                <h3>Black Label (War Room Algorítmico)</h3>
+                <p>Membresía premium de alto valor orientada al emparejamiento algorítmico global para la resolución de crisis corporativas de máxima complejidad.</p>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 CTI GlobalSkills S.A.P.I. de C.V. Todos los derechos reservados. Inteligencia y Soberanía Cognitiva.</p>
+    <footer id="contacto">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>CTI GlobalSkills</h4>
+                <p>Infraestructura DeepTech para la evaluación y mitigación de riesgos cognitivos corporativos.</p>
+                <p><i class="fa-solid fa-location-dot" style="color: #e879f9; margin-right: 8px;"></i> Calle Arquímedes 130, Col. Polanco V Sección, CDMX, 11560</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto Directivo</h4>
+                <p><i class="fa-solid fa-phone" style="color: #e879f9; margin-right: 8px;"></i> WA: +52 2223244758</p>
+                <p><i class="fa-solid fa-envelope" style="color: #e879f9; margin-right: 8px;"></i> contacto@cti-globalskills.net</p>
+            </div>
+            <div class="footer-col">
+                <h4>Redes Institucionales</h4>
+                <p>Síguenos en nuestras plataformas oficiales:</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/ctiglobalskills" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/cti_globalskills" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/cti-globalskills" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/522223244758" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CTI GlobalSkills S.A.P.I. de C.V. Todos los derechos reservados. Inteligencia y Soberanía Cognitiva.</p>
+        </div>
     </footer>
 
 </body>
