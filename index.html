@@ -23,7 +23,7 @@
             position: relative;
         }
 
-        /* Luces ambientales corporativas más sobrias y equilibradas */
+        /* Luces ambientales corporativas */
         .glow-bg {
             position: absolute;
             width: 500px;
@@ -70,7 +70,7 @@
         }
 
         .logo span {
-            color: #00ff88; /* Acento mínimo verde solicitado */
+            color: #00ff88;
         }
 
         nav ul {
@@ -105,9 +105,9 @@
             transform: scale(1.05);
         }
 
-        /* Hero Section - Más compacto para reducir scroll */
+        /* Hero Section */
         .hero {
-            padding: 140px 8% 70px 8%;
+            padding: 140px 8% 40px 8%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -164,6 +164,7 @@
             gap: 15px;
             flex-wrap: wrap;
             justify-content: center;
+            margin-bottom: 50px; /* Espacio antes del Dashboard */
         }
 
         .btn-primary {
@@ -203,9 +204,32 @@
             border-color: #c084fc;
         }
 
-        /* Sección de Dolor / Estadísticas - Compacta */
+        /* NUEVO: Contenedor del Dashboard C-Level */
+        .dashboard-showcase {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(147, 51, 234, 0.4);
+            box-shadow: 0 20px 50px rgba(10, 4, 18, 0.9), 0 0 40px rgba(112, 26, 117, 0.3);
+            position: relative;
+            z-index: 5;
+            background: #0A192F; /* Fondo que combina con el dashboard */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dashboard-showcase img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Sección de Dolor / Estadísticas */
         .pain-section {
-            padding: 70px 8%;
+            padding: 90px 8% 70px 8%;
             position: relative;
             z-index: 2;
             background: linear-gradient(180deg, rgba(6,3,11,0) 0%, rgba(15, 8, 25, 0.5) 100%);
@@ -227,7 +251,7 @@
         }
 
         .pain-header h2 span {
-            color: #00ff88; /* Acento mínimo verde en palabra clave */
+            color: #00ff88;
         }
 
         .pain-header p {
@@ -250,6 +274,7 @@
             border-radius: 16px;
             padding: 35px 28px;
             transition: all 0.3s ease;
+            text-align: left; /* Ergonomía de Lectura: Patrón F */
         }
 
         .card:hover {
@@ -258,11 +283,30 @@
             box-shadow: 0 15px 30px rgba(112, 26, 117, 0.15);
         }
 
+        /* NUEVO: Anclajes visuales (Iconos) */
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(216, 180, 254, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #d8b4fe;
+            margin-bottom: 20px;
+            border: 1px solid rgba(216, 180, 254, 0.2);
+        }
+
+        .card:nth-child(1) .card-icon { color: #f472b6; background: rgba(244, 114, 182, 0.1); border-color: rgba(244, 114, 182, 0.2); }
+        .card:nth-child(2) .card-icon { color: #00ff88; background: rgba(0, 255, 136, 0.1); border-color: rgba(0, 255, 136, 0.2); }
+        .card:nth-child(3) .card-icon { color: #a855f7; background: rgba(168, 85, 247, 0.1); border-color: rgba(168, 85, 247, 0.2); }
+
         .card-number {
             font-size: 2.8rem;
             font-weight: 800;
-            color: #d8b4fe;
-            margin-bottom: 15px;
+            color: #ffffff;
+            margin-bottom: 10px;
             letter-spacing: -1px;
         }
 
@@ -270,7 +314,7 @@
             font-size: 1.2rem;
             font-weight: 700;
             margin-bottom: 12px;
-            color: #ffffff;
+            color: #d8b4fe;
         }
 
         .card p {
@@ -279,7 +323,7 @@
             line-height: 1.5;
         }
 
-        /* Sección Ecosistema CTI - Estructura 2x2 para evitar exceso de scroll */
+        /* Sección Ecosistema CTI */
         .ecosystem-section {
             padding: 70px 8%;
             max-width: 1150px;
@@ -313,7 +357,7 @@
 
         .ecosystem-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Exacto: 2 recuadros por fila */
+            grid-template-columns: repeat(2, 1fr);
             gap: 25px;
         }
 
@@ -330,6 +374,7 @@
             padding: 30px 28px;
             position: relative;
             transition: transform 0.3s ease;
+            text-align: left; /* Ergonomía de Lectura: Patrón F */
         }
 
         .eco-card:hover {
@@ -340,7 +385,7 @@
         .eco-step {
             font-size: 0.8rem;
             font-weight: 800;
-            color: #00ff88; /* Acento verde mínimo */
+            color: #00ff88;
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 10px;
@@ -376,7 +421,7 @@
             line-height: 1.5;
         }
 
-        /* Footer Completo Compacto */
+        /* Footer */
         footer {
             background: #040207;
             padding: 60px 8% 30px 8%;
@@ -455,6 +500,7 @@
         @media(max-width: 768px) {
             nav ul { display: none; }
             .hero { padding-top: 120px; }
+            .dashboard-showcase { margin-top: 20px; }
         }
     </style>
 </head>
@@ -479,9 +525,16 @@
         <div class="hero-tag">DeepTech para la Toma de Decisiones</div>
         <h1>Blindamos el <span class="gradient-text-1">Juicio Directivo</span> frente a la <span class="gradient-text-2">Incertidumbre.</span></h1>
         <p>Transformamos el pensamiento crítico de tu organización en una huella cognitiva verificable. Medimos, entrenamos y elevamos el sistema inmunitario de tus líderes con algoritmos deterministas y cero subjetividad.</p>
+        
         <div class="hero-buttons">
             <a href="#contacto" class="btn-primary">Solicitar Auditoría Cognitiva (Radar) <i class="fa-solid fa-arrow-right"></i></a>
             <a href="#ecosistema" class="btn-secondary">Explorar el Ecosistema</a>
+        </div>
+
+        <!-- EL ESCAPARATE DEL DASHBOARD (El Efecto Palantir) -->
+        <div class="dashboard-showcase">
+            <!-- REEMPLAZA ESTA LÍNEA DE ABAJO CON LA RUTA DE TU IMAGEN -->
+            <img src="TU_IMAGEN_DEL_DASHBOARD_AQUI.png" alt="Dashboard Ejecutivo CTI GlobalSkills">
         </div>
     </section>
 
@@ -493,16 +546,22 @@
 
         <div class="cards-grid">
             <div class="card">
+                <!-- Ancla Visual -->
+                <div class="card-icon"><i class="fa-solid fa-arrow-trend-down"></i></div>
                 <div class="card-number">20% - 30%</div>
                 <h3>Fuga de Ganancias</h3>
                 <p>McKinsey revela que las malas decisiones corporativas cuestan entre un quinto y un tercio de las ganancias anuales en grandes empresas.</p>
             </div>
             <div class="card">
+                <!-- Ancla Visual -->
+                <div class="card-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
                 <div class="card-number">50%</div>
                 <h3>Fracaso en Transformación</h3>
                 <p>Gartner señala que la mitad de los proyectos estratégicos mueren por fallas en la toma de decisiones y resistencia al cambio.</p>
             </div>
             <div class="card">
+                <!-- Ancla Visual -->
+                <div class="card-icon"><i class="fa-regular fa-snowflake"></i></div>
                 <div class="card-number">30% - 40%</div>
                 <h3>Proyectos Congelados</h3>
                 <p>Deloitte identifica que la falta de acción oportuna (parálisis operativa) afecta severamente casi la mitad de los proyectos críticos empresariales.</p>
