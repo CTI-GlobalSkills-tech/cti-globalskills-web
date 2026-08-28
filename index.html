@@ -119,7 +119,7 @@
         <a href="#boardpack" class="text-xs font-mono-code text-slate-300 hover:text-[#00F0FF] transition-colors hidden md:block">
           // BOARD PACK DEMO
         </a>
-        <a href="mailto:partnerships@cti-globalskills.net" class="text-sm font-semibold px-6 py-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/20 text-white transition-all duration-300 backdrop-blur-md shadow-lg hidden sm:block">
+        <a href="#contacto" class="text-sm font-semibold px-6 py-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/20 text-white transition-all duration-300 backdrop-blur-md shadow-lg hidden sm:block">
           Portal Directivo
         </a>
       </div>
@@ -276,9 +276,10 @@
               </div>
             </div>
 
-            <a href="mailto:partnerships@cti-globalskills.net?subject=Solicitud%20de%20Auditoria%20Cog-VaR" class="w-full mt-4 py-4 px-6 rounded-xl bg-gradient-to-r from-[#00F0FF] to-blue-600 text-[#060709] font-black text-sm text-center flex items-center justify-center gap-2 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)] transition-all">
+            <!-- BOTÓN ACTUALIZADO: Redirige a Contacto en lugar de abrir el correo -->
+            <a href="#contacto" class="w-full mt-4 py-4 px-6 rounded-xl bg-gradient-to-r from-[#00F0FF] to-blue-600 text-[#060709] font-black text-sm text-center flex items-center justify-center gap-2 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)] transition-all">
               <i data-lucide="shield-alert" class="w-4 h-4"></i>
-              Auditar Quórum para este Presupuesto
+              Solicitar Auditoría para este Presupuesto
             </a>
           </div>
         </div>
@@ -389,7 +390,7 @@
           <button onclick="resetDilemma()" class="text-xs font-mono-code text-slate-400 hover:text-white underline">
             &larr; Volver a calibrar dilema
           </button>
-          <a href="mailto:partnerships@cti-globalskills.net?subject=Solicitud%20Auditoria%20Quorum%20PACRF" class="px-6 py-3 rounded-xl bg-cyan-500/20 text-[#00F0FF] border border-[#00F0FF] text-xs font-bold font-mono-code hover:bg-[#00F0FF] hover:text-[#060709] transition-all">
+          <a href="#contacto" class="px-6 py-3 rounded-xl bg-cyan-500/20 text-[#00F0FF] border border-[#00F0FF] text-xs font-bold font-mono-code hover:bg-[#00F0FF] hover:text-[#060709] transition-all">
             Auditar Todo el Quórum Directivo &rarr;
           </a>
         </div>
@@ -435,33 +436,42 @@
     </div>
   </section>
 
-  <!-- ARQUITECTURA DE CUMPLIMIENTO (EFECTO TILT) -->
+  <!-- ARQUITECTURA DE CUMPLIMIENTO (TARJETAS ACTUALIZADAS CON HOVER) -->
   <section class="max-w-7xl mx-auto px-6 pb-20">
     <div class="text-center mb-16">
       <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Arquitectura Institucional Blindada</h2>
     </div>
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 perspective-1000">
-      <div class="p-8 rounded-2xl bg-white border border-slate-200 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] transition-transform duration-200 tilt-element">
-        <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-5 text-blue-600"><i data-lucide="cpu" class="w-6 h-6"></i></div>
-        <h4 class="text-lg font-bold text-slate-900 mb-2">EU AI Act</h4>
+      
+      <!-- Tarjeta 1 -->
+      <div class="p-8 rounded-2xl bg-white border border-slate-200 transition-all duration-300 ease-out hover:scale-105 hover:bg-cyan-50 hover:border-cyan-400 hover:shadow-[0_20px_40px_-10px_rgba(0,240,255,0.2)] tilt-element cursor-pointer group">
+        <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-5 text-blue-600 group-hover:bg-[#00F0FF] group-hover:text-[#060709] transition-colors"><i data-lucide="cpu" class="w-6 h-6"></i></div>
+        <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-cyan-700 transition-colors">EU AI Act</h4>
         <p class="text-sm text-slate-600 leading-relaxed">Motor determinista libre de modelos generativos. Cero riesgo de alucinación.</p>
       </div>
-      <div class="p-8 rounded-2xl bg-white border border-slate-200 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] transition-transform duration-200 tilt-element">
-        <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-5 text-blue-600"><i data-lucide="lock" class="w-6 h-6"></i></div>
-        <h4 class="text-lg font-bold text-slate-900 mb-2">GDPR / LFPDPPP</h4>
+
+      <!-- Tarjeta 2 -->
+      <div class="p-8 rounded-2xl bg-white border border-slate-200 transition-all duration-300 ease-out hover:scale-105 hover:bg-cyan-50 hover:border-cyan-400 hover:shadow-[0_20px_40px_-10px_rgba(0,240,255,0.2)] tilt-element cursor-pointer group">
+        <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-5 text-blue-600 group-hover:bg-[#00F0FF] group-hover:text-[#060709] transition-colors"><i data-lucide="lock" class="w-6 h-6"></i></div>
+        <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-cyan-700 transition-colors">GDPR / LFPDPPP</h4>
         <p class="text-sm text-slate-600 leading-relaxed">Tratamiento estricto de huella telemétrica y anonimización fiduciaria.</p>
       </div>
-      <div class="p-8 rounded-2xl bg-white border border-slate-200 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] transition-transform duration-200 tilt-element">
-        <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-5 text-blue-600"><i data-lucide="shield-check" class="w-6 h-6"></i></div>
-        <h4 class="text-lg font-bold text-slate-900 mb-2">ISO 27001</h4>
+
+      <!-- Tarjeta 3 -->
+      <div class="p-8 rounded-2xl bg-white border border-slate-200 transition-all duration-300 ease-out hover:scale-105 hover:bg-cyan-50 hover:border-cyan-400 hover:shadow-[0_20px_40px_-10px_rgba(0,240,255,0.2)] tilt-element cursor-pointer group">
+        <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-5 text-blue-600 group-hover:bg-[#00F0FF] group-hover:text-[#060709] transition-colors"><i data-lucide="shield-check" class="w-6 h-6"></i></div>
+        <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-cyan-700 transition-colors">ISO 27001</h4>
         <p class="text-sm text-slate-600 leading-relaxed">Cifrado AES-256 en reposo. Aislamiento criptográfico por entidad auditada.</p>
       </div>
-      <div class="p-8 rounded-2xl bg-white border border-slate-200 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] transition-transform duration-200 tilt-element">
-        <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-5 text-blue-600"><i data-lucide="scale" class="w-6 h-6"></i></div>
-        <h4 class="text-lg font-bold text-slate-900 mb-2">ISO 31000</h4>
+
+      <!-- Tarjeta 4 -->
+      <div class="p-8 rounded-2xl bg-white border border-slate-200 transition-all duration-300 ease-out hover:scale-105 hover:bg-cyan-50 hover:border-cyan-400 hover:shadow-[0_20px_40px_-10px_rgba(0,240,255,0.2)] tilt-element cursor-pointer group">
+        <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-5 text-blue-600 group-hover:bg-[#00F0FF] group-hover:text-[#060709] transition-colors"><i data-lucide="scale" class="w-6 h-6"></i></div>
+        <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-cyan-700 transition-colors">ISO 31000</h4>
         <p class="text-sm text-slate-600 leading-relaxed">Evaluación del factor humano exigida por estándares globales de riesgo ERM.</p>
       </div>
+
     </div>
   </section>
 
@@ -713,7 +723,7 @@
           <p class="text-slate-300 text-sm leading-relaxed mb-6">
             Se recomienda un sprint de calibración de 2 semanas previo al cierre de votación de asignación de capital. Este proceso no requiere reestructurar comités, sino calibrar la ponderación fiduciaria del análisis de riesgo presentado al Consejo.
           </p>
-          <a href="mailto:partnerships@cti-globalskills.net?subject=Solicitud%20de%20Board%20Pack%20Muestra" class="inline-flex items-center gap-2 text-xs font-bold font-mono-code text-[#00F0FF] hover:underline">
+          <a href="#contacto" class="inline-flex items-center gap-2 text-xs font-bold font-mono-code text-[#00F0FF] hover:underline">
             Solicitar Dictamen Redactado de Muestra en PDF <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </a>
         </div>
@@ -799,7 +809,7 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- FOOTER ACTUALIZADO CON REDES Y CONTACTO -->
   <footer id="contacto" class="bg-[#060709] pt-16 pb-8 border-t border-slate-800">
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 text-center md:text-left">
       <div>
@@ -810,11 +820,27 @@
       </div>
       <div>
         <h4 class="text-white font-bold mb-4">Contacto Institucional</h4>
-        <ul class="text-slate-400 text-sm space-y-2">
-          <li>Polanco V Sección, CDMX, 11560</li>
-          <li>WA: +52 2223244758</li>
-          <li class="text-[#00F0FF]">contacto@cti-globalskills.net</li>
+        <ul class="text-slate-400 text-sm space-y-3 flex flex-col items-center md:items-start">
+          <li class="flex items-start gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4 mt-0.5 text-[#00F0FF]"></i> Polanco V Sección, CDMX, 11560
+          </li>
+          <li class="flex items-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4 text-[#00F0FF]"></i> WA: +52 2223244758
+          </li>
+          <li class="flex items-center gap-2 text-[#00F0FF]">
+            <i data-lucide="mail" class="w-4 h-4"></i> contacto@cti-globalskills.net
+          </li>
         </ul>
+        
+        <!-- Redes Sociales Añadidas -->
+        <div class="flex items-center justify-center md:justify-start gap-4 mt-6">
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-[#00F0FF] hover:text-[#060709] hover:border-[#00F0FF] transition-all">
+            <i data-lucide="linkedin" class="w-4 h-4"></i>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-[#00F0FF] hover:text-[#060709] hover:border-[#00F0FF] transition-all">
+            <i data-lucide="twitter" class="w-4 h-4"></i>
+          </a>
+        </div>
       </div>
       <div>
         <h4 class="text-white font-bold mb-4">Despliegue & Legal</h4>
