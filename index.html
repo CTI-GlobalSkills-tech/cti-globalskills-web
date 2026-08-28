@@ -35,8 +35,8 @@
     input[type=range]::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
-      width: 26px;
-      height: 26px;
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
       background: #00F0FF;
       cursor: pointer;
@@ -45,11 +45,11 @@
       transition: transform 0.15s ease-in-out;
     }
     input[type=range]::-webkit-slider-thumb:hover {
-      transform: scale(1.2);
+      transform: scale(1.15);
     }
     input[type=range]::-moz-range-thumb {
-      width: 26px;
-      height: 26px;
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
       background: #00F0FF;
       cursor: pointer;
@@ -104,6 +104,9 @@
         <span class="text-2xl font-bold tracking-tight text-white hidden">CTI GlobalSkills<span class="text-[#00F0FF]">.</span></span>
       </div>
       <div class="flex items-center gap-4">
+        <a href="#test-vivo" class="text-xs font-mono-code text-cyan-400 hover:text-white transition-colors hidden md:block">
+          // PROBAR MINI-DILEMA
+        </a>
         <a href="#boardpack" class="text-xs font-mono-code text-slate-300 hover:text-[#00F0FF] transition-colors hidden md:block">
           // BOARD PACK DEMO
         </a>
@@ -137,9 +140,9 @@
           <i data-lucide="calculator" class="w-5 h-5"></i>
           Calcular Riesgo Fiduciario (Cog-VaR™)
         </a>
-        <a href="#boardpack" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/20 text-white font-bold text-sm tracking-wide transition-all duration-300">
-          <i data-lucide="file-check" class="w-4 h-4 text-[#00F0FF]"></i>
-          Explorar Board Pack
+        <a href="#test-vivo" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/20 text-white font-bold text-sm tracking-wide transition-all duration-300">
+          <i data-lucide="zap" class="w-4 h-4 text-[#00F0FF]"></i>
+          Test Telemétrico en Vivo (60s)
         </a>
       </div>
     </section>
@@ -274,6 +277,118 @@
     </div>
   </section>
 
+  <!-- ==========================================
+       MINI-DILEMA TELEMÉTRICO EN VIVO (MICRO-TEST 60S)
+  =========================================== -->
+  <section id="test-vivo" class="max-w-5xl mx-auto px-6 py-12 scroll-mt-24">
+    <div class="rounded-3xl bg-[#080C14] border border-cyan-500/40 p-6 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative">
+      
+      <!-- Encabezado del Test -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-4 mb-6">
+        <div>
+          <span class="text-xs font-mono-code text-[#00F0FF] px-2.5 py-1 rounded bg-cyan-500/10 border border-cyan-500/30 inline-block mb-2">
+            TELEMETRÍA COGNITIVA EN TIEMPO REAL
+          </span>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-white">Micro-Test de Sobreconfianza Fiduciaria</h3>
+        </div>
+        <div class="text-xs font-mono-code text-slate-400">
+          ESTADO: <span class="text-emerald-400">Capturando latencia...</span>
+        </div>
+      </div>
+
+      <!-- Planteamiento del Dilema -->
+      <div class="bg-white/5 p-6 rounded-2xl border border-white/10 mb-8">
+        <div class="flex items-center gap-2 text-cyan-400 text-xs font-mono-code uppercase font-bold mb-2">
+          <i data-lucide="help-circle" class="w-4 h-4"></i> Dilema Estratégico de Integración (M&A)
+        </div>
+        <p class="text-slate-200 text-sm sm:text-base leading-relaxed">
+          En adquisiciones corporativas medianas y grandes, <strong>¿cuál es el porcentaje promedio de sobrecosto imprevisto en la integración tecnológica (TI)</strong> reportado por consultoras globales antes de estabilizar la operación?
+        </p>
+        <p class="text-xs text-slate-400 mt-3 italic">
+          Defina un intervalo [Mínimo - Máximo] en el que esté seguro que se encuentra el valor real y especifique su nivel de certeza.
+        </p>
+      </div>
+
+      <!-- Formulario del Dilema -->
+      <div id="dilemmaInputs" class="space-y-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          
+          <!-- Rango Mínimo -->
+          <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+            <div class="flex justify-between items-center mb-2">
+              <label class="text-xs font-semibold text-slate-300">Límite Inferior (Mínimo %):</label>
+              <span id="displayMinRange" class="text-base font-bold font-mono-code text-[#00F0FF]">20%</span>
+            </div>
+            <input id="minRange" type="range" min="0" max="80" step="5" value="20" class="w-full">
+          </div>
+
+          <!-- Rango Máximo -->
+          <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+            <div class="flex justify-between items-center mb-2">
+              <label class="text-xs font-semibold text-slate-300">Límite Superior (Máximo %):</label>
+              <span id="displayMaxRange" class="text-base font-bold font-mono-code text-[#00F0FF]">40%</span>
+            </div>
+            <input id="maxRange" type="range" min="20" max="150" step="5" value="40" class="w-full">
+          </div>
+
+        </div>
+
+        <!-- Nivel de Certeza Declarada -->
+        <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+          <div class="flex justify-between items-center mb-2">
+            <label class="text-xs font-semibold text-slate-300">Nivel de Certeza de que el valor real está en su rango:</label>
+            <span id="displayConfidence" class="text-base font-bold font-mono-code text-amber-300">90% Seguro</span>
+          </div>
+          <input id="confidenceSlider" type="range" min="50" max="99" step="1" value="90" class="w-full">
+          <div class="flex justify-between text-xs text-slate-500 font-mono-code mt-1">
+            <span>50% (Incierto)</span>
+            <span>75% (Moderado)</span>
+            <span>99% (Certeza Absoluta)</span>
+          </div>
+        </div>
+
+        <!-- Botón de Ejecución -->
+        <button onclick="evaluateDilemma()" class="w-full py-4 rounded-xl bg-gradient-to-r from-[#00F0FF] to-blue-600 text-[#060709] font-black text-sm uppercase tracking-wider flex items-center justify-center gap-2 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)] transition-all">
+          <i data-lucide="activity" class="w-4 h-4"></i>
+          Ejecutar Análisis Telemétrico de Criterio
+        </button>
+      </div>
+
+      <!-- Panel de Resultados del Dilema (Oculto inicialmente) -->
+      <div id="dilemmaResults" class="hidden mt-8 pt-6 border-t border-white/10 animate-fadeIn">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <div class="bg-white/5 p-4 rounded-xl border border-white/10 text-center">
+            <span class="text-xs font-mono-code text-slate-400 block mb-1">LATENCIA COGNITIVA</span>
+            <span id="resultLatency" class="text-2xl font-black font-mono-code text-[#00F0FF]">0.00s</span>
+          </div>
+          <div class="bg-white/5 p-4 rounded-xl border border-white/10 text-center">
+            <span class="text-xs font-mono-code text-slate-400 block mb-1">BENCHMARK HISTÓRICO</span>
+            <span class="text-2xl font-black font-mono-code text-white">45%</span>
+          </div>
+          <div class="bg-white/5 p-4 rounded-xl border border-white/10 text-center">
+            <span class="text-xs font-mono-code text-slate-400 block mb-1">OVERPRECISION GAP</span>
+            <span id="resultGap" class="text-2xl font-black font-mono-code text-red-400">0%</span>
+          </div>
+        </div>
+
+        <div id="resultBox" class="p-6 rounded-2xl border mb-6">
+          <h4 id="resultTitle" class="text-lg font-bold mb-2"></h4>
+          <p id="resultDesc" class="text-xs sm:text-sm leading-relaxed"></p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <button onclick="resetDilemma()" class="text-xs font-mono-code text-slate-400 hover:text-white underline">
+            &larr; Volver a calibrar dilema
+          </button>
+          <a href="mailto:partnerships@cti-globalskills.net?subject=Solicitud%20Auditoria%20Quorum%20PACRF" class="px-6 py-3 rounded-xl bg-cyan-500/20 text-[#00F0FF] border border-[#00F0FF] text-xs font-bold font-mono-code hover:bg-[#00F0FF] hover:text-[#060709] transition-all">
+            Auditar Todo el Quórum Directivo &rarr;
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- FRANJA DE CONTADORES NUMÉRICOS ANIMADOS -->
   <section id="metricas" class="max-w-7xl mx-auto px-6 py-16">
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
@@ -367,9 +482,7 @@
     </div>
   </section>
 
-  <!-- ==========================================
-       VISOR INTERACTIVO DE BOARD PACK (CON MAPA DE CALOR REAL)
-  =========================================== -->
+  <!-- VISOR INTERACTIVO DE BOARD PACK (CON MAPA DE CALOR REAL) -->
   <section id="boardpack" class="max-w-6xl mx-auto px-6 py-20 scroll-mt-24">
     <div class="rounded-3xl bg-[#07090E] border border-slate-800 p-6 sm:p-12 shadow-2xl relative overflow-hidden">
       
@@ -451,7 +564,7 @@
         </div>
       </div>
 
-      <!-- PESTAÑA 2: MAPA DE CALOR TÉRMICO DE QUÓRUM (HEATMAP) -->
+      <!-- PESTAÑA 2: HEATMAP -->
       <div id="tab2" class="board-tab-content">
         <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
           <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-3 mb-6">
@@ -462,7 +575,6 @@
               </h4>
               <p class="text-xs text-slate-400">Ponderación telemétrica por Miembro de Consejo (Identidad disociada conforme a GDPR).</p>
             </div>
-            <!-- Leyenda del Heatmap -->
             <div class="flex items-center gap-3 text-xs font-mono-code">
               <span class="flex items-center gap-1 text-red-400"><span class="w-2.5 h-2.5 rounded bg-red-500/80 shadow-[0_0_6px_#ef4444]"></span> Crítico (>70%)</span>
               <span class="flex items-center gap-1 text-amber-300"><span class="w-2.5 h-2.5 rounded bg-amber-400/80"></span> Moderado (40-69%)</span>
@@ -470,7 +582,6 @@
             </div>
           </div>
 
-          <!-- Tabla Heatmap interactiva y scrolleable en móvil -->
           <div class="overflow-x-auto">
             <table class="w-full text-left text-xs font-mono-code border-collapse">
               <thead>
@@ -486,8 +597,6 @@
                 </tr>
               </thead>
               <tbody class="divide-y divide-white/5">
-                
-                <!-- Fila 1 -->
                 <tr>
                   <td class="py-3 px-3 text-slate-300 font-sans font-medium">Overprecision Gap (Sobreconfianza)</td>
                   <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-red-500/30 text-red-300 border border-red-500/50 font-bold block">84%</span></td>
@@ -498,8 +607,6 @@
                   <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 block">45%</span></td>
                   <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-red-500/30 text-red-300 border border-red-500/50 font-bold block">81%</span></td>
                 </tr>
-
-                <!-- Fila 2 -->
                 <tr>
                   <td class="py-3 px-3 text-slate-300 font-sans font-medium">Anclaje en Valuación M&A</td>
                   <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 block">65%</span></td>
@@ -510,8 +617,6 @@
                   <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 block">22%</span></td>
                   <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-red-500/30 text-red-300 border border-red-500/50 font-bold block">74%</span></td>
                 </tr>
-
-                <!-- Fila 3 -->
                 <tr>
                   <td class="py-3 px-3 text-slate-300 font-sans font-medium">Consenso Ciego (Groupthink)</td>
                   <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 block">22%</span></td>
@@ -522,8 +627,6 @@
                   <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 block">30%</span></td>
                   <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 block">61%</span></td>
                 </tr>
-
-                <!-- Fila 4 -->
                 <tr>
                   <td class="py-3 px-3 text-slate-300 font-sans font-medium">Aversión al Conflicto Crítico</td>
                   <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 block">18%</span></td>
@@ -534,7 +637,6 @@
                   <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 block">15%</span></td>
                   <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 block">59%</span></td>
                 </tr>
-
               </tbody>
             </table>
           </div>
@@ -576,7 +678,6 @@
     </div>
     
     <div class="space-y-4">
-      <!-- FAQ 1 -->
       <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
         <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-slate-900">
           <span class="flex items-center gap-3">
@@ -590,7 +691,6 @@
         </div>
       </div>
 
-      <!-- FAQ 2 -->
       <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
         <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-slate-900">
           <span class="flex items-center gap-3">
@@ -604,7 +704,6 @@
         </div>
       </div>
 
-      <!-- FAQ 3 -->
       <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
         <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-slate-900">
           <span class="flex items-center gap-3">
@@ -618,7 +717,6 @@
         </div>
       </div>
 
-      <!-- FAQ 4 -->
       <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
         <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-slate-900">
           <span class="flex items-center gap-3">
@@ -632,7 +730,6 @@
         </div>
       </div>
 
-      <!-- FAQ 5 -->
       <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
         <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-slate-900">
           <span class="flex items-center gap-3">
@@ -733,7 +830,96 @@
     }
     calculate();
 
-    /* --- 2. CONTADORES ANIMADOS AL SCROLL --- */
+    /* --- 2. MINI-DILEMA TELEMÉTRICO EN VIVO --- */
+    let dilemmaStartTime = performance.now();
+    const minRangeInput = document.getElementById('minRange');
+    const maxRangeInput = document.getElementById('maxRange');
+    const confInput = document.getElementById('confidenceSlider');
+
+    const displayMin = document.getElementById('displayMinRange');
+    const displayMax = document.getElementById('displayMaxRange');
+    const displayConf = document.getElementById('displayConfidence');
+
+    if (minRangeInput && maxRangeInput) {
+      minRangeInput.addEventListener('input', () => {
+        if (parseInt(minRangeInput.value) >= parseInt(maxRangeInput.value)) {
+          maxRangeInput.value = parseInt(minRangeInput.value) + 5;
+          displayMax.innerText = maxRangeInput.value + '%';
+        }
+        displayMin.innerText = minRangeInput.value + '%';
+      });
+
+      maxRangeInput.addEventListener('input', () => {
+        if (parseInt(maxRangeInput.value) <= parseInt(minRangeInput.value)) {
+          minRangeInput.value = Math.max(0, parseInt(maxRangeInput.value) - 5);
+          displayMin.innerText = minRangeInput.value + '%';
+        }
+        displayMax.innerText = maxRangeInput.value + '%';
+      });
+    }
+
+    if (confInput) {
+      confInput.addEventListener('input', () => {
+        displayConf.innerText = confInput.value + '% Seguro';
+      });
+    }
+
+    function evaluateDilemma() {
+      const endTime = performance.now();
+      const latencySec = ((endTime - dilemmaStartTime) / 1000).toFixed(2);
+      
+      const minVal = parseInt(minRangeInput.value);
+      const maxVal = parseInt(maxRangeInput.value);
+      const userConf = parseInt(confInput.value);
+      const BENCHMARK = 45; // Benchmark real de la industria (45%)
+
+      const captured = (BENCHMARK >= minVal && BENCHMARK <= maxVal);
+      const rangeWidth = maxVal - minVal;
+
+      document.getElementById('resultLatency').innerText = latencySec + 's';
+
+      const resultBox = document.getElementById('resultBox');
+      const resultTitle = document.getElementById('resultTitle');
+      const resultDesc = document.getElementById('resultDesc');
+      const resultGap = document.getElementById('resultGap');
+
+      if (!captured) {
+        // Falló el intervalo real a pesar de su certeza
+        const gapVal = userConf; // Overprecision directa
+        resultGap.innerText = '+' + gapVal + '%';
+        resultGap.className = 'text-2xl font-black font-mono-code text-red-400';
+
+        resultBox.className = 'p-6 rounded-2xl border bg-red-500/10 border-red-500/40 text-red-300';
+        resultTitle.innerText = 'Diagnóstico: Sesgo Crítico de Sobreprecisión (Overprecision)';
+        resultDesc.innerHTML = `Usted declaró un <strong>${userConf}% de certeza</strong> en el rango [${minVal}% - ${maxVal}%]. Sin embargo, el sobrecosto real es del <strong>45%</strong> (quedó fuera de su estimación). En un Consejo, este perfil genera aprobación de presupuestos con margen insuficiente de contingencia y exposición de capital.`;
+      } else {
+        // Acertó el intervalo
+        if (rangeWidth > 60) {
+          resultGap.innerText = 'Bajo (Difuso)';
+          resultGap.className = 'text-2xl font-black font-mono-code text-amber-300';
+          resultBox.className = 'p-6 rounded-2xl border bg-amber-500/10 border-amber-500/40 text-amber-200';
+          resultTitle.innerText = 'Diagnóstico: Amplitud por Incertidumbre Operativa';
+          resultDesc.innerHTML = `Su rango capturó el valor real (45%), pero la amplitud de su estimación (±${rangeWidth}%) denota una alta dispersión que en un comité suele traducirse en <strong>parálisis de decisión</strong> o dilación fiduciaria.`;
+        } else {
+          resultGap.innerText = '0% (Calibrado)';
+          resultGap.className = 'text-2xl font-black font-mono-code text-emerald-400';
+          resultBox.className = 'p-6 rounded-2xl border bg-emerald-500/10 border-emerald-500/40 text-emerald-200';
+          resultTitle.innerText = 'Diagnóstico: Juicio Fiduciario Altamente Calibrado';
+          resultDesc.innerHTML = `Excelente calibración. Definió un rango preciso [${minVal}% - ${maxVal}%] con ${userConf}% de certidumbre que absorbió con exactitud la contingencia real del 45%, procesado con una latencia de ${latencySec}s.`;
+        }
+      }
+
+      document.getElementById('dilemmaInputs').classList.add('hidden');
+      document.getElementById('dilemmaResults').classList.remove('hidden');
+    }
+
+    function resetDilemma() {
+      dilemmaStartTime = performance.now();
+      document.getElementById('dilemmaInputs').classList.remove('hidden');
+      document.getElementById('dilemmaResults').classList.add('hidden');
+    }
+
+    /* --- 3. CONTADORES ANIMADOS AL SCROLL --- */
     const counters = document.querySelectorAll('.counter');
     let animated = false;
 
@@ -768,7 +954,7 @@
     const metricSection = document.getElementById('metricas');
     if (metricSection) observer.observe(metricSection);
 
-    /* --- 3. ACORDEÓN FAQ --- */
+    /* --- 4. ACORDEÓN FAQ --- */
     function toggleFaq(button) {
       const answer = button.nextElementSibling;
       const chevron = button.querySelector('.faq-chevron');
@@ -783,7 +969,7 @@
       }
     }
 
-    /* --- 4. PESTAÑAS BOARD PACK --- */
+    /* --- 5. PESTAÑAS BOARD PACK --- */
     function switchBoardTab(tabId, btn) {
       document.querySelectorAll('.board-tab-content').forEach(content => {
         content.classList.remove('active');
