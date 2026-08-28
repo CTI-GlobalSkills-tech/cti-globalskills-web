@@ -23,15 +23,40 @@
       animation: ticker 25s linear infinite;
     }
     
-    /* Animación de luces de fondo */
-    @keyframes pulse-slow {
-      0%, 100% { opacity: 0.4; transform: scale(1); }
-      50% { opacity: 0.7; transform: scale(1.05); }
+    /* Animaciones del Dashboard Vivo */
+    @keyframes data-bar {
+      0% { height: 20%; }
+      50% { height: 90%; }
+      100% { height: 20%; }
     }
-    .animate-glow { animation: pulse-slow 4s ease-in-out infinite; }
+    @keyframes data-bar-alt {
+      0% { height: 80%; }
+      50% { height: 30%; }
+      100% { height: 80%; }
+    }
+    @keyframes radar-sweep {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes watermark-fade {
+      0%, 100% { opacity: 0; transform: scale(0.9); }
+      50% { opacity: 0.15; transform: scale(1); }
+    }
+    
+    .bar-1 { animation: data-bar 3s ease-in-out infinite; }
+    .bar-2 { animation: data-bar-alt 4s ease-in-out infinite; }
+    .bar-3 { animation: data-bar 2.5s ease-in-out infinite 1s; }
+    .bar-4 { animation: data-bar-alt 3.5s ease-in-out infinite 0.5s; }
+    
+    .radar-line {
+      background: linear-gradient(90deg, rgba(0,240,255,1) 0%, rgba(0,240,255,0) 100%);
+      transform-origin: bottom left;
+      animation: radar-sweep 4s linear infinite;
+    }
 
-    /* Sombras Ejecutivas para la zona blanca */
-    .shadow-executive { box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.1); }
+    .watermark-1 { animation: watermark-fade 6s ease-in-out infinite; }
+    .watermark-2 { animation: watermark-fade 7s ease-in-out infinite 3s; }
+    .watermark-3 { animation: watermark-fade 8s ease-in-out infinite 1.5s; }
   </style>
 </head>
 <body class="bg-[#F8FAFC] text-slate-800 selection:bg-cyan-500/30 selection:text-cyan-900 relative overflow-x-hidden min-h-screen">
@@ -39,30 +64,26 @@
   <!-- ==========================================
        ZONA OSCURA (DEEPTECH & AUTORIDAD) 
   =========================================== -->
-  <div class="bg-[#060709] relative overflow-hidden pb-32">
+  <div class="bg-[#060709] relative overflow-hidden pb-40 border-b border-[#00F0FF]/30">
     
-    <!-- Luces de radar en el fondo oscuro -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[50rem] h-[30rem] bg-gradient-to-b from-cyan-600/20 to-blue-900/10 rounded-full blur-[100px] pointer-events-none animate-glow"></div>
+    <!-- Luces de radar en el fondo -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[60rem] h-[40rem] bg-gradient-to-b from-cyan-600/10 to-blue-900/10 rounded-full blur-[100px] pointer-events-none"></div>
 
     <!-- NAVEGACIÓN -->
     <nav class="w-full max-w-7xl mx-auto px-6 h-24 flex items-center justify-between relative z-20 border-b border-white/10">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00F0FF] to-[#7000FF] p-[1px] shadow-[0_0_20px_rgba(0,240,255,0.3)]">
-          <div class="w-full h-full bg-[#08090C] rounded-[11px] flex items-center justify-center">
-            <span class="text-white font-black text-sm tracking-tighter">GS</span>
-          </div>
-        </div>
-        <span class="text-xl font-bold tracking-tight text-white">
-          CTI GlobalSkills<span class="text-[#00F0FF]">.</span>
-        </span>
+        <!-- LOGO CONECTADO A TU ARCHIVO DE GITHUB -->
+        <img src="CTI_Global_Skills-H-color-removebg-preview.png" alt="CTI GlobalSkills Logo" class="h-10 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <!-- Respaldo por si falla el nombre de la imagen -->
+        <span class="text-xl font-bold tracking-tight text-white hidden">CTI GlobalSkills<span class="text-[#00F0FF]">.</span></span>
       </div>
-      <a href="mailto:partnerships@cti-globalskills.net" class="text-sm font-semibold px-6 py-2.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-white transition-all duration-300">
+      <a href="mailto:partnerships@cti-globalskills.net" class="text-sm font-semibold px-6 py-2.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/20 text-white transition-all duration-300 backdrop-blur-md">
         Portal Directivo
       </a>
     </nav>
 
     <!-- HERO SECTION -->
-    <section class="relative z-10 max-w-5xl mx-auto px-6 pt-20 pb-16 text-center">
+    <section class="relative z-10 max-w-5xl mx-auto px-6 pt-20 pb-12 text-center">
       <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-bold tracking-widest uppercase mb-8 shadow-[0_0_15px_rgba(0,240,255,0.2)]">
         <div class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></div>
         Auditoría Telemétrica Activa
@@ -76,8 +97,8 @@
       </h1>
 
       <p class="text-slate-400 text-xl font-medium max-w-3xl mx-auto leading-relaxed mb-12">
-        Sustituya cuestionarios subjetivos por telemetría determinista (Zero-AI). 
-        PACRF audita el <span class="text-white font-bold border-b border-cyan-500/50">Overprecision Gap</span> y cuantifica el Capital Expuesto en comités ejecutivos.
+        Sustituya encuestas subjetivas por telemetría determinista (Zero-AI). 
+        PACRF audita el <span class="text-white font-bold border-b border-cyan-500/50">Overprecision Gap</span> y cuantifica el Capital Expuesto.
       </p>
 
       <a href="#contacto" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-[#00F0FF] to-blue-600 text-[#060709] font-black text-sm tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(0,240,255,0.4)]">
@@ -87,41 +108,79 @@
     </section>
   </div>
 
-  <!-- ==========================================
-       EL PUENTE (TICKER GIGANTE E IMAGEN) 
-  =========================================== -->
-  
-  <!-- TICKER GIGANTE -->
-  <div class="w-full bg-[#00F0FF] py-3 relative z-30 shadow-[0_0_30px_rgba(0,240,255,0.4)] border-y border-blue-900">
-    <div class="animate-ticker flex items-center text-sm sm:text-base font-black tracking-widest text-[#060709] uppercase">
+  <!-- TICKER GIGANTE NEÓN -->
+  <div class="w-full bg-[#00F0FF] py-3 relative z-30 shadow-[0_0_30px_rgba(0,240,255,0.4)]">
+    <div class="animate-ticker flex items-center text-sm font-black tracking-widest text-[#060709] uppercase">
       <div class="flex items-center justify-around w-1/2">
-        <span>• ZERO-AI CERTIFIED</span><span>•</span>
-        <span>EU AI ACT EXEMPT</span><span>•</span>
-        <span>GDPR COMPLIANT</span><span>•</span>
-        <span>ISO 27001 ALIGNED</span><span>•</span>
-        <span>ISO 31000 ERM</span>
+        <span>• ZERO-AI CERTIFIED</span><span>•</span><span>EU AI ACT EXEMPT</span><span>•</span>
+        <span>GDPR COMPLIANT</span><span>•</span><span>ISO 27001 ALIGNED</span><span>•</span>
       </div>
       <div class="flex items-center justify-around w-1/2">
-        <span>• ZERO-AI CERTIFIED</span><span>•</span>
-        <span>EU AI ACT EXEMPT</span><span>•</span>
-        <span>GDPR COMPLIANT</span><span>•</span>
-        <span>ISO 27001 ALIGNED</span><span>•</span>
-        <span>ISO 31000 ERM</span>
+        <span>• ZERO-AI CERTIFIED</span><span>•</span><span>EU AI ACT EXEMPT</span><span>•</span>
+        <span>GDPR COMPLIANT</span><span>•</span><span>ISO 27001 ALIGNED</span><span>•</span>
       </div>
     </div>
   </div>
 
-  <!-- IMAGEN DEL DASHBOARD (FLOTANDO ENTRE LO OSCURO Y LO CLARO) -->
-  <section class="max-w-6xl mx-auto px-6 relative z-40 -mt-20 mb-20">
-    <div class="rounded-2xl bg-white p-2 shadow-executive border border-slate-200/50 backdrop-blur-xl">
-      <div class="rounded-xl overflow-hidden bg-slate-900 relative aspect-video flex items-center justify-center border border-slate-800">
-        <!-- IMAGEN DE PRUEBA PARA QUE VEAS CÓMO LUCE (LUEGO LA CAMBIAMOS POR LA TUYA) -->
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover opacity-90" alt="Dashboard de Prueba">
+  <!-- ==========================================
+       DASHBOARD VIVO (PROGRAMADO EN CSS, NO IMAGEN) 
+  =========================================== -->
+  <section class="max-w-6xl mx-auto px-6 relative z-40 -mt-24 mb-20">
+    <!-- Marco de Cristal del Dashboard -->
+    <div class="rounded-2xl bg-white/5 p-3 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] border border-white/20 backdrop-blur-xl">
+      <!-- Pantalla del Dashboard -->
+      <div class="rounded-xl bg-[#030406] relative aspect-video flex flex-col overflow-hidden border border-slate-800">
         
-        <div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md px-4 py-2 rounded-lg border border-white/10">
-          <p class="text-white text-xs font-bold flex items-center gap-2">
+        <!-- Marcas de Agua Flotantes (Normativas) -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <span class="watermark-1 absolute text-6xl font-black text-white whitespace-nowrap">ISO 27001 VERIFIED</span>
+          <span class="watermark-2 absolute text-5xl font-black text-[#00F0FF] whitespace-nowrap -rotate-12">ZERO-AI ENGINE</span>
+          <span class="watermark-3 absolute text-7xl font-black text-blue-500 whitespace-nowrap rotate-6">GDPR SECURE</span>
+        </div>
+
+        <!-- Barra Superior (UI) -->
+        <div class="h-10 w-full border-b border-white/10 flex items-center justify-between px-4 bg-white/5">
+          <div class="flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+            <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+            <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+          </div>
+          <span class="text-xs font-mono text-cyan-500">PACRF_TERMINAL_V4.2</span>
+        </div>
+
+        <!-- Contenido Vivo del Dashboard -->
+        <div class="flex-1 grid grid-cols-3 gap-6 p-6 relative z-10">
+          
+          <!-- Columna 1: Radar -->
+          <div class="col-span-1 border border-white/10 rounded-lg bg-white/5 p-4 flex flex-col items-center justify-center relative overflow-hidden">
+            <p class="text-xs text-slate-500 font-mono absolute top-3 left-3">SENSOR_COGNITIVO</p>
+            <div class="w-32 h-32 rounded-full border border-cyan-500/30 relative flex items-center justify-center">
+              <div class="w-24 h-24 rounded-full border border-cyan-500/20"></div>
+              <div class="w-16 h-16 rounded-full border border-cyan-500/20"></div>
+              <!-- Linea del Radar moviéndose -->
+              <div class="absolute top-1/2 left-1/2 w-16 h-[2px] radar-line"></div>
+            </div>
+          </div>
+
+          <!-- Columna 2: Gráfico de Barras animado -->
+          <div class="col-span-2 border border-white/10 rounded-lg bg-white/5 p-4 flex flex-col justify-end">
+            <p class="text-xs text-slate-500 font-mono mb-4">OVERPRECISION_GAP_ANALYSIS</p>
+            <div class="h-32 flex items-end gap-2 w-full">
+              <div class="w-full bg-cyan-500/80 rounded-t-sm bar-1 shadow-[0_0_10px_rgba(0,240,255,0.5)]"></div>
+              <div class="w-full bg-blue-500/80 rounded-t-sm bar-2"></div>
+              <div class="w-full bg-cyan-500/80 rounded-t-sm bar-3 shadow-[0_0_10px_rgba(0,240,255,0.5)]"></div>
+              <div class="w-full bg-purple-500/80 rounded-t-sm bar-4"></div>
+              <div class="w-full bg-cyan-500/80 rounded-t-sm bar-2 shadow-[0_0_10px_rgba(0,240,255,0.5)]"></div>
+              <div class="w-full bg-blue-500/80 rounded-t-sm bar-1"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="absolute bottom-4 left-4 bg-black/80 backdrop-blur-md px-4 py-2 rounded border border-[#00F0FF]/30">
+          <p class="text-[#00F0FF] text-xs font-mono flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            Simulación de Tenant Corporativo
+            Simulación Telemétrica Activa
           </p>
         </div>
       </div>
@@ -133,82 +192,89 @@
   =========================================== -->
   
   <!-- TARJETAS DE CUMPLIMIENTO -->
-  <section class="max-w-7xl mx-auto px-6 py-12">
+  <section class="max-w-7xl mx-auto px-6 pb-20">
     <div class="text-center mb-16">
       <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Arquitectura Institucional Blindada</h2>
-      <p class="text-slate-500 mt-2 font-medium">Diseñada para superar el escrutinio de los Oficiales de Cumplimiento.</p>
     </div>
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-executive hover:-translate-y-1 transition-all duration-300">
-        <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-5 text-blue-600 border border-blue-100">
-          <i data-lucide="cpu" class="w-6 h-6"></i>
-        </div>
+      <div class="p-8 rounded-2xl bg-white border border-slate-200 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] transition-all">
+        <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-5 text-blue-600"><i data-lucide="cpu" class="w-6 h-6"></i></div>
         <h4 class="text-lg font-bold text-slate-900 mb-2">EU AI Act</h4>
-        <p class="text-sm text-slate-600 leading-relaxed">Motor determinista libre de modelos generativos (LLMs). Cero riesgo de alucinación.</p>
+        <p class="text-sm text-slate-600 leading-relaxed">Motor determinista libre de modelos generativos. Cero riesgo de alucinación.</p>
       </div>
-      <div class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-executive hover:-translate-y-1 transition-all duration-300">
-        <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-5 text-blue-600 border border-blue-100">
-          <i data-lucide="lock" class="w-6 h-6"></i>
-        </div>
+      <div class="p-8 rounded-2xl bg-white border border-slate-200 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] transition-all">
+        <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-5 text-blue-600"><i data-lucide="lock" class="w-6 h-6"></i></div>
         <h4 class="text-lg font-bold text-slate-900 mb-2">GDPR / LFPDPPP</h4>
-        <p class="text-sm text-slate-600 leading-relaxed">Tratamiento estricto de huella telemétrica y anonimización fiduciaria total.</p>
+        <p class="text-sm text-slate-600 leading-relaxed">Tratamiento estricto de huella telemétrica y anonimización fiduciaria.</p>
       </div>
-      <div class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-executive hover:-translate-y-1 transition-all duration-300">
-        <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-5 text-blue-600 border border-blue-100">
-          <i data-lucide="shield-check" class="w-6 h-6"></i>
-        </div>
+      <div class="p-8 rounded-2xl bg-white border border-slate-200 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] transition-all">
+        <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-5 text-blue-600"><i data-lucide="shield-check" class="w-6 h-6"></i></div>
         <h4 class="text-lg font-bold text-slate-900 mb-2">ISO 27001</h4>
-        <p class="text-sm text-slate-600 leading-relaxed">Cifrado AES-256. Aislamiento criptográfico estricto por cada entidad auditada.</p>
+        <p class="text-sm text-slate-600 leading-relaxed">Cifrado AES-256 en reposo. Aislamiento criptográfico por entidad auditada.</p>
       </div>
-      <div class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-executive hover:-translate-y-1 transition-all duration-300">
-        <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-5 text-blue-600 border border-blue-100">
-          <i data-lucide="scale" class="w-6 h-6"></i>
-        </div>
+      <div class="p-8 rounded-2xl bg-white border border-slate-200 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] transition-all">
+        <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-5 text-blue-600"><i data-lucide="scale" class="w-6 h-6"></i></div>
         <h4 class="text-lg font-bold text-slate-900 mb-2">ISO 31000</h4>
-        <p class="text-sm text-slate-600 leading-relaxed">Evaluación del factor humano exigida por estándares globales de riesgo corporativo.</p>
+        <p class="text-sm text-slate-600 leading-relaxed">Evaluación del factor humano exigida por estándares globales de riesgo ERM.</p>
       </div>
     </div>
   </section>
 
   <!-- EL ECOSISTEMA PACRF -->
-  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-slate-200 mt-10">
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-slate-200">
     <div class="max-w-3xl mx-auto text-center mb-16">
       <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mb-4">El Flujo Operativo PACRF</h2>
       <p class="text-slate-600 text-lg">Un recorrido metodológico para blindar el criterio del Consejo.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="p-8 rounded-2xl bg-slate-900 shadow-executive relative overflow-hidden group hover:scale-105 transition-transform duration-300">
+      <div class="p-8 rounded-2xl bg-slate-900 relative overflow-hidden group">
         <span class="text-blue-500/20 font-black text-6xl absolute -top-2 -right-2">01</span>
         <h3 class="text-xl font-bold text-white mb-3 mt-4">Diagnóstico Inicial</h3>
         <p class="text-slate-400 text-sm">Evaluación ejecutiva mediante dilemas telemétricos para detectar puntos ciegos y sobreconfianza directiva.</p>
       </div>
-      <div class="p-8 rounded-2xl bg-slate-900 shadow-executive relative overflow-hidden group hover:scale-105 transition-transform duration-300">
+      <div class="p-8 rounded-2xl bg-slate-900 relative overflow-hidden group">
         <span class="text-cyan-500/20 font-black text-6xl absolute -top-2 -right-2">02</span>
         <h3 class="text-xl font-bold text-white mb-3 mt-4">Sprint de Remediación</h3>
         <p class="text-slate-400 text-sm">Entrenamiento (Protocolo Torniquete) para romper la parálisis analítica ante riesgos detectados.</p>
       </div>
-      <div class="p-8 rounded-2xl bg-slate-900 shadow-executive relative overflow-hidden group hover:scale-105 transition-transform duration-300">
+      <div class="p-8 rounded-2xl bg-slate-900 relative overflow-hidden group">
         <span class="text-purple-500/20 font-black text-6xl absolute -top-2 -right-2">03</span>
         <h3 class="text-xl font-bold text-white mb-3 mt-4">Licencia Anual</h3>
-        <p class="text-slate-400 text-sm">Emisión de Board Packs automatizados y monitoreo continuo del Índice de Neurogobernanza (ING).</p>
+        <p class="text-slate-400 text-sm">Emisión de Board Packs automatizados y monitoreo continuo del Índice de Neurogobernanza.</p>
       </div>
     </div>
   </section>
 
-  <!-- PREGUNTAS FRECUENTES -->
-  <section class="max-w-4xl mx-auto px-6 py-16 bg-slate-100 rounded-3xl mb-20 border border-slate-200">
-    <h2 class="text-2xl font-extrabold text-slate-900 mb-8 text-center">Despejando Dudas Críticas</h2>
+  <!-- PREGUNTAS FRECUENTES (EXPANDIDAS) -->
+  <section class="max-w-4xl mx-auto px-6 py-20">
+    <h2 class="text-3xl font-extrabold text-slate-900 mb-12 text-center">Consultas de Cumplimiento Institucional</h2>
     
     <div class="space-y-4">
-      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-        <h4 class="text-slate-900 font-bold mb-2">¿Por qué PACRF no utiliza Inteligencia Artificial Generativa?</h4>
-        <p class="text-slate-600 text-sm leading-relaxed">Los LLMs son un pasivo legal por su riesgo de alucinación. Usamos calibración matemática determinista (Zero-AI), 100% auditable ante tribunales.</p>
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+        <h4 class="text-slate-900 font-bold mb-2 flex items-center gap-2"><i data-lucide="help-circle" class="w-5 h-5 text-blue-600"></i> ¿Por qué PACRF no utiliza Inteligencia Artificial Generativa?</h4>
+        <p class="text-slate-600 text-sm leading-relaxed">Los LLMs son un pasivo legal en gobierno corporativo por su riesgo de alucinación y opacidad algorítmica. Usamos calibración matemática determinista (Zero-AI), lo que garantiza que nuestras auditorías sean 100% reproducibles, inmutables y exentas de la regulación restrictiva del EU AI Act.</p>
       </div>
-      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-        <h4 class="text-slate-900 font-bold mb-2">¿Requieren información financiera confidencial?</h4>
-        <p class="text-slate-600 text-sm leading-relaxed">No. Operamos bajo arquitectura Zero-Knowledge. Evaluamos la arquitectura del juicio del tomador de decisiones, no los secretos comerciales de la empresa.</p>
+
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+        <h4 class="text-slate-900 font-bold mb-2 flex items-center gap-2"><i data-lucide="help-circle" class="w-5 h-5 text-blue-600"></i> ¿Nuestros clientes deben cargar información financiera confidencial?</h4>
+        <p class="text-slate-600 text-sm leading-relaxed">Absolutamente no. La plataforma opera bajo el principio de Zero-Knowledge. Evaluamos la coherencia, la latencia y la arquitectura del juicio humano del tomador de decisiones ante dilemas fiduciarios abstractos. No requerimos leer estados financieros, secretos comerciales ni actas de consejo.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+        <h4 class="text-slate-900 font-bold mb-2 flex items-center gap-2"><i data-lucide="help-circle" class="w-5 h-5 text-blue-600"></i> ¿Cómo se cuantifica el Capital Expuesto (Cog-VaR)?</h4>
+        <p class="text-slate-600 text-sm leading-relaxed">El Cog-VaR (Cognitive Value at Risk) se calcula mapeando la desviación entre la precisión declarada por el directivo y su precisión real bajo incertidumbre. Esta brecha telemétrica (Overprecision Gap) se cruza estadísticamente con el volumen de decisiones de capital aprobadas por el Consejo, arrojando una métrica financiera de riesgo latente.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+        <h4 class="text-slate-900 font-bold mb-2 flex items-center gap-2"><i data-lucide="help-circle" class="w-5 h-5 text-blue-600"></i> ¿Cuánto tiempo toma desplegar la auditoría inicial?</h4>
+        <p class="text-slate-600 text-sm leading-relaxed">El despliegue tecnológico (Tenant Allocation) toma menos de 24 horas para las firmas Partner. La evaluación de los miembros del Consejo se realiza de forma asíncrona en 15 a 20 minutos por directivo. Los Board Packs ejecutivos se generan y encriptan automáticamente al finalizar el 100% del quorum.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+        <h4 class="text-slate-900 font-bold mb-2 flex items-center gap-2"><i data-lucide="help-circle" class="w-5 h-5 text-blue-600"></i> ¿Quién mantiene la soberanía de la telemetría generada?</h4>
+        <p class="text-slate-600 text-sm leading-relaxed">El cliente final y la Firma Consultora (Partner). CTI GlobalSkills funge exclusivamente como proveedor de infraestructura DeepTech. Los datos se encriptan bajo estrictos lineamientos GDPR, garantizando la disociación total de la identidad de los consejeros evaluados.</p>
       </div>
     </div>
   </section>
@@ -223,17 +289,17 @@
         <p class="text-slate-400 text-sm">Infraestructura DeepTech para la mitigación de sesgos corporativos en Órganos de Gobierno.</p>
       </div>
       <div>
-        <h4 class="text-white font-bold mb-4">Contacto</h4>
+        <h4 class="text-white font-bold mb-4">Contacto Institucional</h4>
         <ul class="text-slate-400 text-sm space-y-2">
           <li>Polanco V Sección, CDMX, 11560</li>
           <li>WA: +52 2223244758</li>
-          <li class="text-cyan-400">contacto@cti-globalskills.net</li>
+          <li class="text-[#00F0FF]">contacto@cti-globalskills.net</li>
         </ul>
       </div>
       <div>
-        <h4 class="text-white font-bold mb-4">Legal & Partners</h4>
+        <h4 class="text-white font-bold mb-4">Despliegue & Legal</h4>
         <ul class="text-slate-400 text-sm space-y-2">
-          <li>Solicitar Acreditación GRC</li>
+          <li>Solicitar Acreditación de Partner GRC</li>
           <li>Aviso de Privacidad (LFPDPPP)</li>
         </ul>
       </div>
