@@ -368,7 +368,7 @@
   </section>
 
   <!-- ==========================================
-       VISOR INTERACTIVO DE BOARD PACK (OPCIÓN B)
+       VISOR INTERACTIVO DE BOARD PACK (CON MAPA DE CALOR REAL)
   =========================================== -->
   <section id="boardpack" class="max-w-6xl mx-auto px-6 py-20 scroll-mt-24">
     <div class="rounded-3xl bg-[#07090E] border border-slate-800 p-6 sm:p-12 shadow-2xl relative overflow-hidden">
@@ -394,7 +394,7 @@
           01. Índice de Neurogobernanza (ING)
         </button>
         <button onclick="switchBoardTab('tab2', this)" class="board-tab-btn px-4 py-2.5 rounded-xl text-xs font-bold font-mono-code bg-white/5 text-slate-400 border border-white/10 hover:border-slate-600 transition-all">
-          02. Matriz de Dispersión de Quórum
+          02. Mapa de Calor de Quórum (Heatmap)
         </button>
         <button onclick="switchBoardTab('tab3', this)" class="board-tab-btn px-4 py-2.5 rounded-xl text-xs font-bold font-mono-code bg-white/5 text-slate-400 border border-white/10 hover:border-slate-600 transition-all">
           03. Dictamen & Protocolo Torniquete
@@ -451,29 +451,97 @@
         </div>
       </div>
 
-      <!-- PESTAÑA 2: MATRIZ DE QUÓRUM -->
+      <!-- PESTAÑA 2: MAPA DE CALOR TÉRMICO DE QUÓRUM (HEATMAP) -->
       <div id="tab2" class="board-tab-content">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
-            <div class="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-400 mb-4">
-              <i data-lucide="users" class="w-5 h-5"></i>
+        <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
+          <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-3 mb-6">
+            <div>
+              <h4 class="text-white font-bold text-base flex items-center gap-2">
+                <i data-lucide="grid" class="w-4 h-4 text-[#00F0FF]"></i>
+                Matriz Térmica de Vulnerabilidad Fiduciaria
+              </h4>
+              <p class="text-xs text-slate-400">Ponderación telemétrica por Miembro de Consejo (Identidad disociada conforme a GDPR).</p>
             </div>
-            <h4 class="text-white font-bold text-sm mb-1">Círculo de Consenso Ciego</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">Identificados 3 miembros clave con alineación artificial de voto por aversión al debate técnico bajo presión.</p>
+            <!-- Leyenda del Heatmap -->
+            <div class="flex items-center gap-3 text-xs font-mono-code">
+              <span class="flex items-center gap-1 text-red-400"><span class="w-2.5 h-2.5 rounded bg-red-500/80 shadow-[0_0_6px_#ef4444]"></span> Crítico (>70%)</span>
+              <span class="flex items-center gap-1 text-amber-300"><span class="w-2.5 h-2.5 rounded bg-amber-400/80"></span> Moderado (40-69%)</span>
+              <span class="flex items-center gap-1 text-emerald-400"><span class="w-2.5 h-2.5 rounded bg-emerald-500/80"></span> Controlado (<40%)</span>
+            </div>
           </div>
-          <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
-            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-[#00F0FF] mb-4">
-              <i data-lucide="zap" class="w-5 h-5"></i>
-            </div>
-            <h4 class="text-white font-bold text-sm mb-1">Disparidad de Juicio Cuantitativo</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">El Comité de Auditoría y el Comité de Finanzas muestran un desfase telemétrico de 3.4x en calibración de probabilidad.</p>
+
+          <!-- Tabla Heatmap interactiva y scrolleable en móvil -->
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs font-mono-code border-collapse">
+              <thead>
+                <tr class="border-b border-white/10 text-slate-400">
+                  <th class="py-3 px-3 font-semibold">VECTOR DE AUDITORÍA</th>
+                  <th class="py-3 px-2 text-center">DIR-01</th>
+                  <th class="py-3 px-2 text-center">DIR-02</th>
+                  <th class="py-3 px-2 text-center">DIR-03</th>
+                  <th class="py-3 px-2 text-center">DIR-04</th>
+                  <th class="py-3 px-2 text-center">DIR-05</th>
+                  <th class="py-3 px-2 text-center text-cyan-400">C. AUDITORÍA</th>
+                  <th class="py-3 px-2 text-center text-cyan-400">C. FINANZAS</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/5">
+                
+                <!-- Fila 1 -->
+                <tr>
+                  <td class="py-3 px-3 text-slate-300 font-sans font-medium">Overprecision Gap (Sobreconfianza)</td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-red-500/30 text-red-300 border border-red-500/50 font-bold block">84%</span></td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 block">58%</span></td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-red-500/30 text-red-300 border border-red-500/50 font-bold block">76%</span></td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 block">32%</span></td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-red-500/30 text-red-300 border border-red-500/50 font-bold block">88%</span></td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 block">45%</span></td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-red-500/30 text-red-300 border border-red-500/50 font-bold block">81%</span></td>
+                </tr>
+
+                <!-- Fila 2 -->
+                <tr>
+                  <td class="py-3 px-3 text-slate-300 font-sans font-medium">Anclaje en Valuación M&A</td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 block">65%</span></td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 block">28%</span></td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 block">62%</span></td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-red-500/30 text-red-300 border border-red-500/50 font-bold block">79%</span></td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 block">54%</span></td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 block">22%</span></td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-red-500/30 text-red-300 border border-red-500/50 font-bold block">74%</span></td>
+                </tr>
+
+                <!-- Fila 3 -->
+                <tr>
+                  <td class="py-3 px-3 text-slate-300 font-sans font-medium">Consenso Ciego (Groupthink)</td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 block">22%</span></td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-red-500/30 text-red-300 border border-red-500/50 font-bold block">74%</span></td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-red-500/30 text-red-300 border border-red-500/50 font-bold block">82%</span></td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 block">48%</span></td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 block">19%</span></td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 block">30%</span></td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 block">61%</span></td>
+                </tr>
+
+                <!-- Fila 4 -->
+                <tr>
+                  <td class="py-3 px-3 text-slate-300 font-sans font-medium">Aversión al Conflicto Crítico</td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 block">18%</span></td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-red-500/30 text-red-300 border border-red-500/50 font-bold block">71%</span></td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 block">34%</span></td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 block">52%</span></td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 block">25%</span></td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 block">15%</span></td>
+                  <td class="py-3 px-2 text-center"><span class="px-2 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 block">59%</span></td>
+                </tr>
+
+              </tbody>
+            </table>
           </div>
-          <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
-            <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-4">
-              <i data-lucide="shield-alert" class="w-5 h-5"></i>
-            </div>
-            <h4 class="text-white font-bold text-sm mb-1">Blindaje Frente a Terceros</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">Emisión de evidencia documental auditable exigible en asambleas de accionistas y comités de riesgo.</p>
+
+          <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
+            <span>Telemetría determinista anonimizada (Zero-Knowledge)</span>
+            <span class="text-[#00F0FF]">Correlación Cruzada Validada</span>
           </div>
         </div>
       </div>
