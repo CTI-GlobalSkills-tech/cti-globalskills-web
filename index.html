@@ -12,7 +12,7 @@
   <style>
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
     
-    /* Animación del Ticker Gigante */
+    /* Animación del Ticker */
     @keyframes ticker {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
@@ -22,41 +22,6 @@
       width: 200%;
       animation: ticker 25s linear infinite;
     }
-    
-    /* Animaciones del Dashboard Vivo */
-    @keyframes data-bar {
-      0% { height: 20%; }
-      50% { height: 90%; }
-      100% { height: 20%; }
-    }
-    @keyframes data-bar-alt {
-      0% { height: 80%; }
-      50% { height: 30%; }
-      100% { height: 80%; }
-    }
-    @keyframes radar-sweep {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    @keyframes watermark-fade {
-      0%, 100% { opacity: 0; transform: scale(0.9); }
-      50% { opacity: 0.15; transform: scale(1); }
-    }
-    
-    .bar-1 { animation: data-bar 3s ease-in-out infinite; }
-    .bar-2 { animation: data-bar-alt 4s ease-in-out infinite; }
-    .bar-3 { animation: data-bar 2.5s ease-in-out infinite 1s; }
-    .bar-4 { animation: data-bar-alt 3.5s ease-in-out infinite 0.5s; }
-    
-    .radar-line {
-      background: linear-gradient(90deg, rgba(0,240,255,1) 0%, rgba(0,240,255,0) 100%);
-      transform-origin: bottom left;
-      animation: radar-sweep 4s linear infinite;
-    }
-
-    .watermark-1 { animation: watermark-fade 6s ease-in-out infinite; }
-    .watermark-2 { animation: watermark-fade 7s ease-in-out infinite 3s; }
-    .watermark-3 { animation: watermark-fade 8s ease-in-out infinite 1.5s; }
   </style>
 </head>
 <body class="bg-[#F8FAFC] text-slate-800 selection:bg-cyan-500/30 selection:text-cyan-900 relative overflow-x-hidden min-h-screen">
@@ -64,47 +29,41 @@
   <!-- ==========================================
        ZONA OSCURA (DEEPTECH & AUTORIDAD) 
   =========================================== -->
-  <div class="bg-[#060709] relative overflow-hidden pb-40 border-b border-[#00F0FF]/30">
+  <div class="bg-[#060709] relative overflow-hidden pb-48 border-b border-[#00F0FF]/30">
     
-    <!-- Luces de radar en el fondo -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[60rem] h-[40rem] bg-gradient-to-b from-cyan-600/10 to-blue-900/10 rounded-full blur-[100px] pointer-events-none"></div>
+    <!-- Luces de fondo -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[60rem] h-[40rem] bg-gradient-to-b from-cyan-600/15 to-blue-900/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-    <!-- NAVEGACIÓN -->
-    <nav class="w-full max-w-7xl mx-auto px-6 h-24 flex items-center justify-between relative z-20 border-b border-white/10">
+    <!-- NAVEGACIÓN (AHORA MÁS ALTA PARA ALOJAR EL LOGO GRANDE) -->
+    <nav class="w-full max-w-7xl mx-auto px-6 h-32 flex items-center justify-between relative z-20 border-b border-white/10">
       <div class="flex items-center gap-3">
-        <!-- LOGO CONECTADO A TU ARCHIVO DE GITHUB -->
-        <img src="CTI_Global_Skills-H-color-removebg-preview.png" alt="CTI GlobalSkills Logo" class="h-10 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <!-- Respaldo por si falla el nombre de la imagen -->
-        <span class="text-xl font-bold tracking-tight text-white hidden">CTI GlobalSkills<span class="text-[#00F0FF]">.</span></span>
+        <!-- LOGO A TAMAÑO CORPORATIVO (h-20 a h-24) -->
+        <img src="CTI_Global_Skills-H-color-removebg-preview.png" alt="CTI GlobalSkills Logo" class="h-20 sm:h-24 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <span class="text-2xl font-bold tracking-tight text-white hidden">CTI GlobalSkills<span class="text-[#00F0FF]">.</span></span>
       </div>
-      <a href="mailto:partnerships@cti-globalskills.net" class="text-sm font-semibold px-6 py-2.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/20 text-white transition-all duration-300 backdrop-blur-md">
+      <a href="mailto:partnerships@cti-globalskills.net" class="text-sm font-semibold px-6 py-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/20 text-white transition-all duration-300 backdrop-blur-md shadow-lg hidden sm:block">
         Portal Directivo
       </a>
     </nav>
 
     <!-- HERO SECTION -->
-    <section class="relative z-10 max-w-5xl mx-auto px-6 pt-20 pb-12 text-center">
+    <section class="relative z-10 max-w-5xl mx-auto px-6 pt-16 pb-12 text-center">
       <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-bold tracking-widest uppercase mb-8 shadow-[0_0_15px_rgba(0,240,255,0.2)]">
         <div class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></div>
-        Auditoría Telemétrica Activa
+        Motor PACRF en Línea
       </div>
 
       <h1 class="text-5xl sm:text-7xl font-extrabold tracking-tight text-white leading-[1.1] mb-8">
         El sesgo directivo no es un error. <br />
         <span class="bg-gradient-to-r from-[#00F0FF] via-blue-400 to-[#7000FF] bg-clip-text text-transparent">
-          Es un pasivo no auditado.
+          Es un pasivo fiduciario.
         </span>
       </h1>
 
       <p class="text-slate-400 text-xl font-medium max-w-3xl mx-auto leading-relaxed mb-12">
-        Sustituya encuestas subjetivas por telemetría determinista (Zero-AI). 
-        PACRF audita el <span class="text-white font-bold border-b border-cyan-500/50">Overprecision Gap</span> y cuantifica el Capital Expuesto.
+        Sustituya encuestas de percepción por telemetría determinista (Zero-AI). 
+        PACRF audita el <span class="text-white font-bold border-b border-cyan-500/50">Overprecision Gap</span> y cuantifica el riesgo.
       </p>
-
-      <a href="#contacto" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-[#00F0FF] to-blue-600 text-[#060709] font-black text-sm tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(0,240,255,0.4)]">
-        Desplegar vía Partner Acreditado
-        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-      </a>
     </section>
   </div>
 
@@ -123,67 +82,29 @@
   </div>
 
   <!-- ==========================================
-       DASHBOARD VIVO (PROGRAMADO EN CSS, NO IMAGEN) 
+       DASHBOARD VIVO (CON VIDEO MP4 CENTRADO) 
   =========================================== -->
-  <section class="max-w-6xl mx-auto px-6 relative z-40 -mt-24 mb-20">
-    <!-- Marco de Cristal del Dashboard -->
-    <div class="rounded-2xl bg-white/5 p-3 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] border border-white/20 backdrop-blur-xl">
-      <!-- Pantalla del Dashboard -->
-      <div class="rounded-xl bg-[#030406] relative aspect-video flex flex-col overflow-hidden border border-slate-800">
+  <section class="max-w-5xl mx-auto px-6 relative z-40 -mt-32 mb-20">
+    <!-- Marco de Cristal Simétrico -->
+    <div class="rounded-3xl bg-white/5 p-3 sm:p-4 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] border border-white/20 backdrop-blur-2xl w-full mx-auto">
+      
+      <!-- Contenedor del Video -->
+      <div class="rounded-2xl overflow-hidden bg-[#030406] relative aspect-video flex items-center justify-center border border-slate-700/50 w-full group">
         
-        <!-- Marcas de Agua Flotantes (Normativas) -->
-        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <span class="watermark-1 absolute text-6xl font-black text-white whitespace-nowrap">ISO 27001 VERIFIED</span>
-          <span class="watermark-2 absolute text-5xl font-black text-[#00F0FF] whitespace-nowrap -rotate-12">ZERO-AI ENGINE</span>
-          <span class="watermark-3 absolute text-7xl font-black text-blue-500 whitespace-nowrap rotate-6">GDPR SECURE</span>
-        </div>
+        <!-- REPRODUCTOR DE VIDEO (Reemplazarás este enlace con tu video de iStock cuando lo tengas) -->
+        <video autoplay loop muted playsinline class="w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-opacity duration-500">
+          <source src="https://videos.pexels.com/video-files/3129957/3129957-uhd_3840_2160_25fps.mp4" type="video/mp4">
+        </video>
 
-        <!-- Barra Superior (UI) -->
-        <div class="h-10 w-full border-b border-white/10 flex items-center justify-between px-4 bg-white/5">
-          <div class="flex items-center gap-2">
-            <div class="w-3 h-3 rounded-full bg-red-500"></div>
-            <div class="w-3 h-3 rounded-full bg-amber-500"></div>
-            <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
-          </div>
-          <span class="text-xs font-mono text-cyan-500">PACRF_TERMINAL_V4.2</span>
-        </div>
-
-        <!-- Contenido Vivo del Dashboard -->
-        <div class="flex-1 grid grid-cols-3 gap-6 p-6 relative z-10">
-          
-          <!-- Columna 1: Radar -->
-          <div class="col-span-1 border border-white/10 rounded-lg bg-white/5 p-4 flex flex-col items-center justify-center relative overflow-hidden">
-            <p class="text-xs text-slate-500 font-mono absolute top-3 left-3">SENSOR_COGNITIVO</p>
-            <div class="w-32 h-32 rounded-full border border-cyan-500/30 relative flex items-center justify-center">
-              <div class="w-24 h-24 rounded-full border border-cyan-500/20"></div>
-              <div class="w-16 h-16 rounded-full border border-cyan-500/20"></div>
-              <!-- Linea del Radar moviéndose -->
-              <div class="absolute top-1/2 left-1/2 w-16 h-[2px] radar-line"></div>
-            </div>
-          </div>
-
-          <!-- Columna 2: Gráfico de Barras animado -->
-          <div class="col-span-2 border border-white/10 rounded-lg bg-white/5 p-4 flex flex-col justify-end">
-            <p class="text-xs text-slate-500 font-mono mb-4">OVERPRECISION_GAP_ANALYSIS</p>
-            <div class="h-32 flex items-end gap-2 w-full">
-              <div class="w-full bg-cyan-500/80 rounded-t-sm bar-1 shadow-[0_0_10px_rgba(0,240,255,0.5)]"></div>
-              <div class="w-full bg-blue-500/80 rounded-t-sm bar-2"></div>
-              <div class="w-full bg-cyan-500/80 rounded-t-sm bar-3 shadow-[0_0_10px_rgba(0,240,255,0.5)]"></div>
-              <div class="w-full bg-purple-500/80 rounded-t-sm bar-4"></div>
-              <div class="w-full bg-cyan-500/80 rounded-t-sm bar-2 shadow-[0_0_10px_rgba(0,240,255,0.5)]"></div>
-              <div class="w-full bg-blue-500/80 rounded-t-sm bar-1"></div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="absolute bottom-4 left-4 bg-black/80 backdrop-blur-md px-4 py-2 rounded border border-[#00F0FF]/30">
-          <p class="text-[#00F0FF] text-xs font-mono flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            Simulación Telemétrica Activa
+        <!-- Etiqueta de Telemetría Flotante -->
+        <div class="absolute bottom-6 left-6 bg-black/80 backdrop-blur-md px-5 py-2.5 rounded-xl border border-[#00F0FF]/30 shadow-lg">
+          <p class="text-[#00F0FF] text-sm font-mono font-bold flex items-center gap-3">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_#10b981]"></span>
+            Telemetría Fiduciaria Activa
           </p>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -191,7 +112,6 @@
        ZONA CLARA (EJECUTIVA & CUMPLIMIENTO) 
   =========================================== -->
   
-  <!-- TARJETAS DE CUMPLIMIENTO -->
   <section class="max-w-7xl mx-auto px-6 pb-20">
     <div class="text-center mb-16">
       <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Arquitectura Institucional Blindada</h2>
@@ -265,16 +185,6 @@
       <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
         <h4 class="text-slate-900 font-bold mb-2 flex items-center gap-2"><i data-lucide="help-circle" class="w-5 h-5 text-blue-600"></i> ¿Cómo se cuantifica el Capital Expuesto (Cog-VaR)?</h4>
         <p class="text-slate-600 text-sm leading-relaxed">El Cog-VaR (Cognitive Value at Risk) se calcula mapeando la desviación entre la precisión declarada por el directivo y su precisión real bajo incertidumbre. Esta brecha telemétrica (Overprecision Gap) se cruza estadísticamente con el volumen de decisiones de capital aprobadas por el Consejo, arrojando una métrica financiera de riesgo latente.</p>
-      </div>
-
-      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-        <h4 class="text-slate-900 font-bold mb-2 flex items-center gap-2"><i data-lucide="help-circle" class="w-5 h-5 text-blue-600"></i> ¿Cuánto tiempo toma desplegar la auditoría inicial?</h4>
-        <p class="text-slate-600 text-sm leading-relaxed">El despliegue tecnológico (Tenant Allocation) toma menos de 24 horas para las firmas Partner. La evaluación de los miembros del Consejo se realiza de forma asíncrona en 15 a 20 minutos por directivo. Los Board Packs ejecutivos se generan y encriptan automáticamente al finalizar el 100% del quorum.</p>
-      </div>
-
-      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-        <h4 class="text-slate-900 font-bold mb-2 flex items-center gap-2"><i data-lucide="help-circle" class="w-5 h-5 text-blue-600"></i> ¿Quién mantiene la soberanía de la telemetría generada?</h4>
-        <p class="text-slate-600 text-sm leading-relaxed">El cliente final y la Firma Consultora (Partner). CTI GlobalSkills funge exclusivamente como proveedor de infraestructura DeepTech. Los datos se encriptan bajo estrictos lineamientos GDPR, garantizando la disociación total de la identidad de los consejeros evaluados.</p>
       </div>
     </div>
   </section>
