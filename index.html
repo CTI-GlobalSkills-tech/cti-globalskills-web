@@ -13,7 +13,6 @@
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
     .font-mono-code { font-family: 'JetBrains Mono', monospace; }
     
-    /* Animación del Ticker */
     @keyframes ticker {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
@@ -24,7 +23,7 @@
       animation: ticker 25s linear infinite;
     }
 
-    /* Estilo personalizado del Slider Financiero */
+    /* Slider Estilizado */
     input[type=range] {
       -webkit-appearance: none;
       appearance: none;
@@ -57,6 +56,24 @@
       box-shadow: 0 0 15px #00F0FF;
       border: 3px solid #060709;
     }
+
+    /* Transición suave para acordeón */
+    .faq-answer {
+      transition: max-height 0.35s ease-in-out, opacity 0.3s ease-in-out;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+    }
+    .faq-answer.open {
+      max-height: 300px;
+      opacity: 1;
+    }
+    .faq-chevron {
+      transition: transform 0.3s ease;
+    }
+    .faq-chevron.rotated {
+      transform: rotate(180deg);
+    }
   </style>
 </head>
 <body class="bg-[#F8FAFC] text-slate-800 selection:bg-cyan-500/30 selection:text-cyan-900 relative overflow-x-hidden min-h-screen">
@@ -65,14 +82,11 @@
        ZONA OSCURA (DEEPTECH & AUTORIDAD) 
   =========================================== -->
   <div class="bg-[#060709] relative overflow-hidden pb-48 border-b border-[#00F0FF]/30">
-    
-    <!-- Luces de fondo -->
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[60rem] h-[40rem] bg-gradient-to-b from-cyan-600/15 to-blue-900/10 rounded-full blur-[120px] pointer-events-none"></div>
 
     <!-- NAVEGACIÓN -->
     <nav class="w-full max-w-7xl mx-auto px-6 h-32 flex items-center justify-between relative z-20 border-b border-white/10">
       <div class="flex items-center gap-3">
-        <!-- LOGO CORPORATIVO -->
         <img src="CTI_Global_Skills-H-color-removebg-preview.png" alt="CTI GlobalSkills Logo" class="h-20 sm:h-24 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <span class="text-2xl font-bold tracking-tight text-white hidden">CTI GlobalSkills<span class="text-[#00F0FF]">.</span></span>
       </div>
@@ -83,10 +97,10 @@
 
     <!-- HERO SECTION -->
     <section class="relative z-10 max-w-5xl mx-auto px-6 pt-16 pb-12 text-center">
-      <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-bold tracking-widest uppercase mb-8 shadow-[0_0_15px_rgba(0,240,255,0.2)]">
+      <a href="#ecosistema" class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-bold tracking-widest uppercase mb-8 shadow-[0_0_15px_rgba(0,240,255,0.2)] hover:bg-cyan-500/20 hover:scale-105 transition-all">
         <div class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></div>
-        Motor PACRF en Línea
-      </div>
+        Motor PACRF en Línea &bull; Ver Metodología
+      </a>
 
       <h1 class="text-5xl sm:text-7xl font-extrabold tracking-tight text-white leading-[1.1] mb-8">
         El sesgo directivo no es un error. <br />
@@ -95,10 +109,15 @@
         </span>
       </h1>
 
-      <p class="text-slate-400 text-xl font-medium max-w-3xl mx-auto leading-relaxed mb-12">
+      <p class="text-slate-400 text-xl font-medium max-w-3xl mx-auto leading-relaxed mb-10">
         Sustituya encuestas de percepción por telemetría determinista (Zero-AI). 
-        PACRF audita el <span class="text-white font-bold border-b border-cyan-500/50">Overprecision Gap</span> y cuantifica el riesgo.
+        PACRF audita el <a href="#simulador" class="text-[#00F0FF] font-bold border-b-2 border-cyan-400/80 hover:text-white hover:border-white transition-all">Overprecision Gap</a> y cuantifica el riesgo financiero.
       </p>
+
+      <a href="#simulador" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-[#00F0FF] to-blue-600 text-[#060709] font-black text-sm tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(0,240,255,0.4)]">
+        <i data-lucide="calculator" class="w-5 h-5"></i>
+        Calcular Riesgo Fiduciario (Cog-VaR™)
+      </a>
     </section>
   </div>
 
@@ -116,20 +135,13 @@
     </div>
   </div>
 
-  <!-- ==========================================
-       DASHBOARD VIVO CON VIDEO
-  =========================================== -->
+  <!-- DASHBOARD VIVO CON VIDEO -->
   <section class="max-w-5xl mx-auto px-6 relative z-40 -mt-32 mb-20">
-    <!-- Marco de Cristal Simétrico -->
     <div class="rounded-3xl bg-white/5 p-3 sm:p-4 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] border border-white/20 backdrop-blur-2xl w-full mx-auto">
-      
-      <!-- Contenedor del Video -->
       <div class="rounded-2xl overflow-hidden bg-[#030406] relative aspect-video flex items-center justify-center border border-slate-700/50 w-full group">
         <video autoplay loop muted playsinline class="w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-opacity duration-500">
           <source src="video-dasboard mp4.mp4" type="video/mp4">
         </video>
-
-        <!-- Etiqueta de Telemetría Flotante -->
         <div class="absolute bottom-6 left-6 bg-black/80 backdrop-blur-md px-5 py-2.5 rounded-xl border border-[#00F0FF]/30 shadow-lg">
           <p class="text-[#00F0FF] text-sm font-mono-code font-bold flex items-center gap-3">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_#10b981]"></span>
@@ -137,20 +149,16 @@
           </p>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- ==========================================
-       SIMULADOR INTERACTIVO COG-VAR™ (NUEVO)
+       SIMULADOR INTERACTIVO COG-VAR™
   =========================================== -->
-  <section class="max-w-6xl mx-auto px-6 py-12 relative z-30">
+  <section id="simulador" class="max-w-6xl mx-auto px-6 py-12 relative z-30 scroll-mt-24">
     <div class="rounded-3xl bg-[#0B0F17] border border-cyan-500/30 p-8 sm:p-12 shadow-[0_25px_60px_-15px_rgba(0,240,255,0.15)] relative overflow-hidden">
-      
-      <!-- Detalle decorativo de fondo -->
       <div class="absolute -top-24 -right-24 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
       
-      <!-- Cabecera del Simulador -->
       <div class="max-w-3xl mb-10">
         <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-[#00F0FF] text-xs font-mono-code uppercase tracking-wider mb-4">
           <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
@@ -165,11 +173,8 @@
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-        
-        <!-- Controles Interactivos (Izquierda) -->
+        <!-- Controles -->
         <div class="lg:col-span-6 space-y-8 bg-white/5 p-6 sm:p-8 rounded-2xl border border-white/10">
-          
-          <!-- Slider Presupuesto -->
           <div>
             <div class="flex justify-between items-center mb-3">
               <label class="text-sm font-semibold text-slate-300">Presupuesto Anual en Decisiones (CapEx / M&A):</label>
@@ -183,7 +188,6 @@
             </div>
           </div>
 
-          <!-- Selector de Escenario de Volatilidad -->
           <div>
             <label class="text-sm font-semibold text-slate-300 block mb-3">Contexto de Incertidumbre Operativa:</label>
             <div class="grid grid-cols-3 gap-2">
@@ -199,19 +203,16 @@
             </div>
           </div>
 
-          <!-- Metodología Nota Rápida -->
           <div class="pt-4 border-t border-white/10 flex items-start gap-3">
             <i data-lucide="info" class="w-5 h-5 text-cyan-400 shrink-0 mt-0.5"></i>
             <p class="text-xs text-slate-400 leading-relaxed">
               Basado en desviaciones estándar observadas en comités no calibrados mediante modelos fiduciarios deterministas.
             </p>
           </div>
-
         </div>
 
-        <!-- Panel de Resultados Financieros (Derecha) -->
+        <!-- Resultados -->
         <div class="lg:col-span-6 bg-gradient-to-br from-slate-900 to-black p-8 rounded-2xl border border-cyan-500/40 shadow-2xl relative">
-          
           <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
             <span class="text-xs font-mono-code text-slate-400 uppercase">MÉTRICA AUDITADA</span>
             <span class="text-xs font-mono-code px-2.5 py-1 rounded bg-red-500/20 text-red-400 border border-red-500/30 flex items-center gap-1.5">
@@ -221,8 +222,6 @@
           </div>
 
           <div class="space-y-6">
-            
-            <!-- Resultado Principal: Cog-VaR -->
             <div>
               <p class="text-xs font-mono-code text-slate-400 uppercase tracking-wider mb-1">Capital Expuesto en Juicio Directivo (Cog-VaR):</p>
               <div id="displayCogVar" class="text-4xl sm:text-5xl font-black font-mono-code text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-amber-300 to-[#00F0FF]">
@@ -230,7 +229,6 @@
               </div>
             </div>
 
-            <!-- Desglose de Fricción vs Mitigación -->
             <div class="grid grid-cols-2 gap-4 pt-4 border-t border-white/10">
               <div class="bg-white/5 p-4 rounded-xl border border-white/10">
                 <p class="text-xs text-slate-400 mb-1">Fricción / Parálisis:</p>
@@ -242,26 +240,61 @@
               </div>
             </div>
 
-            <!-- CTA Contextual -->
             <a href="mailto:partnerships@cti-globalskills.net?subject=Solicitud%20de%20Auditoria%20Cog-VaR" class="w-full mt-4 py-4 px-6 rounded-xl bg-gradient-to-r from-[#00F0FF] to-blue-600 text-[#060709] font-black text-sm text-center flex items-center justify-center gap-2 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)] transition-all">
               <i data-lucide="shield-alert" class="w-4 h-4"></i>
               Auditar Quórum para este Presupuesto
             </a>
-
           </div>
-
         </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ==========================================
+       FRANJA DE CONTADORES NUMÉRICOS ANIMADOS (NUEVO)
+  =========================================== -->
+  <section id="metricas" class="max-w-7xl mx-auto px-6 py-16">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm text-center">
+        <div class="text-4xl sm:text-5xl font-black text-slate-900 font-mono-code mb-2">
+          <span class="counter" data-target="0">0</span>%
+        </div>
+        <p class="text-xs font-bold text-cyan-600 uppercase tracking-wider mb-1">Modelos Generativos (Zero-AI)</p>
+        <p class="text-xs text-slate-500">Cero riesgo de alucinación algorítmica.</p>
+      </div>
+
+      <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm text-center">
+        <div class="text-4xl sm:text-5xl font-black text-slate-900 font-mono-code mb-2">
+          <span class="counter" data-target="100">0</span>%
+        </div>
+        <p class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-1">Exención EU AI Act</p>
+        <p class="text-xs text-slate-500">Determinismo matemático auditable.</p>
+      </div>
+
+      <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm text-center">
+        <div class="text-4xl sm:text-5xl font-black text-slate-900 font-mono-code mb-2">
+          <span class="counter" data-target="15">0</span> min
+        </div>
+        <p class="text-xs font-bold text-purple-600 uppercase tracking-wider mb-1">Por Miembro de Consejo</p>
+        <p class="text-xs text-slate-500">Evaluación asíncrona no invasiva.</p>
+      </div>
+
+      <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm text-center">
+        <div class="text-4xl sm:text-5xl font-black text-slate-900 font-mono-code mb-2">
+          AES-<span class="counter" data-target="256">0</span>
+        </div>
+        <p class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-1">Cifrado Criptográfico</p>
+        <p class="text-xs text-slate-500">Aislamiento total por entidad fiduciaria.</p>
       </div>
 
     </div>
   </section>
 
   <!-- ==========================================
-       ZONA CLARA (EJECUTIVA & CUMPLIMIENTO) 
+       ZONA CLARA (ARQUITECTURA DE CUMPLIMIENTO) 
   =========================================== -->
-  
-  <section class="max-w-7xl mx-auto px-6 py-16">
+  <section class="max-w-7xl mx-auto px-6 pb-20">
     <div class="text-center mb-16">
       <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Arquitectura Institucional Blindada</h2>
     </div>
@@ -291,7 +324,7 @@
   </section>
 
   <!-- EL ECOSISTEMA PACRF -->
-  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-slate-200">
+  <section id="ecosistema" class="max-w-7xl mx-auto px-6 py-20 border-t border-slate-200 scroll-mt-24">
     <div class="max-w-3xl mx-auto text-center mb-16">
       <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mb-4">El Flujo Operativo PACRF</h2>
       <p class="text-slate-600 text-lg">Un recorrido metodológico para blindar el criterio del Consejo.</p>
@@ -316,25 +349,87 @@
     </div>
   </section>
 
-  <!-- PREGUNTAS FRECUENTES (EXPANDIDAS) -->
+  <!-- ==========================================
+       PREGUNTAS FRECUENTES (ACORDEONES INTERACTIVOS)
+  =========================================== -->
   <section class="max-w-4xl mx-auto px-6 py-20">
-    <h2 class="text-3xl font-extrabold text-slate-900 mb-12 text-center">Consultas de Cumplimiento Institucional</h2>
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mb-2">Consultas de Cumplimiento Institucional</h2>
+      <p class="text-slate-600 text-sm">Criterios técnicos de auditoría fiduciaria y seguridad de datos.</p>
+    </div>
     
     <div class="space-y-4">
-      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-        <h4 class="text-slate-900 font-bold mb-2 flex items-center gap-2"><i data-lucide="help-circle" class="w-5 h-5 text-blue-600"></i> ¿Por qué PACRF no utiliza Inteligencia Artificial Generativa?</h4>
-        <p class="text-slate-600 text-sm leading-relaxed">Los LLMs son un pasivo legal en gobierno corporativo por su riesgo de alucinación y opacidad algorítmica. Usamos calibración matemática determinista (Zero-AI), lo que garantiza que nuestras auditorías sean 100% reproducibles, inmutables y exentas de la regulación restrictiva del EU AI Act.</p>
+      
+      <!-- FAQ 1 -->
+      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-slate-900">
+          <span class="flex items-center gap-3">
+            <i data-lucide="help-circle" class="w-5 h-5 text-cyan-600 shrink-0"></i>
+            ¿Por qué PACRF no utiliza Inteligencia Artificial Generativa?
+          </span>
+          <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-400 shrink-0"></i>
+        </button>
+        <div class="faq-answer px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+          Los Modelos de Lenguaje Grande (LLMs) representan un pasivo legal en gobierno corporativo por su inherente riesgo de alucinación y opacidad algorítmica. PACRF opera sobre calibración matemática determinista (Zero-AI), garantizando que los resultados sean 100% reproducibles, inmutables y formalmente exentos del ámbito regulatorio restrictivo del EU AI Act.
+        </div>
       </div>
 
-      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-        <h4 class="text-slate-900 font-bold mb-2 flex items-center gap-2"><i data-lucide="help-circle" class="w-5 h-5 text-blue-600"></i> ¿Nuestros clientes deben cargar información financiera confidencial?</h4>
-        <p class="text-slate-600 text-sm leading-relaxed">Absolutamente no. La plataforma opera bajo el principio de Zero-Knowledge. Evaluamos la coherencia, la latencia y la arquitectura del juicio humano del tomador de decisiones ante dilemas fiduciarios abstractos. No requerimos leer estados financieros, secretos comerciales ni actas de consejo.</p>
+      <!-- FAQ 2 -->
+      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-slate-900">
+          <span class="flex items-center gap-3">
+            <i data-lucide="help-circle" class="w-5 h-5 text-cyan-600 shrink-0"></i>
+            ¿Nuestros clientes deben cargar información financiera confidencial?
+          </span>
+          <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-400 shrink-0"></i>
+        </button>
+        <div class="faq-answer px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+          Absolutamente no. La plataforma está construida bajo arquitectura Zero-Knowledge. Evaluamos la coherencia, latencia y arquitectura de juicio del tomador de decisiones ante dilemas fiduciarios simulados, sin requerir acceso a estados financieros, secretos comerciales ni actas internas del Consejo.
+        </div>
       </div>
 
-      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-        <h4 class="text-slate-900 font-bold mb-2 flex items-center gap-2"><i data-lucide="help-circle" class="w-5 h-5 text-blue-600"></i> ¿Cómo se cuantifica el Capital Expuesto (Cog-VaR)?</h4>
-        <p class="text-slate-600 text-sm leading-relaxed">El Cog-VaR (Cognitive Value at Risk) se calcula mapeando la desviación entre la precisión declarada por el directivo y su precisión real bajo incertidumbre. Esta brecha telemétrica (Overprecision Gap) se cruza estadísticamente con el volumen de decisiones de capital aprobadas por el Consejo, arrojando una métrica financiera de riesgo latente.</p>
+      <!-- FAQ 3 -->
+      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-slate-900">
+          <span class="flex items-center gap-3">
+            <i data-lucide="help-circle" class="w-5 h-5 text-cyan-600 shrink-0"></i>
+            ¿Cómo se cuantifica el Capital Expuesto (Cog-VaR™)?
+          </span>
+          <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-400 shrink-0"></i>
+        </button>
+        <div class="faq-answer px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+          El Cognitive Value at Risk (Cog-VaR™) se calcula midiendo la discrepancia entre la certidumbre declarada por los consejeros y su precisión real bajo condiciones de incertidumbre (Overprecision Gap). Esta brecha se modela frente al volumen financiero de decisiones de capital aprobadas, cuantificando la probabilidad de error fiduciario en dólares.
+        </div>
       </div>
+
+      <!-- FAQ 4 -->
+      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-slate-900">
+          <span class="flex items-center gap-3">
+            <i data-lucide="help-circle" class="w-5 h-5 text-cyan-600 shrink-0"></i>
+            ¿Cuánto tiempo toma desplegar la auditoría inicial?
+          </span>
+          <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-400 shrink-0"></i>
+        </button>
+        <div class="faq-answer px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+          La habilitación técnica del entorno corporativo toma menos de 24 horas para las firmas Partner. La evaluación de los miembros del Consejo se completa de forma asíncrona en 15 a 20 minutos por directivo. Los reportes ejecutivos consolidados se generan de forma automática al completarse el quórum requerido.
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-slate-900">
+          <span class="flex items-center gap-3">
+            <i data-lucide="help-circle" class="w-5 h-5 text-cyan-600 shrink-0"></i>
+            ¿Quién mantiene la soberanía de la telemetría generada?
+          </span>
+          <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-400 shrink-0"></i>
+        </button>
+        <div class="faq-answer px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+          El cliente final y la Firma Consultora acreditada. CTI GlobalSkills actúa exclusivamente como proveedor de infraestructura tecnológica fiduciaria. Los datos están sujetos a cifrado con claves únicas y estricta disociación de identidades directivas conforme a lineamientos GDPR.
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -369,12 +464,13 @@
   </footer>
 
   <!-- ==========================================
-       LÓGICA JAVASCRIPT DEL SIMULADOR COG-VAR
+       LÓGICA JAVASCRIPT: SIMULADOR, CONTADORES & FAQ
   =========================================== -->
   <script>
     lucide.createIcons();
 
-    let currentRate = 0.168; // 16.8% por defecto (M&A)
+    /* --- 1. LÓGICA SIMULADOR COG-VAR --- */
+    let currentRate = 0.168;
 
     const slider = document.getElementById('budgetSlider');
     const displayBudget = document.getElementById('displayBudget');
@@ -391,12 +487,13 @@
     }
 
     function calculate() {
+      if (!slider) return;
       const budgetMillions = parseFloat(slider.value);
       const budget = budgetMillions * 1000000;
       
       const cogVar = budget * currentRate;
-      const friction = cogVar * 0.20; // 20% de fricción operativa
-      const savings = cogVar * 0.80;  // 80% de salvaguarda potencial
+      const friction = cogVar * 0.20;
+      const savings = cogVar * 0.80;
 
       displayBudget.innerText = formatUSD(budget);
       displayCogVar.innerText = formatUSD(cogVar);
@@ -404,7 +501,7 @@
       displaySavings.innerText = formatUSD(savings);
     }
 
-    slider.addEventListener('input', calculate);
+    if (slider) slider.addEventListener('input', calculate);
 
     function setScenario(type, btn) {
       document.querySelectorAll('.scenario-btn').forEach(b => {
@@ -422,8 +519,59 @@
       calculate();
     }
 
-    // Inicializar cálculo inicial
     calculate();
+
+    /* --- 2. LÓGICA DE CONTADORES ANIMADOS AL SCROLL --- */
+    const counters = document.querySelectorAll('.counter');
+    let animated = false;
+
+    function runCounters() {
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        let count = 0;
+        const speed = target > 100 ? target / 50 : Math.max(1, target / 30);
+
+        const updateCount = () => {
+          count += speed;
+          if (count < target) {
+            counter.innerText = Math.ceil(count);
+            requestAnimationFrame(updateCount);
+          } else {
+            counter.innerText = target;
+          }
+        };
+        updateCount();
+      });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !animated) {
+          animated = true;
+          runCounters();
+        }
+      });
+    }, { threshold: 0.4 });
+
+    const metricSection = document.getElementById('metricas');
+    if (metricSection) observer.observe(metricSection);
+
+    /* --- 3. LÓGICA DE ACORDEÓN FAQ --- */
+    function toggleFaq(button) {
+      const answer = button.nextElementSibling;
+      const chevron = button.querySelector('.faq-chevron');
+      const isOpen = answer.classList.contains('open');
+
+      // Cerrar otros acordeones
+      document.querySelectorAll('.faq-answer').forEach(el => el.classList.remove('open'));
+      document.querySelectorAll('.faq-chevron').forEach(el => el.classList.remove('rotated'));
+
+      // Abrir el seleccionado si estaba cerrado
+      if (!isOpen) {
+        answer.classList.add('open');
+        chevron.classList.add('rotated');
+      }
+    }
   </script>
 </body>
 </html>
