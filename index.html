@@ -1,785 +1,193 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CTI GlobalSkills - DeepTech para la Alta Dirección</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: #06030b;
-            color: #ffffff;
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Luces ambientales corporativas */
-        .glow-bg {
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(91, 33, 182, 0.12) 0%, rgba(6, 3, 11, 0) 70%);
-            top: -100px;
-            left: -100px;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .glow-bg-2 {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(131, 24, 98, 0.08) 0%, rgba(6, 3, 11, 0) 70%);
-            top: 35%;
-            right: -200px;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        /* Navbar */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 8%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            background: rgba(6, 3, 11, 0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(112, 26, 117, 0.2);
-        }
-
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: #ffffff;
-            letter-spacing: -0.5px;
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: #00ff88;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-            align-items: center;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #cbd5e1;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #c084fc;
-        }
-
-        .btn-nav {
-            background: linear-gradient(135deg, #7e22ce 0%, #be185d 100%);
-            color: white !important;
-            padding: 8px 18px;
-            border-radius: 50px;
-            box-shadow: 0 0 15px rgba(126, 34, 206, 0.3);
-            transition: transform 0.3s ease !important;
-        }
-
-        .btn-nav:hover {
-            transform: scale(1.05);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 140px 8% 40px 8%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-tag {
-            display: inline-block;
-            padding: 6px 16px;
-            background: rgba(112, 26, 117, 0.15);
-            border: 1px solid rgba(147, 51, 234, 0.3);
-            color: #d8b4fe;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.4rem, 4.8vw, 4.2rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            max-width: 950px;
-            letter-spacing: -1.5px;
-        }
-
-        .hero h1 span.gradient-text-1 {
-            background: linear-gradient(135deg, #d8b4fe 0%, #a855f7 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero h1 span.gradient-text-2 {
-            background: linear-gradient(135deg, #f472b6 0%, #be185d 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: clamp(0.95rem, 1.8vw, 1.1rem);
-            color: #94a3b8;
-            max-width: 750px;
-            line-height: 1.5;
-            margin-bottom: 30px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 50px;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #7e22ce 0%, #be185d 100%);
-            color: white;
-            padding: 13px 30px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            text-decoration: none;
-            box-shadow: 0 8px 25px rgba(126, 34, 206, 0.35);
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(190, 24, 93, 0.5);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.02);
-            color: white;
-            padding: 13px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            text-decoration: none;
-            border: 1px solid rgba(147, 51, 234, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(112, 26, 117, 0.15);
-            border-color: #c084fc;
-        }
-
-        /* -------------------------------------------
-           DASHBOARD CODIFICADO (EL EFECTO PALANTIR)
-        ------------------------------------------- */
-        .dashboard-ui {
-            width: 100%;
-            max-width: 950px;
-            margin: 0 auto;
-            background: rgba(10, 4, 20, 0.8);
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid rgba(147, 51, 234, 0.4);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(147, 51, 234, 0.2);
-            position: relative;
-            z-index: 5;
-            text-align: left;
-            backdrop-filter: blur(10px);
-        }
-
-        .dash-header {
-            background: rgba(255, 255, 255, 0.03);
-            padding: 12px 20px;
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid rgba(147, 51, 234, 0.2);
-            gap: 8px;
-        }
-
-        .dash-dots {
-            display: flex;
-            gap: 8px;
-        }
-
-        .dot { width: 12px; height: 12px; border-radius: 50%; }
-        .dot.r { background: #ff5f56; }
-        .dot.y { background: #ffbd2e; }
-        .dot.g { background: #27c93f; }
-
-        .dash-title {
-            margin-left: 15px;
-            font-size: 0.75rem;
-            color: #94a3b8;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-
-        .dash-body {
-            padding: 30px;
-            display: grid;
-            grid-template-columns: 1fr 1.5fr 1fr;
-            gap: 20px;
-        }
-
-        @media(max-width: 768px) {
-            .dash-body { grid-template-columns: 1fr; }
-        }
-
-        .dash-panel {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            padding: 20px;
-        }
-
-        .panel-title {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            color: #d8b4fe;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-            font-weight: 800;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* Panel Izquierdo: Métricas */
-        .metric-big {
-            font-size: 3rem;
-            font-weight: 800;
-            color: #00ff88;
-            line-height: 1;
-            margin-bottom: 5px;
-        }
-        .metric-sub {
-            font-size: 0.8rem;
-            color: #94a3b8;
-            margin-bottom: 25px;
-        }
-        .bar-wrap { margin-bottom: 15px; }
-        .bar-label { display: flex; justify-content: space-between; font-size: 0.75rem; color: #cbd5e1; margin-bottom: 8px; }
-        .bar-bg { width: 100%; height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 3px; overflow: hidden;}
-        .bar-fill { height: 100%; border-radius: 3px; }
-
-        /* Panel Central: Mapa de Calor */
-        .heat-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: repeat(4, 1fr);
-            gap: 6px;
-            height: 150px;
-        }
-        .heat-box { border-radius: 4px; background: rgba(147, 51, 234, 0.1); transition: all 0.3s ease; }
-        .heat-box:hover { transform: scale(1.1); }
-        .heat-box.c-high { background: rgba(244, 114, 182, 0.6); }
-        .heat-box.c-med { background: rgba(168, 85, 247, 0.5); }
-        .heat-box.c-low { background: rgba(0, 255, 136, 0.3); }
-
-        /* Panel Derecho: Alertas */
-        .alert-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .alert-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-        .alert-icon { width: 8px; height: 8px; border-radius: 50%; margin-top: 5px; flex-shrink: 0;}
-        .alert-icon.critical { background: #f472b6; box-shadow: 0 0 10px #f472b6; }
-        .alert-icon.warning { background: #ffbd2e; }
-        .alert-icon.stable { background: #00ff88; }
-        .alert-text p { font-size: 0.8rem; color: #f8fafc; margin-bottom: 3px; font-weight: 600;}
-        .alert-text span { font-size: 0.7rem; color: #64748b; }
-
-        /* Sección de Dolor / Estadísticas */
-        .pain-section {
-            padding: 90px 8% 70px 8%;
-            position: relative;
-            z-index: 2;
-            background: linear-gradient(180deg, rgba(6,3,11,0) 0%, rgba(15, 8, 25, 0.5) 100%);
-            border-top: 1px solid rgba(112, 26, 117, 0.2);
-        }
-
-        .pain-header {
-            text-align: center;
-            max-width: 850px;
-            margin: 0 auto 50px auto;
-        }
-
-        .pain-header h2 {
-            font-size: clamp(1.8rem, 3.2vw, 2.8rem);
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 15px;
-            letter-spacing: -1px;
-        }
-
-        .pain-header h2 span {
-            color: #00ff88;
-        }
-
-        .pain-header p {
-            color: #94a3b8;
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .card {
-            background: rgba(18, 9, 30, 0.5);
-            border: 1px solid rgba(112, 26, 117, 0.25);
-            border-radius: 16px;
-            padding: 35px 28px;
-            transition: all 0.3s ease;
-            text-align: left;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #a855f7;
-            box-shadow: 0 15px 30px rgba(112, 26, 117, 0.15);
-        }
-
-        .card-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(216, 180, 254, 0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: #d8b4fe;
-            margin-bottom: 20px;
-            border: 1px solid rgba(216, 180, 254, 0.2);
-        }
-
-        .card:nth-child(1) .card-icon { color: #f472b6; background: rgba(244, 114, 182, 0.1); border-color: rgba(244, 114, 182, 0.2); }
-        .card:nth-child(2) .card-icon { color: #00ff88; background: rgba(0, 255, 136, 0.1); border-color: rgba(0, 255, 136, 0.2); }
-        .card:nth-child(3) .card-icon { color: #a855f7; background: rgba(168, 85, 247, 0.1); border-color: rgba(168, 85, 247, 0.2); }
-
-        .card-number {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 10px;
-            letter-spacing: -1px;
-        }
-
-        .card h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: #d8b4fe;
-        }
-
-        .card p {
-            color: #94a3b8;
-            font-size: 0.92rem;
-            line-height: 1.5;
-        }
-
-        /* Sección Ecosistema CTI */
-        .ecosystem-section {
-            padding: 70px 8%;
-            max-width: 1150px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .ecosystem-header {
-            text-align: center;
-            max-width: 850px;
-            margin: 0 auto 45px auto;
-        }
-
-        .ecosystem-header h2 {
-            font-size: clamp(2rem, 3.2vw, 2.8rem);
-            font-weight: 800;
-            margin-bottom: 15px;
-        }
-
-        .ecosystem-header h2 span {
-            background: linear-gradient(135deg, #d8b4fe 0%, #be185d 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .ecosystem-header p {
-            color: #94a3b8;
-            font-size: 1rem;
-        }
-
-        .ecosystem-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        @media(max-width: 768px) {
-            .ecosystem-grid { grid-template-columns: 1fr; }
-        }
-
-        .eco-card {
-            background: linear-gradient(145deg, rgba(18, 9, 30, 0.7) 0%, rgba(10, 4, 18, 0.85) 100%);
-            border: 1px solid rgba(112, 26, 117, 0.3);
-            border-radius: 16px;
-            padding: 30px 28px;
-            position: relative;
-            transition: transform 0.3s ease;
-            text-align: left;
-        }
-
-        .eco-card:hover {
-            transform: translateY(-4px);
-            border-color: #d8b4fe;
-        }
-
-        .eco-step {
-            font-size: 0.8rem;
-            font-weight: 800;
-            color: #00ff88;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-        }
-
-        .eco-card h3 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: #ffffff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .badge-2027 {
-            font-size: 0.7rem;
-            background: rgba(190, 24, 93, 0.2);
-            border: 1px solid rgba(190, 24, 93, 0.4);
-            color: #f472b6;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .eco-card p {
-            color: #94a3b8;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        /* Footer */
-        footer {
-            background: #040207;
-            padding: 60px 8% 30px 8%;
-            border-top: 1px solid rgba(112, 26, 117, 0.2);
-            position: relative;
-            z-index: 2;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 35px;
-            max-width: 1200px;
-            margin: 0 auto 40px auto;
-            text-align: left;
-        }
-
-        .footer-col h4 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #ffffff;
-        }
-
-        .footer-col p, .footer-col a {
-            color: #94a3b8;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 8px;
-            transition: color 0.3s;
-        }
-
-        .footer-col a:hover { color: #d8b4fe; }
-
-        .social-icons {
-            display: flex;
-            gap: 12px;
-            margin-top: 15px;
-        }
-
-        .social-icons a {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            width: 38px;
-            height: 38px;
-            background: rgba(112, 26, 117, 0.15);
-            border: 1px solid rgba(147, 51, 234, 0.3);
-            border-radius: 50%;
-            color: #d8b4fe;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            margin-bottom: 0;
-        }
-
-        .social-icons a:hover {
-            background: #7e22ce;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 25px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: #64748b;
-            font-size: 0.85rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        @media(max-width: 768px) {
-            nav ul { display: none; }
-            .hero { padding-top: 120px; }
-            .dashboard-ui { margin-top: 20px; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CTI GlobalSkills | Auditoría Fiduciaria & Gobernanza Cognitiva</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+  </style>
 </head>
-<body>
+<body class="bg-[#060709] text-slate-100 selection:bg-cyan-500/20 selection:text-cyan-400 relative overflow-x-hidden min-h-screen">
 
-    <div class="glow-bg"></div>
-    <div class="glow-bg-2"></div>
+  <!-- Luces Ambientales Difusas -->
+  <div class="absolute top-[-10rem] left-1/2 -translate-x-1/2 w-[45rem] h-[30rem] bg-gradient-to-tr from-cyan-600/15 via-indigo-600/15 to-transparent rounded-full blur-[140px] pointer-events-none"></div>
+  <div class="absolute top-[35rem] -left-[10rem] w-[35rem] h-[35rem] bg-violet-600/10 rounded-full blur-[160px] pointer-events-none"></div>
 
-    <header>
-        <a href="#" class="logo">CTI <span>GlobalSkills</span></a>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#riesgo">El Riesgo</a></li>
-                <li><a href="#ecosistema">Ecosistema CTI</a></li>
-                <li><a href="#contacto" class="btn-nav">Acceso Directivos</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="inicio" class="hero">
-        <div class="hero-tag">DeepTech para la Toma de Decisiones</div>
-        <h1>Blindamos el <span class="gradient-text-1">Juicio Directivo</span> frente a la <span class="gradient-text-2">Incertidumbre.</span></h1>
-        <p>Transformamos el pensamiento crítico de tu organización en una huella cognitiva verificable. Medimos, entrenamos y elevamos el sistema inmunitario de tus líderes con algoritmos deterministas y cero subjetividad.</p>
-        
-        <div class="hero-buttons">
-            <a href="#contacto" class="btn-primary">Solicitar Auditoría Cognitiva (Radar) <i class="fa-solid fa-arrow-right"></i></a>
-            <a href="#ecosistema" class="btn-secondary">Explorar el Ecosistema</a>
+  <!-- NAVEGACIÓN -->
+  <nav class="w-full max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative z-20 border-b border-white/[0.06]">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-[#00F0FF] to-[#7000FF] p-[1px] flex items-center justify-center shadow-lg shadow-cyan-500/10">
+        <div class="w-full h-full bg-[#08090C] rounded-[11px] flex items-center justify-center">
+          <span class="text-white font-black text-sm tracking-tighter">GS</span>
         </div>
+      </div>
+      <span class="text-base font-semibold tracking-tight text-white/90">
+        CTI GlobalSkills<span class="text-[#00F0FF]">.</span>
+      </span>
+    </div>
 
-        <!-- DASHBOARD C-LEVEL CODIFICADO -->
-        <div class="dashboard-ui">
-            <div class="dash-header">
-                <div class="dash-dots">
-                    <div class="dot r"></div>
-                    <div class="dot y"></div>
-                    <div class="dot g"></div>
-                </div>
-                <div class="dash-title">CTI War Room · Monitoreo Ejecutivo</div>
-            </div>
-            <div class="dash-body">
-                <!-- Panel 1: Métrica Principal -->
-                <div class="dash-panel">
-                    <div class="panel-title"><i class="fa-solid fa-brain"></i> Agilidad Cognitiva</div>
-                    <div class="metric-big">94%</div>
-                    <div class="metric-sub">Nivel Óptimo del Consejo</div>
-                    
-                    <div class="bar-wrap">
-                        <div class="bar-label"><span>Elasticidad</span> <span>92%</span></div>
-                        <div class="bar-bg"><div class="bar-fill" style="width: 92%; background: #00ff88;"></div></div>
-                    </div>
-                    <div class="bar-wrap">
-                        <div class="bar-label"><span>Precisión</span> <span>78%</span></div>
-                        <div class="bar-bg"><div class="bar-fill" style="width: 78%; background: #ffbd2e;"></div></div>
-                    </div>
-                </div>
+    <div class="flex items-center gap-4">
+      <span class="hidden md:inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-white/[0.03] border border-white/[0.08] text-slate-400">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        Infraestructura Zero-AI Certificada
+      </span>
+      <a href="mailto:partnerships@cti-globalskills.net" class="text-xs font-semibold px-4 py-2.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.1] text-white transition duration-200">
+        Acceso Institucional
+      </a>
+    </div>
+  </nav>
 
-                <!-- Panel 2: Mapa de calor simulado -->
-                <div class="dash-panel">
-                    <div class="panel-title"><i class="fa-solid fa-chart-pie"></i> Mapa de Sesgos (Tiempo Real)</div>
-                    <div class="heat-grid">
-                        <div class="heat-box c-low"></div><div class="heat-box c-low"></div><div class="heat-box c-med"></div><div class="heat-box c-low"></div><div class="heat-box c-low"></div><div class="heat-box c-low"></div>
-                        <div class="heat-box c-low"></div><div class="heat-box c-med"></div><div class="heat-box c-high"></div><div class="heat-box c-med"></div><div class="heat-box c-low"></div><div class="heat-box c-low"></div>
-                        <div class="heat-box c-low"></div><div class="heat-box c-low"></div><div class="heat-box c-med"></div><div class="heat-box c-low"></div><div class="heat-box c-low"></div><div class="heat-box c-low"></div>
-                        <div class="heat-box c-low"></div><div class="heat-box c-low"></div><div class="heat-box c-low"></div><div class="heat-box c-low"></div><div class="heat-box c-low"></div><div class="heat-box c-low"></div>
-                    </div>
-                </div>
+  <!-- SECCIÓN 1: HERO SECTION -->
+  <section class="relative z-10 max-w-5xl mx-auto px-6 pt-20 pb-16 text-center">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/[0.07] border border-cyan-500/20 text-cyan-400 text-xs font-semibold tracking-wide uppercase mb-8 shadow-sm">
+      <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+      Estándar Global en Auditoría Telemétrica de Gobierno Corporativo
+    </div>
 
-                <!-- Panel 3: Alertas -->
-                <div class="dash-panel">
-                    <div class="panel-title"><i class="fa-solid fa-bell"></i> Riesgos Detectados</div>
-                    
-                    <div class="alert-item">
-                        <div class="alert-icon critical"></div>
-                        <div class="alert-text">
-                            <p>Sesgo de Confirmación</p>
-                            <span>Fuga proyectada: 12% ROI</span>
-                        </div>
-                    </div>
-                    <div class="alert-item">
-                        <div class="alert-icon warning"></div>
-                        <div class="alert-text">
-                            <p>Parálisis Analítica</p>
-                            <span>Proyecto Alpha demorado</span>
-                        </div>
-                    </div>
-                    <div class="alert-item">
-                        <div class="alert-icon stable"></div>
-                        <div class="alert-text">
-                            <p>Visión Sistémica</p>
-                            <span>Decisión alineada (Nivel 4)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-white leading-[1.15] mb-6">
+      El sesgo directivo no es un error de gestión. <br class="hidden sm:inline" />
+      <span class="bg-gradient-to-r from-[#00F0FF] via-indigo-200 to-[#A78BFA] bg-clip-text text-transparent">
+        Es un pasivo fiduciario no auditado.
+      </span>
+    </h1>
+
+    <p class="text-slate-400 text-lg sm:text-xl font-normal max-w-3xl mx-auto leading-relaxed mb-10">
+      Sustituya cuestionarios subjetivos por telemetría cuantitativa inmutable (Zero-AI). 
+      PACRF audita el <span class="text-slate-200 font-medium">Overprecision Gap</span> y cuantifica el Capital Expuesto (<span class="text-slate-200 font-medium">Cog-VaR</span>) en la toma de decisiones críticas de Consejos y Comités Ejecutivos.
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
+      <a href="#contacto-acreditado" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-[#00F0FF] to-[#3B82F6] text-[#060709] font-bold text-sm tracking-tight flex items-center justify-center gap-2 hover:opacity-95 hover:shadow-lg hover:shadow-cyan-500/20 transition duration-200">
+        Desplegar a través de una Firma Consultora Acreditada
+        <i data-lucide="chevron-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+
+    <p class="text-xs text-slate-500 font-medium">
+      Acceso restringido a firmas de Board Advisory, GRC y despachos corporativos autorizados.
+    </p>
+  </section>
+
+  <!-- SECCIÓN 2: FRANJA DE SEGURIDAD & CUMPLIMIENTO -->
+  <section class="relative z-10 max-w-7xl mx-auto px-6 py-12 border-y border-white/[0.05] bg-white/[0.01]">
+    <div class="text-center mb-8">
+      <span class="text-[11px] font-bold tracking-widest text-slate-400 uppercase">
+        Arquitectura Institucional de Alta Seguridad & Blindaje Fiduciario
+      </span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <!-- Tarjeta 1 -->
+      <div class="p-5 rounded-xl bg-[#0C0E14] border border-white/[0.06] hover:border-cyan-500/30 transition duration-300">
+        <div class="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center mb-3 text-[#00F0FF]">
+          <i data-lucide="cpu" class="w-4 h-4"></i>
         </div>
-    </section>
+        <h4 class="text-sm font-semibold text-white mb-1">Exención EU AI Act</h4>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Motor determinista puro libre de modelos generativos (LLMs). Cero cajas negras; 100% reproducible ante tribunales.
+        </p>
+      </div>
 
-    <section id="riesgo" class="pain-section">
-        <div class="pain-header">
-            <h2>Una mala decisión directiva destruye más <span>rentabilidad de la empresa</span> en minutos de lo que un ERP optimiza en años.</h2>
-            <p>La saturación informativa y la presión corporativa congelan proyectos críticos y provocan fugas masivas de capital por falta de agilidad mental en la alta dirección.</p>
+      <!-- Tarjeta 2 -->
+      <div class="p-5 rounded-xl bg-[#0C0E14] border border-white/[0.06] hover:border-cyan-500/30 transition duration-300">
+        <div class="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center mb-3 text-indigo-400">
+          <i data-lucide="lock" class="w-4 h-4"></i>
         </div>
+        <h4 class="text-sm font-semibold text-white mb-1">GDPR & LFPDPPP</h4>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Tratamiento estricto de huella telemétrica y disociación de identidad. Anonimización fiduciaria de respuestas.
+        </p>
+      </div>
 
-        <div class="cards-grid">
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-arrow-trend-down"></i></div>
-                <div class="card-number">20% - 30%</div>
-                <h3>Fuga de Ganancias</h3>
-                <p>McKinsey revela que las malas decisiones corporativas cuestan entre un quinto y un tercio de las ganancias anuales en grandes empresas.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
-                <div class="card-number">50%</div>
-                <h3>Fracaso en Transformación</h3>
-                <p>Gartner señala que la mitad de los proyectos estratégicos mueren por fallas en la toma de decisiones y resistencia al cambio.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-regular fa-snowflake"></i></div>
-                <div class="card-number">30% - 40%</div>
-                <h3>Proyectos Congelados</h3>
-                <p>Deloitte identifica que la falta de acción oportuna (parálisis operativa) afecta severamente casi la mitad de los proyectos críticos empresariales.</p>
-            </div>
+      <!-- Tarjeta 3 -->
+      <div class="p-5 rounded-xl bg-[#0C0E14] border border-white/[0.06] hover:border-cyan-500/30 transition duration-300">
+        <div class="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center mb-3 text-purple-400">
+          <i data-lucide="shield-check" class="w-4 h-4"></i>
         </div>
-    </section>
+        <h4 class="text-sm font-semibold text-white mb-1">Alineación ISO 27001</h4>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Cifrado AES-256 en reposo y TLS 1.3 en tránsito. Aislamiento criptográfico estricto por entidad auditada.
+        </p>
+      </div>
 
-    <section id="ecosistema" class="ecosystem-section">
-        <div class="ecosystem-header">
-            <h2>El <span>Ecosistema CTI</span> de Alta Precisión</h2>
-            <p>Un recorrido metodológico estructurado en 4 fases para blindar el criterio del Consejo y asegurar la rentabilidad corporativa.</p>
+      <!-- Tarjeta 4 -->
+      <div class="p-5 rounded-xl bg-[#0C0E14] border border-white/[0.06] hover:border-cyan-500/30 transition duration-300">
+        <div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-3 text-emerald-400">
+          <i data-lucide="scale" class="w-4 h-4"></i>
         </div>
+        <h4 class="text-sm font-semibold text-white mb-1">ISO 31000 & COSO ERM</h4>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Auditoría cuantitativa del factor humano y sesgo decisional exigido por estándares globales de riesgo.
+        </p>
+      </div>
+    </div>
+  </section>
 
-        <div class="ecosystem-grid">
-            <div class="eco-card">
-                <div class="eco-step">Paso 01</div>
-                <h3>Diagnóstico Inicial</h3>
-                <p>Evaluación ejecutiva profunda mediante tomografía cognitiva para detectar puntos ciegos, sesgos de confirmación y sobreconfianza en la alta dirección.</p>
-            </div>
-            <div class="eco-card">
-                <div class="eco-step">Paso 02</div>
-                <h3>Sprint de Elasticidad Cognitiva</h3>
-                <p>Entrenamiento táctico intensivo para romper la parálisis analítica y elevar la agilidad mental en la resolución de situaciones de alta incertidumbre.</p>
-            </div>
-            <div class="eco-card">
-                <div class="eco-step">Paso 03</div>
-                <h3>Licencia Anual de Gimnasio Cerebral</h3>
-                <p>Acceso continuo a micro-retos y simulaciones ejecutivas integradas en el flujo de trabajo diario (Slack/Teams) para mantener el juicio directivo en forma óptima.</p>
-            </div>
-            <div class="eco-card">
-                <div class="eco-step">Paso 04</div>
-                <h3>Black Label (War Room Algorítmico) <span class="badge-2027">Desarrollo a lanzar en 2027</span></h3>
-                <p>Membresía premium de alto valor orientada al emparejamiento algorítmico global para la resolución de crisis corporativas de máxima complejidad.</p>
-            </div>
-        </div>
-    </section>
+  <!-- SECCIÓN 3: TARJETAS MÉTRICAS -->
+  <section class="relative z-10 max-w-7xl mx-auto px-6 py-20">
+    <div class="max-w-2xl mx-auto text-center mb-14">
+      <span class="text-xs font-semibold uppercase tracking-widest text-[#00F0FF] mb-2 block">
+        El Costo Financiero del Sesgo No Auditado
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+        La sobreconfianza directiva destruye valor antes de que el control interno pueda detectarla.
+      </h2>
+    </div>
 
-    <footer id="contacto">
-        <div class="footer-content">
-            <div class="footer-col">
-                <h4>CTI GlobalSkills</h4>
-                <p>Infraestructura DeepTech para la evaluación y mitigación de riesgos cognitivos corporativos.</p>
-                <p><i class="fa-solid fa-location-dot" style="color: #d8b4fe; margin-right: 6px;"></i> Calle Arquímedes 130, Col. Polanco V Sección, CDMX, 11560</p>
-            </div>
-            <div class="footer-col">
-                <h4>Contacto Directivo</h4>
-                <p><i class="fa-solid fa-phone" style="color: #d8b4fe; margin-right: 6px;"></i> WA: +52 2223244758</p>
-                <p><i class="fa-solid fa-envelope" style="color: #d8b4fe; margin-right: 6px;"></i> contacto@cti-globalskills.net</p>
-            </div>
-            <div class="footer-col">
-                <h4>Redes Institucionales</h4>
-                <p>Síguenos en nuestras plataformas oficiales:</p>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/ctiglobalskills" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/cti_globalskills" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/company/cti-globalskills" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://wa.me/522223244758" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                </div>
-            </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="p-8 rounded-2xl bg-gradient-to-b from-white/[0.04] to-[#0A0C10] border border-white/[0.08] hover:border-red-500/30 transition duration-300">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-4xl sm:text-5xl font-extrabold tracking-tight text-red-400">20% – 30%</span>
+          <i data-lucide="trending-down" class="w-6 h-6 text-red-400/60"></i>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 CTI GlobalSkills S.A.P.I. de C.V. Todos los derechos reservados. Inteligencia y Soberanía Cognitiva.</p>
-        </div>
-    </footer>
+        <h3 class="text-lg font-semibold text-white mb-2">Fuga de Rentabilidad Anual</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Capital corporativo erosionado por decisiones viciadas por sobreprecisión y anclaje en comités ejecutivos.
+        </p>
+      </div>
 
+      <div class="p-8 rounded-2xl bg-gradient-to-b from-white/[0.04] to-[#0A0C10] border border-white/[0.08] hover:border-amber-500/30 transition duration-300">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-4xl sm:text-5xl font-extrabold tracking-tight text-amber-400">70% – 90%</span>
+          <i data-lucide="alert-triangle" class="w-6 h-6 text-amber-400/60"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-white mb-2">Fracaso en M&A e Integraciones</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Transacciones que destruyen valor por divergencia fiduciaria y complacencia cognitiva no diagnosticada.
+        </p>
+      </div>
+
+      <div class="p-8 rounded-2xl bg-gradient-to-b from-white/[0.04] to-[#0A0C10] border border-white/[0.08] hover:border-indigo-500/30 transition duration-300">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-4xl sm:text-5xl font-extrabold tracking-tight text-indigo-400">30% – 40%</span>
+          <i data-lucide="pause-circle" class="w-6 h-6 text-indigo-400/60"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-white mb-2">Parálisis en Decisiones Críticas</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Retraso y congelamiento de proyectos estratégicos debido a la falta de calibración probabilística en el Consejo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contacto-acreditado" class="max-w-7xl mx-auto px-6 py-12 border-t border-white/[0.06] text-center">
+    <p class="text-xs text-slate-500 mb-2">
+      © 2026 CTI GlobalSkills S.A.P.I. de C.V. Todos los derechos reservados. Infraestructura DeepTech para Órganos de Gobierno.
+    </p>
+    <p class="text-xs text-slate-600">
+      Polanco V Sección, CDMX · Consultas de Acreditación: <a href="mailto:partnerships@cti-globalskills.net" class="text-cyan-400 hover:underline">partnerships@cti-globalskills.net</a>
+    </p>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>
