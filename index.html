@@ -57,7 +57,7 @@
       border: 3px solid #060709;
     }
 
-    /* Transición suave para acordeón */
+    /* Acordeón FAQ */
     .faq-answer {
       transition: max-height 0.35s ease-in-out, opacity 0.3s ease-in-out;
       max-height: 0;
@@ -73,6 +73,19 @@
     }
     .faq-chevron.rotated {
       transform: rotate(180deg);
+    }
+
+    /* Pestañas del Board Pack */
+    .board-tab-content {
+      display: none;
+    }
+    .board-tab-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -90,9 +103,14 @@
         <img src="CTI_Global_Skills-H-color-removebg-preview.png" alt="CTI GlobalSkills Logo" class="h-20 sm:h-24 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <span class="text-2xl font-bold tracking-tight text-white hidden">CTI GlobalSkills<span class="text-[#00F0FF]">.</span></span>
       </div>
-      <a href="mailto:partnerships@cti-globalskills.net" class="text-sm font-semibold px-6 py-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/20 text-white transition-all duration-300 backdrop-blur-md shadow-lg hidden sm:block">
-        Portal Directivo
-      </a>
+      <div class="flex items-center gap-4">
+        <a href="#boardpack" class="text-xs font-mono-code text-slate-300 hover:text-[#00F0FF] transition-colors hidden md:block">
+          // BOARD PACK DEMO
+        </a>
+        <a href="mailto:partnerships@cti-globalskills.net" class="text-sm font-semibold px-6 py-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/20 text-white transition-all duration-300 backdrop-blur-md shadow-lg hidden sm:block">
+          Portal Directivo
+        </a>
+      </div>
     </nav>
 
     <!-- HERO SECTION -->
@@ -114,10 +132,16 @@
         PACRF audita el <a href="#simulador" class="text-[#00F0FF] font-bold border-b-2 border-cyan-400/80 hover:text-white hover:border-white transition-all">Overprecision Gap</a> y cuantifica el riesgo financiero.
       </p>
 
-      <a href="#simulador" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-[#00F0FF] to-blue-600 text-[#060709] font-black text-sm tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(0,240,255,0.4)]">
-        <i data-lucide="calculator" class="w-5 h-5"></i>
-        Calcular Riesgo Fiduciario (Cog-VaR™)
-      </a>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#simulador" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-[#00F0FF] to-blue-600 text-[#060709] font-black text-sm tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(0,240,255,0.4)]">
+          <i data-lucide="calculator" class="w-5 h-5"></i>
+          Calcular Riesgo Fiduciario (Cog-VaR™)
+        </a>
+        <a href="#boardpack" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/20 text-white font-bold text-sm tracking-wide transition-all duration-300">
+          <i data-lucide="file-check" class="w-4 h-4 text-[#00F0FF]"></i>
+          Explorar Board Pack
+        </a>
+      </div>
     </section>
   </div>
 
@@ -250,12 +274,9 @@
     </div>
   </section>
 
-  <!-- ==========================================
-       FRANJA DE CONTADORES NUMÉRICOS ANIMADOS (NUEVO)
-  =========================================== -->
+  <!-- FRANJA DE CONTADORES NUMÉRICOS ANIMADOS -->
   <section id="metricas" class="max-w-7xl mx-auto px-6 py-16">
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-      
       <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm text-center">
         <div class="text-4xl sm:text-5xl font-black text-slate-900 font-mono-code mb-2">
           <span class="counter" data-target="0">0</span>%
@@ -287,13 +308,10 @@
         <p class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-1">Cifrado Criptográfico</p>
         <p class="text-xs text-slate-500">Aislamiento total por entidad fiduciaria.</p>
       </div>
-
     </div>
   </section>
 
-  <!-- ==========================================
-       ZONA CLARA (ARQUITECTURA DE CUMPLIMIENTO) 
-  =========================================== -->
+  <!-- ARQUITECTURA DE CUMPLIMIENTO -->
   <section class="max-w-7xl mx-auto px-6 pb-20">
     <div class="text-center mb-16">
       <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Arquitectura Institucional Blindada</h2>
@@ -350,6 +368,137 @@
   </section>
 
   <!-- ==========================================
+       VISOR INTERACTIVO DE BOARD PACK (OPCIÓN B)
+  =========================================== -->
+  <section id="boardpack" class="max-w-6xl mx-auto px-6 py-20 scroll-mt-24">
+    <div class="rounded-3xl bg-[#07090E] border border-slate-800 p-6 sm:p-12 shadow-2xl relative overflow-hidden">
+      
+      <!-- Encabezado de Documento Confidencial -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-6 mb-8">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-[#00F0FF] text-xs font-mono-code mb-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-ping"></span>
+            ENTREGABLE AUDITABLE // BOARD PACK PACRF
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-white">Inspección de Dictamen Fiduciario</h3>
+        </div>
+        <div class="text-left sm:text-right">
+          <span class="text-xs font-mono-code text-slate-400 block">HASH CRIPTOGRÁFICO:</span>
+          <span class="text-xs font-mono-code text-[#00F0FF]">SHA-256: 7e8b91a0...f43d</span>
+        </div>
+      </div>
+
+      <!-- Navegación de Pestañas del Board Pack -->
+      <div class="flex flex-wrap gap-2 mb-8 border-b border-white/10 pb-4">
+        <button onclick="switchBoardTab('tab1', this)" class="board-tab-btn active px-4 py-2.5 rounded-xl text-xs font-bold font-mono-code bg-cyan-500/20 text-[#00F0FF] border border-[#00F0FF] transition-all">
+          01. Índice de Neurogobernanza (ING)
+        </button>
+        <button onclick="switchBoardTab('tab2', this)" class="board-tab-btn px-4 py-2.5 rounded-xl text-xs font-bold font-mono-code bg-white/5 text-slate-400 border border-white/10 hover:border-slate-600 transition-all">
+          02. Matriz de Dispersión de Quórum
+        </button>
+        <button onclick="switchBoardTab('tab3', this)" class="board-tab-btn px-4 py-2.5 rounded-xl text-xs font-bold font-mono-code bg-white/5 text-slate-400 border border-white/10 hover:border-slate-600 transition-all">
+          03. Dictamen & Protocolo Torniquete
+        </button>
+      </div>
+
+      <!-- PESTAÑA 1: ING -->
+      <div id="tab1" class="board-tab-content active">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div class="lg:col-span-1 bg-white/5 p-6 rounded-2xl border border-white/10 flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-mono-code text-slate-400 uppercase">SCORE CONSOLIDADO</span>
+              <div class="text-5xl font-black font-mono-code text-[#00F0FF] my-4">68.4<span class="text-lg text-slate-500 font-normal">/100</span></div>
+              <p class="text-xs text-amber-400 font-bold flex items-center gap-1.5">
+                <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+                Zona de Sobreconfianza Fiduciaria
+              </p>
+            </div>
+            <div class="text-xs text-slate-400 mt-6 pt-4 border-t border-white/10">
+              Desviación estándar de juicio detectada en el 43% de los miembros evaluados ante escenarios de estrés financiero.
+            </div>
+          </div>
+
+          <div class="lg:col-span-2 bg-white/5 p-6 rounded-2xl border border-white/10 space-y-4">
+            <span class="text-xs font-mono-code text-slate-400 uppercase block mb-2">DESGLOSE DE VULNERABILIDADES COGNITIVAS</span>
+            <div>
+              <div class="flex justify-between text-xs font-mono-code text-slate-300 mb-1">
+                <span>Overprecision Gap (Sobreestimación de certeza)</span>
+                <span class="text-red-400 font-bold">78% (Crítico)</span>
+              </div>
+              <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                <div class="bg-gradient-to-r from-amber-500 to-red-500 h-full w-[78%]"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs font-mono-code text-slate-300 mb-1">
+                <span>Sesgo de Anclaje en Valuación M&A</span>
+                <span class="text-amber-400 font-bold">62% (Moderado)</span>
+              </div>
+              <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                <div class="bg-gradient-to-r from-cyan-500 to-amber-500 h-full w-[62%]"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs font-mono-code text-slate-300 mb-1">
+                <span>Latencia de Reacción ante Ruptura de Hipótesis</span>
+                <span class="text-emerald-400 font-bold">29% (Bajo)</span>
+              </div>
+              <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                <div class="bg-emerald-500 h-full w-[29%]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PESTAÑA 2: MATRIZ DE QUÓRUM -->
+      <div id="tab2" class="board-tab-content">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
+            <div class="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-400 mb-4">
+              <i data-lucide="users" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-white font-bold text-sm mb-1">Círculo de Consenso Ciego</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">Identificados 3 miembros clave con alineación artificial de voto por aversión al debate técnico bajo presión.</p>
+          </div>
+          <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-[#00F0FF] mb-4">
+              <i data-lucide="zap" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-white font-bold text-sm mb-1">Disparidad de Juicio Cuantitativo</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">El Comité de Auditoría y el Comité de Finanzas muestran un desfase telemétrico de 3.4x en calibración de probabilidad.</p>
+          </div>
+          <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-4">
+              <i data-lucide="shield-alert" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-white font-bold text-sm mb-1">Blindaje Frente a Terceros</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">Emisión de evidencia documental auditable exigible en asambleas de accionistas y comités de riesgo.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PESTAÑA 3: DICTAMEN -->
+      <div id="tab3" class="board-tab-content">
+        <div class="bg-white/5 p-6 sm:p-8 rounded-2xl border border-cyan-500/30">
+          <div class="flex items-center gap-3 text-cyan-400 text-xs font-mono-code mb-4">
+            <i data-lucide="check-circle" class="w-4 h-4"></i>
+            RECOMENDACIÓN METODOLÓGICA GENERADA AUTOMÁTICAMENTE
+          </div>
+          <h4 class="text-xl font-bold text-white mb-2">Activación de Protocolo Torniquete para M&A Q3</h4>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Se recomienda un sprint de calibración de 2 semanas previo al cierre de votación de asignación de capital. Este proceso no requiere reestructurar comités, sino calibrar la ponderación fiduciaria del análisis de riesgo presentado al Consejo.
+          </p>
+          <a href="mailto:partnerships@cti-globalskills.net?subject=Solicitud%20de%20Board%20Pack%20Muestra" class="inline-flex items-center gap-2 text-xs font-bold font-mono-code text-[#00F0FF] hover:underline">
+            Solicitar Dictamen Redactado de Muestra en PDF <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
        PREGUNTAS FRECUENTES (ACORDEONES INTERACTIVOS)
   =========================================== -->
   <section class="max-w-4xl mx-auto px-6 py-20">
@@ -359,7 +508,6 @@
     </div>
     
     <div class="space-y-4">
-      
       <!-- FAQ 1 -->
       <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
         <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-slate-900">
@@ -429,7 +577,6 @@
           El cliente final y la Firma Consultora acreditada. CTI GlobalSkills actúa exclusivamente como proveedor de infraestructura tecnológica fiduciaria. Los datos están sujetos a cifrado con claves únicas y estricta disociación de identidades directivas conforme a lineamientos GDPR.
         </div>
       </div>
-
     </div>
   </section>
 
@@ -464,14 +611,13 @@
   </footer>
 
   <!-- ==========================================
-       LÓGICA JAVASCRIPT: SIMULADOR, CONTADORES & FAQ
+       LÓGICA JAVASCRIPT
   =========================================== -->
   <script>
     lucide.createIcons();
 
-    /* --- 1. LÓGICA SIMULADOR COG-VAR --- */
+    /* --- 1. SIMULADOR COG-VAR --- */
     let currentRate = 0.168;
-
     const slider = document.getElementById('budgetSlider');
     const displayBudget = document.getElementById('displayBudget');
     const displayCogVar = document.getElementById('displayCogVar');
@@ -490,7 +636,6 @@
       if (!slider) return;
       const budgetMillions = parseFloat(slider.value);
       const budget = budgetMillions * 1000000;
-      
       const cogVar = budget * currentRate;
       const friction = cogVar * 0.20;
       const savings = cogVar * 0.80;
@@ -518,10 +663,9 @@
 
       calculate();
     }
-
     calculate();
 
-    /* --- 2. LÓGICA DE CONTADORES ANIMADOS AL SCROLL --- */
+    /* --- 2. CONTADORES ANIMADOS AL SCROLL --- */
     const counters = document.querySelectorAll('.counter');
     let animated = false;
 
@@ -556,21 +700,36 @@
     const metricSection = document.getElementById('metricas');
     if (metricSection) observer.observe(metricSection);
 
-    /* --- 3. LÓGICA DE ACORDEÓN FAQ --- */
+    /* --- 3. ACORDEÓN FAQ --- */
     function toggleFaq(button) {
       const answer = button.nextElementSibling;
       const chevron = button.querySelector('.faq-chevron');
       const isOpen = answer.classList.contains('open');
 
-      // Cerrar otros acordeones
       document.querySelectorAll('.faq-answer').forEach(el => el.classList.remove('open'));
       document.querySelectorAll('.faq-chevron').forEach(el => el.classList.remove('rotated'));
 
-      // Abrir el seleccionado si estaba cerrado
       if (!isOpen) {
         answer.classList.add('open');
         chevron.classList.add('rotated');
       }
+    }
+
+    /* --- 4. PESTAÑAS BOARD PACK --- */
+    function switchBoardTab(tabId, btn) {
+      document.querySelectorAll('.board-tab-content').forEach(content => {
+        content.classList.remove('active');
+      });
+      document.querySelectorAll('.board-tab-btn').forEach(b => {
+        b.classList.remove('active', 'bg-cyan-500/20', 'text-[#00F0FF]', 'border-[#00F0FF]');
+        b.classList.add('bg-white/5', 'text-slate-400', 'border-white/10');
+      });
+
+      const activeTab = document.getElementById(tabId);
+      if (activeTab) activeTab.classList.add('active');
+
+      btn.classList.remove('bg-white/5', 'text-slate-400', 'border-white/10');
+      btn.classList.add('active', 'bg-cyan-500/20', 'text-[#00F0FF]', 'border-[#00F0FF]');
     }
   </script>
 </body>
